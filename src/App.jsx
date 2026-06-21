@@ -206,6 +206,13 @@ const servicesOSPricingPoints = [
   'If payment processing is used, any processing or platform fees should be explained clearly before a business commits.',
 ];
 
+const servicesOSPilotPoints = [
+  'Early access is by request.',
+  'Pilot pricing is discussed individually.',
+  'The goal is practical pricing for small service businesses, not enterprise software pricing.',
+  'Pilot users may start with one workflow first, such as leads/estimates or scheduling, before expanding into more operations.',
+];
+
 const servicesOSFaqs = [
   {
     question: 'Is ServicesOS only for cleaning businesses?',
@@ -226,6 +233,21 @@ const servicesOSFaqs = [
     question: 'How much setup is required?',
     answer:
       'Early pilots can start with one workflow, such as leads and estimates or scheduling, before moving more operations into ServicesOS.',
+  },
+  {
+    question: 'Can I pay for ServicesOS on the website today?',
+    answer:
+      'Not yet. Early access is handled by request so we can make sure ServicesOS is a good fit before onboarding a business.',
+  },
+  {
+    question: 'Will ServicesOS support payments?',
+    answer:
+      'Yes. ServicesOS is being designed around Stripe and Stripe Connect so service businesses can collect deposits, final payments, and eventually in-person payments. Payment features will be tested carefully before wider release.',
+  },
+  {
+    question: 'How does early access work?',
+    answer:
+      'Early pilots can start with a focused workflow, such as leads and estimates or scheduling, then expand as the business is ready.',
   },
   {
     question: 'Does ServicesOS make decisions automatically?',
@@ -566,7 +588,7 @@ function ContactCTA({ compact = false }) {
     email: '',
     businessName: '',
     businessType: '',
-    interestedProduct: 'ServicesOS',
+    interestedProduct: 'ServicesOS Demo',
     message: '',
     website: '',
   });
@@ -653,8 +675,9 @@ function ContactCTA({ compact = false }) {
           <p className="eyebrow">Contact</p>
           <h2>Request a ServicesOS Demo</h2>
           <p>
-            Tell us what workflow problem you want solved. This simple form sends the request through an email form
-            endpoint without backend complexity or email automation.
+            Tell us what workflow problem you want solved, ask about early access, or request a pilot pricing
+            conversation. This simple form sends the request through an email form endpoint without backend complexity or
+            email automation.
           </p>
           <div className="contact-actions" aria-label="Contact links">
             <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
@@ -746,7 +769,10 @@ function ContactCTA({ compact = false }) {
               onChange={updateField}
               value={formValues.interestedProduct}
             >
-              <option>ServicesOS</option>
+              <option>ServicesOS Demo</option>
+              <option>Early Access / Pilot</option>
+              <option>Pilot Pricing</option>
+              <option>Product Research</option>
               <option>GrowthAI</option>
               <option>EducationOS</option>
               <option>RetailOS / PharmacyOS</option>
@@ -1041,6 +1067,47 @@ function ServicesOSPage() {
               Owners stay in control of customer communication, pricing decisions, staff assignments, and final
               approvals.
             </p>
+          </div>
+        </div>
+      </section>
+      <section className="section pilot-section">
+        <div className="shell two-column value-panel pilot-panel">
+          <div>
+            <p className="eyebrow">Early Access / Pilot</p>
+            <h2>Preparing for real-world service business pilots.</h2>
+            <p>
+              ServicesOS is currently preparing for early real-world pilot testing with cleaning and service
+              businesses. Early access is intended for owners who want a simpler way to manage leads, estimates,
+              scheduling, employee workflows, job completion, and payment tracking from one place.
+            </p>
+            <div className="hero-actions">
+              <a className="button primary" href="#contact">
+                Request Early Access
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+              <a className="button secondary" href="#contact">
+                Ask About Pilot Pricing
+              </a>
+              <a className="button secondary" href="#contact">
+                Request a ServicesOS Demo
+              </a>
+            </div>
+          </div>
+          <div>
+            <article className="status-callout">
+              <p className="eyebrow">Current Status</p>
+              <h3>Active development before wider launch.</h3>
+              <p>
+                Current Status: ServicesOS is in active development and preparing for early real-world testing. The
+                current focus is workflow stability, beta feedback, UI refinement, and payment testing before wider
+                launch.
+              </p>
+            </article>
+            <ul className="plain-list">
+              {servicesOSPilotPoints.map((point) => (
+                <li key={point}>{point}</li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

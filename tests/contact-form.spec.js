@@ -20,7 +20,7 @@ async function fillValidContactForm(page) {
   await page.getByLabel('Email', { exact: true }).fill('jamie@example.com');
   await page.getByLabel('Business name').fill('Stellar Cleaning Co.');
   await page.getByLabel('Business type').fill('Residential cleaning');
-  await page.getByLabel('Interested product').selectOption('ServicesOS');
+  await page.getByLabel('Interested product').selectOption('ServicesOS Demo');
   await page
     .getByLabel('Message', { exact: true })
     .fill('We need a better way to manage estimates, scheduling, and customer follow-up.');
@@ -44,7 +44,10 @@ test.describe('Request demo contact form', () => {
     await expect(page.getByLabel('Email', { exact: true })).toBeVisible();
     await expect(page.getByLabel('Business name')).toBeVisible();
     await expect(page.getByLabel('Business type')).toBeVisible();
-    await expect(page.getByLabel('Interested product')).toHaveValue('ServicesOS');
+    await expect(page.getByLabel('Interested product')).toHaveValue('ServicesOS Demo');
+    await expect(page.locator('#interested-product')).toContainText('Early Access / Pilot');
+    await expect(page.locator('#interested-product')).toContainText('Pilot Pricing');
+    await expect(page.locator('#interested-product')).toContainText('Product Research');
     await expect(page.getByLabel('Message')).toBeVisible();
   });
 
@@ -92,7 +95,7 @@ test.describe('Request demo contact form', () => {
       email: 'jamie@example.com',
       businessName: 'Stellar Cleaning Co.',
       businessType: 'Residential cleaning',
-      interestedProduct: 'ServicesOS',
+      interestedProduct: 'ServicesOS Demo',
       message: 'We need a better way to manage estimates, scheduling, and customer follow-up.',
       source: 'slai-website',
     });

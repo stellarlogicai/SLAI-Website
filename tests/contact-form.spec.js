@@ -1,8 +1,13 @@
 import { expect, test } from '@playwright/test';
 
-const contactEndpoint = 'http://127.0.0.1:4173/contact-test-endpoint';
+const contactEndpoint = 'https://formspree.io/f/meebjnng';
 const successMessage = 'Thanks — your request has been captured. We’ll follow up soon.';
 const errorMessage = 'Something went wrong sending your request. Please try again.';
+const corsHeaders = {
+  'Access-Control-Allow-Headers': 'accept, content-type',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Origin': '*',
+};
 
 async function configureContactEndpoint(page) {
   await page.addInitScript((endpoint) => {
@@ -19,6 +24,15 @@ async function fillValidContactForm(page) {
   await page
     .getByLabel('Message', { exact: true })
     .fill('We need a better way to manage estimates, scheduling, and customer follow-up.');
+}
+
+async function fulfillPreflight(route) {
+  if (route.request().method() === 'OPTIONS') {
+    await route.fulfill({ status: 204, headers: corsHeaders });
+    return true;
+  }
+
+  return false;
 }
 
 test.describe('Request demo contact form', () => {
@@ -56,8 +70,16 @@ test.describe('Request demo contact form', () => {
 
     let submittedPayload;
     await page.route(contactEndpoint, async (route) => {
+      if (await fulfillPreflight(route)) {
+        return;
+      }
+
+      expect(route.request().headers()).toMatchObject({
+        accept: 'application/json',
+        'content-type': 'application/json',
+      });
       submittedPayload = route.request().postDataJSON();
-      await route.fulfill({ contentType: 'application/json', json: { ok: true } });
+      await route.fulfill({ contentType: 'application/json', headers: corsHeaders, json: { ok: true } });
     });
 
     await page.goto('/#contact');
@@ -80,7 +102,11 @@ test.describe('Request demo contact form', () => {
   test('shows the success message after a successful response', async ({ page }) => {
     await configureContactEndpoint(page);
     await page.route(contactEndpoint, async (route) => {
-      await route.fulfill({ contentType: 'application/json', json: { ok: true } });
+      if (await fulfillPreflight(route)) {
+        return;
+      }
+
+      await route.fulfill({ contentType: 'application/json', headers: corsHeaders, json: { ok: true } });
     });
 
     await page.goto('/#contact');
@@ -93,7 +119,11 @@ test.describe('Request demo contact form', () => {
   test('shows an error message after a failed response', async ({ page }) => {
     await configureContactEndpoint(page);
     await page.route(contactEndpoint, async (route) => {
-      await route.fulfill({ status: 500, contentType: 'application/json', json: { ok: false } });
+      if (await fulfillPreflight(route)) {
+        return;
+      }
+
+      await route.fulfill({ status: 500, contentType: 'application/json', headers: corsHeaders, json: { ok: false } });
     });
 
     await page.goto('/#contact');
@@ -117,7 +147,7 @@ test.describe('Request demo contact form', () => {
     let requestCount = 0;
     await page.route(contactEndpoint, async (route) => {
       requestCount += 1;
-      await route.fulfill({ contentType: 'application/json', json: { ok: true } });
+      await route.fulfill({ contentType: 'application/json', headers: corsHeaders, json: { ok: true } });
     });
 
     await page.goto('/#contact');

@@ -14,6 +14,7 @@ export async function submitContactRequest(payload) {
   const response = await fetch(endpoint, {
     method: 'POST',
     headers: {
+      Accept: 'application/json',
       'Content-Type': 'application/json',
     },
     body: JSON.stringify(payload),

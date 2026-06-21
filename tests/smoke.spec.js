@@ -4,7 +4,7 @@ test.describe('SLAI website smoke tests', () => {
   test('homepage loads and shows the main hero text', async ({ page }) => {
     await page.goto('/');
 
-    await expect(page).toHaveTitle(/SLAI/);
+    await expect(page).toHaveTitle('Stellar Logic AI | Human-Centered AI Platforms for Service Businesses');
     await expect(page.getByRole('heading', { name: 'Building AI That Amplifies Human Potential.' })).toBeVisible();
   });
 

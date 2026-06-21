@@ -709,6 +709,11 @@ blockquote {
   align-items: start;
 }
 
+.pilot-panel .hero-actions {
+  gap: 12px;
+  margin-top: 24px;
+}
+
 .status-callout {
   margin-bottom: 22px;
   border: 1px solid rgba(0, 180, 216, 0.24);
@@ -1086,6 +1091,20 @@ textarea[aria-invalid="true"] {
 
   .page-hero h1 {
     font-size: 2.8rem;
+  }
+
+  .servicesos-hero .page-hero-inner {
+    padding: 62px 0 64px;
+  }
+
+  .servicesos-hero h1 {
+    margin-bottom: 18px;
+    font-size: 2.48rem;
+    line-height: 1.03;
+  }
+
+  .servicesos-hero .hero-actions {
+    margin-top: 24px;
   }
 
   .section {

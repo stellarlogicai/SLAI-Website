@@ -27,35 +27,46 @@ const routes = {
   '/servicesos': 'servicesos',
 };
 
+const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
+const siteDescription =
+  'Stellar Logic AI builds human-centered AI platforms, starting with ServicesOS: a workflow system for cleaning and service businesses to manage leads, estimates, scheduling, employee workflows, and payment readiness from one place.';
+const servicesOSDescription =
+  'ServicesOS helps cleaning and service businesses track leads, send estimates, schedule jobs, assign cleaners, guide job completion, and prepare for payment workflows without losing context between the office and field team.';
+const servicesOSSocialTitle = 'ServicesOS by Stellar Logic AI';
+const servicesOSSocialDescription =
+  'A workflow platform being built for cleaning and service businesses to manage leads, estimates, scheduling, employees, job completion, and future payment workflows from one place.';
+
 const routeMeta = {
   '/': {
-    title: 'SLAI | Building AI That Amplifies Human Potential',
-    description:
-      'SLAI builds AI-powered platforms for service businesses, education, growth, and careful long-term research.',
+    title: siteTitle,
+    description: siteDescription,
+    socialTitle: servicesOSSocialTitle,
+    socialDescription: servicesOSSocialDescription,
   },
   '/about': {
-    title: 'About SLAI | Human-Centered AI',
+    title: 'About Stellar Logic AI | Human-Centered AI',
     description:
-      'Learn about SLAI, its founder story, and the principles behind building AI that helps people work smarter.',
+      'Learn about Stellar Logic AI, its founder-led story, and the principles behind practical AI systems that keep people responsible for important decisions.',
   },
   '/servicesos': {
-    title: 'ServicesOS | SLAI',
-    description:
-      'ServicesOS is SLAI’s main near-term product: operating software for service businesses with human-centered AI assistance.',
+    title: 'ServicesOS by Stellar Logic AI | Early Access Pilot',
+    description: servicesOSDescription,
+    socialTitle: servicesOSSocialTitle,
+    socialDescription: servicesOSSocialDescription,
   },
   '/research': {
-    title: 'Research | SLAI',
+    title: 'Research | Stellar Logic AI',
     description:
-      'SLAI research areas include human-centered AI, memory systems, AI governance, education systems, business automation, and competitive integrity.',
+      'Stellar Logic AI research areas include human-centered AI, memory systems, AI governance, education systems, business automation, and competitive integrity.',
   },
   '/blog': {
-    title: 'Blog | SLAI',
-    description: 'SLAI research notes and product updates are coming soon.',
+    title: 'Blog | Stellar Logic AI',
+    description: 'Stellar Logic AI research notes and product updates are coming soon.',
   },
   '/competitive-integrity': {
-    title: 'Competitive Integrity | SLAI',
+    title: 'Competitive Integrity Research | Stellar Logic AI',
     description:
-      'A future SLAI research direction exploring fair competition, behavioral intelligence, and human-reviewed integrity systems.',
+      'A future Stellar Logic AI research direction exploring fair competition, behavioral intelligence, and human-reviewed integrity systems.',
   },
 };
 
@@ -242,7 +253,7 @@ const servicesOSFaqs = [
   {
     question: 'Will ServicesOS support payments?',
     answer:
-      'Yes. ServicesOS is being designed around Stripe and Stripe Connect so service businesses can collect deposits, final payments, and eventually in-person payments. Payment features will be tested carefully before wider release.',
+      'The plan is for ServicesOS to support Stripe and Stripe Connect so service businesses can collect deposits, final payments, and eventually in-person payments. Payment features will be tested carefully before wider release.',
   },
   {
     question: 'How does early access work?',
@@ -411,9 +422,9 @@ function Hero() {
   );
 }
 
-function PageHero({ eyebrow, title, copy, children }) {
+function PageHero({ className = '', eyebrow, title, copy, children }) {
   return (
-    <section className="page-hero">
+    <section className={className ? `page-hero ${className}` : 'page-hero'}>
       <div className="shell page-hero-inner">
         <p className="eyebrow">{eyebrow}</p>
         <h1>{title}</h1>
@@ -676,8 +687,7 @@ function ContactCTA({ compact = false }) {
           <h2>Request a ServicesOS Demo</h2>
           <p>
             Tell us what workflow problem you want solved, ask about early access, or request a pilot pricing
-            conversation. This simple form sends the request through an email form endpoint without backend complexity or
-            email automation.
+            conversation. Your request goes to SLAI by email, and we'll follow up directly.
           </p>
           <div className="contact-actions" aria-label="Contact links">
             <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
@@ -755,7 +765,7 @@ function ContactCTA({ compact = false }) {
               disabled={isSubmitting}
               name="businessType"
               onChange={updateField}
-              placeholder="Cleaning, lawn care, retail, pharmacy, other"
+              placeholder="Business type"
               type="text"
               value={formValues.businessType}
             />
@@ -915,6 +925,7 @@ function ServicesOSPage() {
   return (
     <>
       <PageHero
+        className="servicesos-hero"
         eyebrow="ServicesOS"
         title="One operating platform for service businesses."
         copy="ServicesOS is SLAI's main near-term product: a practical system for service businesses that need less software sprawl, fewer manual handoffs, and clearer daily operations."
@@ -1098,9 +1109,8 @@ function ServicesOSPage() {
               <p className="eyebrow">Current Status</p>
               <h3>Active development before wider launch.</h3>
               <p>
-                Current Status: ServicesOS is in active development and preparing for early real-world testing. The
-                current focus is workflow stability, beta feedback, UI refinement, and payment testing before wider
-                launch.
+                ServicesOS is in active development and preparing for early real-world testing. The current focus is
+                workflow stability, beta feedback, UI refinement, and payment testing before wider launch.
               </p>
             </article>
             <ul className="plain-list">
@@ -1358,14 +1368,18 @@ export default function App() {
 
   useEffect(() => {
     const meta = routeMeta[route] || routeMeta['/'];
+    const socialTitle = meta.socialTitle || meta.title;
+    const socialDescription = meta.socialDescription || meta.description;
     document.title = meta.title;
     const metaEntries = [
       ['name', 'description', meta.description],
-      ['property', 'og:title', meta.title],
-      ['property', 'og:description', meta.description],
+      ['property', 'og:site_name', 'Stellar Logic AI'],
+      ['property', 'og:title', socialTitle],
+      ['property', 'og:description', socialDescription],
       ['property', 'og:image', socialPreviewImage],
-      ['name', 'twitter:title', meta.title],
-      ['name', 'twitter:description', meta.description],
+      ['name', 'twitter:card', 'summary_large_image'],
+      ['name', 'twitter:title', socialTitle],
+      ['name', 'twitter:description', socialDescription],
       ['name', 'twitter:image', socialPreviewImage],
     ];
 

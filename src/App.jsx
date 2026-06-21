@@ -110,14 +110,24 @@ const productPreviews = [
 
 const serviceFeatures = [
   {
-    title: 'Customer Operations',
-    description: 'Keep customer details, service history, notes, and follow-up work organized for small service teams.',
+    title: 'CRM / lead tracking',
+    description: 'Keep prospects, customer details, service history, notes, and follow-up work organized for small teams.',
     icon: Users,
   },
   {
-    title: 'Estimates and Contracts',
-    description: 'Support clearer pricing conversations with estimate and agreement workflows in one operating system.',
+    title: 'Estimates and quotes',
+    description: 'Build clearer pricing conversations around service scopes, quotes, deposits, and approval steps.',
     icon: FileSignature,
+  },
+  {
+    title: 'Contracts and agreements',
+    description: 'Keep service terms, accepted work, and customer expectations closer to the rest of the workflow.',
+    icon: ClipboardCheck,
+  },
+  {
+    title: 'Payments and deposits',
+    description: 'Connect payments, deposits, and job status so money does not sit apart from operations.',
+    icon: CreditCard,
   },
   {
     title: 'Scheduling',
@@ -125,19 +135,107 @@ const serviceFeatures = [
     icon: CalendarCheck,
   },
   {
-    title: 'Payments',
-    description: 'Bring payment workflows closer to the rest of the business instead of separating money from operations.',
-    icon: CreditCard,
+    title: 'Employee assignment',
+    description: 'Assign team members to jobs, keep work visible, and reduce owner-only memory around who is doing what.',
+    icon: Users,
   },
   {
-    title: 'Training',
-    description: 'Give teams repeatable standards, onboarding support, and job-quality expectations that can improve over time.',
+    title: 'Job checklists',
+    description: 'Support repeatable job execution with checklists, completion notes, and service-specific standards.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Training support',
+    description: 'Give new and existing employees a clearer place to learn standards, expectations, and job procedures.',
     icon: BookOpenCheck,
   },
   {
-    title: 'AI Assistance',
-    description: 'Use AI to summarize, recommend, draft, and surface options while humans remain responsible for decisions.',
+    title: 'Inventory and equipment',
+    description: 'Track important equipment, supplies, and job-readiness details without another separate spreadsheet.',
     icon: ClipboardCheck,
+  },
+  {
+    title: 'Customer history',
+    description: 'Give owners and staff better context around previous jobs, communication, preferences, and recurring needs.',
+    icon: FileSignature,
+  },
+  {
+    title: 'Reporting and analytics',
+    description: 'Surface practical business signals around work volume, follow-up, payments, recurring jobs, and team activity.',
+    icon: LineChart,
+  },
+];
+
+const servicesOSAudience = [
+  'Cleaning businesses managing leads, estimates, crews, recurring customers, and quality expectations.',
+  'Local service companies that rely on repeat work, referrals, schedule discipline, and clear customer communication.',
+  'Owner-led teams that have outgrown notebooks, spreadsheets, text threads, and disconnected subscriptions.',
+];
+
+const servicesOSWorkflow = [
+  'Lead',
+  'Estimate',
+  'Contract',
+  'Payment',
+  'Scheduling',
+  'Employee assignment',
+  'Job execution',
+  'Completion',
+  'Review',
+  'Recurring service',
+  'Analytics',
+];
+
+const servicesOSToolGroups = [
+  'CRM and lead trackers',
+  'Quote and estimate tools',
+  'Contract or agreement workflows',
+  'Payment and deposit tools',
+  'Scheduling calendars',
+  'Job checklist systems',
+  'Training documents',
+  'Inventory or equipment spreadsheets',
+  'Reporting dashboards',
+];
+
+const servicesOSPricingPoints = [
+  'Early access and pilot pricing are available by request while the product is being shaped with real service businesses.',
+  'Early access pricing is intended to be practical for small service businesses, not enterprise software pricing.',
+  'The pricing goal is simple, transparent plans that make sense for small service teams.',
+  'ServicesOS is designed to reduce the need for many separate software subscriptions.',
+  'If payment processing is used, any processing or platform fees should be explained clearly before a business commits.',
+];
+
+const servicesOSFaqs = [
+  {
+    question: 'Is ServicesOS only for cleaning businesses?',
+    answer:
+      'Cleaning businesses are the first strong fit, but the workflow is being designed for service businesses that manage leads, estimates, scheduling, staff, job execution, and recurring customers.',
+  },
+  {
+    question: 'Is ServicesOS fully launched?',
+    answer:
+      'ServicesOS is the active near-term product priority. Public messaging should be treated as early access and pilot-oriented, not a claim that every planned feature is complete.',
+  },
+  {
+    question: 'Will ServicesOS replace every tool immediately?',
+    answer:
+      'The goal is to reduce software sprawl over time, but adoption should be practical. Some businesses may start with one workflow before moving more operations into the platform.',
+  },
+  {
+    question: 'How much setup is required?',
+    answer:
+      'Early pilots can start with one workflow, such as leads and estimates or scheduling, before moving more operations into ServicesOS.',
+  },
+  {
+    question: 'Does ServicesOS make decisions automatically?',
+    answer:
+      'No. AI assistance should summarize, draft, recommend, and organize. Owners, managers, and employees remain responsible for important decisions.',
+  },
+  {
+    question: 'How do I ask about pricing?',
+    answer:
+      'Use the request demo form and mention early access pricing. SLAI can discuss pilot fit, business size, and the workflows you want to simplify.',
   },
 ];
 
@@ -796,18 +894,39 @@ function ServicesOSPage() {
         copy="ServicesOS is SLAI's main near-term product: a practical system for service businesses that need less software sprawl, fewer manual handoffs, and clearer daily operations."
       >
         <div className="hero-actions">
-          <a
-            className="button primary"
-            href="mailto:stellar.logic.ai@gmail.com?subject=ServicesOS%20Demo%20Request"
-          >
-            Request a Demo
+          <a className="button primary" href="#contact">
+            Request a ServicesOS Demo
             <ArrowRight size={18} aria-hidden="true" />
           </a>
-          <a className="button secondary" href="mailto:stellar.logic.ai@gmail.com">
-            Ask a Question
+          <a className="button secondary" href="#contact">
+            Ask About Pilot Pricing
           </a>
         </div>
       </PageHero>
+      <section className="section services-fit-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">Who it is for</p>
+            <h2>Built for owner-led service teams that need one operating center.</h2>
+          </div>
+          <div>
+            <p>
+              ServicesOS helps you track leads, send estimates, schedule jobs, assign cleaners, collect payments, and
+              manage recurring customers from one place.
+            </p>
+            <p>
+              ServicesOS is being shaped around cleaning and local service businesses that need clearer workflows from
+              first inquiry through recurring service. The product is business-focused: fewer scattered tools, less
+              repeated admin work, and a better shared view of daily operations.
+            </p>
+            <ul className="plain-list">
+              {servicesOSAudience.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>
       <section className="section problem-section">
         <h2 className="sr-only">ServicesOS problem and solution</h2>
         <div className="shell three-column">
@@ -820,6 +939,13 @@ function ServicesOSPage() {
             <p className="eyebrow">Friction</p>
             <h3>Too much manual work.</h3>
             <p>Important details get copied between systems, handled in messages, or remembered by the person who happened to do it last.</p>
+            <ul className="plain-list">
+              <li>Missed follow-ups after estimates</li>
+              <li>Jobs getting scheduled in texts or memory</li>
+              <li>Cleaners not knowing exact scope or checklist</li>
+              <li>Recurring customers needing repeat scheduling</li>
+              <li>Payment/deposit status not being clear before a job</li>
+            </ul>
           </article>
           <article>
             <p className="eyebrow">Solution</p>
@@ -828,17 +954,42 @@ function ServicesOSPage() {
           </article>
         </div>
       </section>
+      <section className="section workflow-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Core Workflow</p>
+            <h2>From lead to recurring customer.</h2>
+            <p>
+              ServicesOS is organized around the work service businesses repeat every day, not around a collection of
+              disconnected apps.
+            </p>
+            <p>The goal is to keep each job moving without losing context between the customer, office, and field team.</p>
+            <p>
+              Cleaners can see assigned jobs, customer notes, checklists, special instructions, and completion steps so
+              the owner does not have to repeat every detail manually.
+            </p>
+          </div>
+          <ol className="workflow-list">
+            {servicesOSWorkflow.map((step, index) => (
+              <li key={step}>
+                <span>{String(index + 1).padStart(2, '0')}</span>
+                {step}
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
       <section className="section feature-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Core Workflows</p>
-            <h2>Built for the work service businesses repeat every day.</h2>
+            <p className="eyebrow">Features</p>
+            <h2>Practical tools for the operating work behind every job.</h2>
             <p>
               The platform is designed around practical operations first. AI assistance supports the work but does not
               replace human judgment, customer relationships, or owner responsibility.
             </p>
           </div>
-          <div className="feature-grid">
+          <div className="feature-grid services-feature-grid">
             {serviceFeatures.map((feature) => {
               const Icon = feature.icon;
               return (
@@ -852,6 +1003,23 @@ function ServicesOSPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+      <section className="section tool-reduction-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Tool Consolidation</p>
+            <h2>Designed to reduce subscription sprawl.</h2>
+            <p>
+              ServicesOS is not positioned as another single-purpose app. The goal is to bring the major operating
+              workflows closer together so a service business can rely on fewer disconnected subscriptions over time.
+            </p>
+          </div>
+          <ul className="plain-list tool-list">
+            {servicesOSToolGroups.map((tool) => (
+              <li key={tool}>{tool}</li>
+            ))}
+          </ul>
         </div>
       </section>
       <section className="section product-detail-section">
@@ -869,10 +1037,59 @@ function ServicesOSPage() {
               AI features should summarize, recommend, draft, and assist. Important decisions stay with humans, and low
               confidence should lead to review rather than guessing.
             </p>
+            <p>
+              Owners stay in control of customer communication, pricing decisions, staff assignments, and final
+              approvals.
+            </p>
           </div>
         </div>
       </section>
-      <ProductPreview detailed />
+      <section className="section pricing-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Pricing Approach</p>
+            <h2>Early access pricing by request.</h2>
+            <p>
+              Public final pricing is not being listed yet. The near-term focus is learning from real service
+              businesses and offering pilot conversations that are clear about fit, scope, and fees.
+            </p>
+            <div className="hero-actions">
+              <a className="button primary" href="#contact">
+                Request a ServicesOS Demo
+                <ArrowRight size={18} aria-hidden="true" />
+              </a>
+              <a className="button secondary" href="#contact">
+                Ask About Pilot Pricing
+              </a>
+            </div>
+          </div>
+          <ul className="plain-list">
+            {servicesOSPricingPoints.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+      <section className="section faq-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">FAQ</p>
+            <h2>Common early-access questions.</h2>
+            <p>
+              Straightforward answers for service business owners evaluating whether ServicesOS is worth a demo
+              conversation.
+            </p>
+          </div>
+          <div className="faq-grid">
+            {servicesOSFaqs.map((item) => (
+              <article className="faq-card" key={item.question}>
+                <h3>{item.question}</h3>
+                <p>{item.answer}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
       <ContactCTA />
     </>
   );

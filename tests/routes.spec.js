@@ -14,7 +14,7 @@ const publicRoutes = [
   {
     path: '/servicesos',
     heading: 'One operating platform for service businesses.',
-    visibleText: 'Built for the work service businesses repeat every day.',
+    visibleText: 'From lead to recurring customer.',
   },
   {
     path: '/research',

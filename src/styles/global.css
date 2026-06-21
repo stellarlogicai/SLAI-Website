@@ -656,6 +656,90 @@ blockquote {
   margin-bottom: 24px;
 }
 
+.services-feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.workflow-section {
+  border-top: 1px solid var(--line);
+}
+
+.workflow-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.workflow-list li {
+  min-height: 118px;
+  border: 1px solid rgba(192, 199, 209, 0.18);
+  border-radius: 8px;
+  padding: 18px;
+  background: rgba(6, 26, 51, 0.52);
+  color: var(--text);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.workflow-list span {
+  display: block;
+  margin-bottom: 18px;
+  color: var(--electric);
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.value-panel {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 34px;
+  background:
+    radial-gradient(circle at 12% 0%, rgba(0, 180, 216, 0.12), transparent 24rem),
+    rgba(13, 27, 43, 0.66);
+}
+
+.tool-list {
+  margin-top: 0;
+  columns: 2;
+  column-gap: 28px;
+}
+
+.tool-list li {
+  break-inside: avoid;
+  margin-bottom: 10px;
+}
+
+.pricing-section {
+  background: rgba(255, 255, 255, 0.03);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.faq-card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  padding: 24px;
+  background: rgba(13, 27, 43, 0.66);
+}
+
+.faq-card h3 {
+  margin-bottom: 12px;
+  letter-spacing: 0;
+}
+
+.faq-card p:last-child {
+  margin-bottom: 0;
+}
+
 .research-area-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -850,7 +934,9 @@ textarea[aria-invalid="true"] {
   .story-grid,
   .three-column,
   .feature-grid,
-  .research-area-grid {
+  .research-area-grid,
+  .workflow-list,
+  .faq-grid {
     grid-template-columns: 1fr;
   }
 
@@ -859,6 +945,26 @@ textarea[aria-invalid="true"] {
   .contact-panel {
     grid-template-columns: 1fr;
     gap: 24px;
+  }
+
+  .workflow-list {
+    gap: 12px;
+  }
+
+  .workflow-list li {
+    min-height: auto;
+  }
+
+  .workflow-list span {
+    margin-bottom: 12px;
+  }
+
+  .feature-card {
+    min-height: auto;
+  }
+
+  .tool-list {
+    columns: 1;
   }
 
   .hero-content {
@@ -971,6 +1077,7 @@ textarea[aria-invalid="true"] {
 
   .research-panel,
   .contact-panel,
+  .value-panel,
   .story-block,
   .principles-panel,
   .placeholder-panel {

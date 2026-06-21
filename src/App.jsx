@@ -16,6 +16,7 @@ import {
   Users,
 } from 'lucide-react';
 import { useEffect, useState } from 'react';
+import { submitContactRequest } from './services/contact';
 
 const routes = {
   '/': 'home',
@@ -448,14 +449,18 @@ function ContactCTA({ compact = false }) {
     businessType: '',
     interestedProduct: 'ServicesOS',
     message: '',
+    website: '',
   });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submissionError, setSubmissionError] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   function updateField(event) {
     const { name, value } = event.target;
     setFormValues((current) => ({ ...current, [name]: value }));
     setFormErrors((current) => ({ ...current, [name]: undefined }));
+    setSubmissionError('');
   }
 
   function validateForm() {
@@ -479,18 +484,47 @@ function ContactCTA({ compact = false }) {
     return nextErrors;
   }
 
-  function submitForm(event) {
+  async function submitForm(event) {
     event.preventDefault();
     const nextErrors = validateForm();
 
     if (Object.keys(nextErrors).length > 0) {
       setFormErrors(nextErrors);
       setIsSubmitted(false);
+      setSubmissionError('');
       return;
     }
 
     setFormErrors({});
-    setIsSubmitted(true);
+    setSubmissionError('');
+
+    if (formValues.website.trim()) {
+      setIsSubmitted(true);
+      return;
+    }
+
+    const payload = {
+      name: formValues.name.trim(),
+      email: formValues.email.trim(),
+      businessName: formValues.businessName.trim(),
+      businessType: formValues.businessType.trim(),
+      interestedProduct: formValues.interestedProduct,
+      message: formValues.message.trim(),
+      submittedAt: new Date().toISOString(),
+      source: 'slai-website',
+    };
+
+    setIsSubmitting(true);
+    setIsSubmitted(false);
+
+    try {
+      await submitContactRequest(payload);
+      setIsSubmitted(true);
+    } catch {
+      setSubmissionError('Something went wrong sending your request. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -500,8 +534,8 @@ function ContactCTA({ compact = false }) {
           <p className="eyebrow">Contact</p>
           <h2>Request a ServicesOS Demo</h2>
           <p>
-            Tell us what workflow problem you want solved. This static form captures the request on screen only for now,
-            with no backend submission or email automation.
+            Tell us what workflow problem you want solved. This simple form sends the request through an email form
+            endpoint without backend complexity or email automation.
           </p>
           <div className="contact-actions" aria-label="Contact links">
             <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
@@ -511,12 +545,25 @@ function ContactCTA({ compact = false }) {
           </div>
         </div>
         <form className="contact-form" noValidate onSubmit={submitForm}>
+          <div className="form-row honeypot" aria-hidden="true">
+            <label htmlFor="contact-website">Website</label>
+            <input
+              autoComplete="off"
+              id="contact-website"
+              name="website"
+              onChange={updateField}
+              tabIndex="-1"
+              type="text"
+              value={formValues.website}
+            />
+          </div>
           <div className="form-row">
             <label htmlFor="contact-name">Name</label>
             <input
               aria-describedby={formErrors.name ? 'contact-name-error' : undefined}
               aria-invalid={Boolean(formErrors.name)}
               id="contact-name"
+              disabled={isSubmitting}
               name="name"
               onChange={updateField}
               required
@@ -535,6 +582,7 @@ function ContactCTA({ compact = false }) {
               aria-describedby={formErrors.email ? 'contact-email-error' : undefined}
               aria-invalid={Boolean(formErrors.email)}
               id="contact-email"
+              disabled={isSubmitting}
               name="email"
               onChange={updateField}
               required
@@ -551,6 +599,7 @@ function ContactCTA({ compact = false }) {
             <label htmlFor="business-name">Business name</label>
             <input
               id="business-name"
+              disabled={isSubmitting}
               name="businessName"
               onChange={updateField}
               type="text"
@@ -561,6 +610,7 @@ function ContactCTA({ compact = false }) {
             <label htmlFor="business-type">Business type</label>
             <input
               id="business-type"
+              disabled={isSubmitting}
               name="businessType"
               onChange={updateField}
               placeholder="Cleaning, lawn care, retail, pharmacy, other"
@@ -572,6 +622,7 @@ function ContactCTA({ compact = false }) {
             <label htmlFor="interested-product">Interested product</label>
             <select
               id="interested-product"
+              disabled={isSubmitting}
               name="interestedProduct"
               onChange={updateField}
               value={formValues.interestedProduct}
@@ -589,6 +640,7 @@ function ContactCTA({ compact = false }) {
               aria-describedby={formErrors.message ? 'contact-message-error' : undefined}
               aria-invalid={Boolean(formErrors.message)}
               id="contact-message"
+              disabled={isSubmitting}
               name="message"
               onChange={updateField}
               required
@@ -601,10 +653,15 @@ function ContactCTA({ compact = false }) {
               </p>
             )}
           </div>
-          <button className="button primary form-submit" type="submit">
-            Request a ServicesOS Demo
+          <button className="button primary form-submit" disabled={isSubmitting} type="submit">
+            {isSubmitting ? 'Sending request...' : 'Request a ServicesOS Demo'}
             <Mail size={18} aria-hidden="true" />
           </button>
+          {submissionError && (
+            <p className="form-submit-error" role="alert">
+              {submissionError}
+            </p>
+          )}
           {isSubmitted && (
             <p className="form-success" role="status">
               Thanks — your request has been captured. We’ll follow up soon.

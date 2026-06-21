@@ -683,8 +683,17 @@ blockquote {
 
 .form-row.full,
 .form-submit,
+.form-submit-error,
 .form-success {
   grid-column: 1 / -1;
+}
+
+.honeypot {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
 
 label {
@@ -717,19 +726,29 @@ textarea:focus {
   outline-offset: 2px;
 }
 
+input:disabled,
+select:disabled,
+textarea:disabled,
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.72;
+}
+
 input[aria-invalid="true"],
 textarea[aria-invalid="true"] {
   border-color: rgba(255, 209, 102, 0.82);
 }
 
 .form-error,
+.form-submit-error,
 .form-success {
   margin: 0;
   font-size: 0.9rem;
   line-height: 1.5;
 }
 
-.form-error {
+.form-error,
+.form-submit-error {
   color: var(--gold);
 }
 

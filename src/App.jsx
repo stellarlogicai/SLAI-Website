@@ -260,20 +260,31 @@ function Hero() {
         <div className="signal-node node-three" />
       </div>
       <div className="shell hero-content">
-        <p className="eyebrow">Stellar Logic AI</p>
-        <h1>Building AI That Amplifies Human Potential.</h1>
-        <p className="hero-copy">
-          SLAI develops AI-powered platforms for business growth, education, operations, and future intelligent systems
-          that help people work smarter while keeping humans responsible for important decisions.
-        </p>
-        <div className="hero-actions">
-          <PageLink className="button primary" href="/servicesos">
-            Explore ServicesOS
-            <ArrowRight size={18} aria-hidden="true" />
-          </PageLink>
-          <PageLink className="button secondary" href="/about">
-            Learn About SLAI
-          </PageLink>
+        <div className="hero-copy-panel">
+          <p className="eyebrow">Stellar Logic AI</p>
+          <h1>Building AI That Amplifies Human Potential.</h1>
+          <p className="hero-copy">
+            SLAI develops AI-powered platforms for business growth, education, operations, and future intelligent
+            systems that help people work smarter while keeping humans responsible for important decisions.
+          </p>
+          <div className="hero-actions">
+            <PageLink className="button primary" href="/servicesos">
+              Explore ServicesOS
+              <ArrowRight size={18} aria-hidden="true" />
+            </PageLink>
+            <PageLink className="button secondary" href="/about">
+              Learn About SLAI
+            </PageLink>
+          </div>
+        </div>
+        <div className="hero-brand-panel" aria-hidden="true">
+          <img
+            alt=""
+            className="hero-brand-image"
+            height="630"
+            src="/brand/logo_social_preview_1200x630.png"
+            width="1200"
+          />
         </div>
       </div>
     </section>
@@ -427,15 +438,25 @@ function ResearchPreview() {
   return (
     <section className="section research-section">
       <div className="shell research-panel">
-        <div>
-          <p className="eyebrow">Research</p>
-          <h2>Careful public research, without inflated claims.</h2>
+        <div className="research-copy">
+          <div>
+            <p className="eyebrow">Research</p>
+            <h2>Careful public research, without inflated claims.</h2>
+          </div>
+          <p>
+            SLAI will publish selected observations on architecture, human oversight, memory systems, education, and
+            operational intelligence without exposing proprietary methods or presenting speculative research as finished
+            capability.
+          </p>
         </div>
-        <p>
-          SLAI will publish selected observations on architecture, human oversight, memory systems, education, and
-          operational intelligence without exposing proprietary methods or presenting speculative research as finished
-          capability.
-        </p>
+        <img
+          alt="SLAI branded research preview with the company mark on a deep navy background."
+          className="research-brand-image"
+          height="720"
+          loading="lazy"
+          src="/brand/logo_dark_background.png"
+          width="720"
+        />
       </div>
     </section>
   );

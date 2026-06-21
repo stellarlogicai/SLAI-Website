@@ -58,6 +58,8 @@ const routeMeta = {
   },
 };
 
+const socialPreviewImage = '/brand/logo_social_preview_1200x630.png';
+
 const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
@@ -216,9 +218,15 @@ function Navbar({ currentPath }) {
   return (
     <header className="site-header">
       <nav className="nav shell" aria-label="Main navigation">
-        <PageLink className="brand" href="/">
-          <span className="brand-mark">S</span>
-          <span className="brand-text">SLAI</span>
+        <PageLink aria-label="SLAI brand" className="brand" href="/">
+          <img
+            alt=""
+            className="brand-icon"
+            height="40"
+            src="/brand/logo_icon_transparent_clean.png"
+            width="40"
+          />
+          <span className="brand-wordmark">SLAI</span>
         </PageLink>
         <div className="nav-links">
           {navLinks.map((link) => {
@@ -433,32 +441,176 @@ function ResearchPreview() {
 }
 
 function ContactCTA({ compact = false }) {
+  const [formValues, setFormValues] = useState({
+    name: '',
+    email: '',
+    businessName: '',
+    businessType: '',
+    interestedProduct: 'ServicesOS',
+    message: '',
+  });
+  const [formErrors, setFormErrors] = useState({});
+  const [isSubmitted, setIsSubmitted] = useState(false);
+
+  function updateField(event) {
+    const { name, value } = event.target;
+    setFormValues((current) => ({ ...current, [name]: value }));
+    setFormErrors((current) => ({ ...current, [name]: undefined }));
+  }
+
+  function validateForm() {
+    const nextErrors = {};
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!formValues.name.trim()) {
+      nextErrors.name = 'Name is required.';
+    }
+
+    if (!formValues.email.trim()) {
+      nextErrors.email = 'Email is required.';
+    } else if (!emailPattern.test(formValues.email.trim())) {
+      nextErrors.email = 'Enter a valid email address.';
+    }
+
+    if (!formValues.message.trim()) {
+      nextErrors.message = 'Message is required.';
+    }
+
+    return nextErrors;
+  }
+
+  function submitForm(event) {
+    event.preventDefault();
+    const nextErrors = validateForm();
+
+    if (Object.keys(nextErrors).length > 0) {
+      setFormErrors(nextErrors);
+      setIsSubmitted(false);
+      return;
+    }
+
+    setFormErrors({});
+    setIsSubmitted(true);
+  }
+
   return (
     <section className={compact ? 'section contact-section compact' : 'section contact-section'} id="contact">
       <div className="shell contact-panel">
         <div>
           <p className="eyebrow">Contact</p>
-          <h2>Demo requests and partnership conversations.</h2>
+          <h2>Request a ServicesOS Demo</h2>
           <p>
-            For ServicesOS demos, partnership inquiries, or public research conversations, reach out directly. This is a
-            static contact section with no backend form submission.
+            Tell us what workflow problem you want solved. This static form captures the request on screen only for now,
+            with no backend submission or email automation.
           </p>
+          <div className="contact-actions" aria-label="Contact links">
+            <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
+              stellar.logic.ai@gmail.com
+              <Mail size={16} aria-hidden="true" />
+            </a>
+          </div>
         </div>
-        <div className="contact-actions" aria-label="Contact links">
-          <a
-            className="button primary"
-            href="mailto:stellar.logic.ai@gmail.com?subject=SLAI%20ServicesOS%20Demo%20Request"
-          >
-            Request a Demo
+        <form className="contact-form" noValidate onSubmit={submitForm}>
+          <div className="form-row">
+            <label htmlFor="contact-name">Name</label>
+            <input
+              aria-describedby={formErrors.name ? 'contact-name-error' : undefined}
+              aria-invalid={Boolean(formErrors.name)}
+              id="contact-name"
+              name="name"
+              onChange={updateField}
+              required
+              type="text"
+              value={formValues.name}
+            />
+            {formErrors.name && (
+              <p className="form-error" id="contact-name-error">
+                {formErrors.name}
+              </p>
+            )}
+          </div>
+          <div className="form-row">
+            <label htmlFor="contact-email">Email</label>
+            <input
+              aria-describedby={formErrors.email ? 'contact-email-error' : undefined}
+              aria-invalid={Boolean(formErrors.email)}
+              id="contact-email"
+              name="email"
+              onChange={updateField}
+              required
+              type="email"
+              value={formValues.email}
+            />
+            {formErrors.email && (
+              <p className="form-error" id="contact-email-error">
+                {formErrors.email}
+              </p>
+            )}
+          </div>
+          <div className="form-row">
+            <label htmlFor="business-name">Business name</label>
+            <input
+              id="business-name"
+              name="businessName"
+              onChange={updateField}
+              type="text"
+              value={formValues.businessName}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="business-type">Business type</label>
+            <input
+              id="business-type"
+              name="businessType"
+              onChange={updateField}
+              placeholder="Cleaning, lawn care, retail, pharmacy, other"
+              type="text"
+              value={formValues.businessType}
+            />
+          </div>
+          <div className="form-row">
+            <label htmlFor="interested-product">Interested product</label>
+            <select
+              id="interested-product"
+              name="interestedProduct"
+              onChange={updateField}
+              value={formValues.interestedProduct}
+            >
+              <option>ServicesOS</option>
+              <option>GrowthAI</option>
+              <option>EducationOS</option>
+              <option>RetailOS / PharmacyOS</option>
+              <option>General SLAI inquiry</option>
+            </select>
+          </div>
+          <div className="form-row full">
+            <label htmlFor="contact-message">Message</label>
+            <textarea
+              aria-describedby={formErrors.message ? 'contact-message-error' : undefined}
+              aria-invalid={Boolean(formErrors.message)}
+              id="contact-message"
+              name="message"
+              onChange={updateField}
+              required
+              rows="5"
+              value={formValues.message}
+            />
+            {formErrors.message && (
+              <p className="form-error" id="contact-message-error">
+                {formErrors.message}
+              </p>
+            )}
+          </div>
+          <button className="button primary form-submit" type="submit">
+            Request a ServicesOS Demo
             <Mail size={18} aria-hidden="true" />
-          </a>
-          <a className="button secondary" href="mailto:stellar.logic.ai@gmail.com">
-            Email SLAI
-          </a>
-          <a className="button secondary" href="https://www.linkedin.com/in/jamie-brown-68a6333a9/">
-            LinkedIn
-          </a>
-        </div>
+          </button>
+          {isSubmitted && (
+            <p className="form-success" role="status">
+              Thanks — your request has been captured. We’ll follow up soon.
+            </p>
+          )}
+        </form>
       </div>
     </section>
   );
@@ -781,9 +933,15 @@ function Footer() {
     <footer className="footer">
       <div className="shell footer-inner">
         <div>
-          <PageLink className="brand footer-brand" href="/">
-            <span className="brand-mark">S</span>
-            <span className="brand-text">SLAI</span>
+          <PageLink aria-label="SLAI brand" className="brand footer-brand" href="/">
+            <img
+              alt=""
+              className="brand-icon footer-icon"
+              height="40"
+              src="/brand/logo_icon_transparent_clean.png"
+              width="40"
+            />
+            <span className="brand-wordmark">SLAI</span>
           </PageLink>
           <p>AI should amplify humanity, not replace it.</p>
         </div>
@@ -839,15 +997,27 @@ export default function App() {
   useEffect(() => {
     const meta = routeMeta[route] || routeMeta['/'];
     document.title = meta.title;
-    let description = document.querySelector('meta[name="description"]');
+    const metaEntries = [
+      ['name', 'description', meta.description],
+      ['property', 'og:title', meta.title],
+      ['property', 'og:description', meta.description],
+      ['property', 'og:image', socialPreviewImage],
+      ['name', 'twitter:title', meta.title],
+      ['name', 'twitter:description', meta.description],
+      ['name', 'twitter:image', socialPreviewImage],
+    ];
 
-    if (!description) {
-      description = document.createElement('meta');
-      description.setAttribute('name', 'description');
-      document.head.append(description);
+    for (const [attribute, key, content] of metaEntries) {
+      let tag = document.querySelector(`meta[${attribute}="${key}"]`);
+
+      if (!tag) {
+        tag = document.createElement('meta');
+        tag.setAttribute(attribute, key);
+        document.head.append(tag);
+      }
+
+      tag.setAttribute('content', content);
     }
-
-    description.setAttribute('content', meta.description);
   }, [route]);
 
   return (

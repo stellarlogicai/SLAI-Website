@@ -1,4 +1,9 @@
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { defineConfig, devices } from '@playwright/test';
+
+const projectRoot = path.dirname(fileURLToPath(import.meta.url));
+process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(projectRoot, '.ms-playwright');
 
 export default defineConfig({
   testDir: './tests',

@@ -29,7 +29,7 @@ test.describe('SLAI website smoke tests', () => {
     await expect(page.getByRole('heading', { name: 'GrowthAI', exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'EducationOS', exact: true })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'FutureAI', exact: true })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Demo requests and partnership conversations.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Request a ServicesOS Demo' })).toBeVisible();
   });
 
   test('mobile viewport keeps core layout usable', async ({ page, isMobile }) => {

@@ -1,0 +1,141 @@
+{
+  "customers": {
+    "standardClean": {
+      "name": "Morgan Parker",
+      "phone": "555-0101",
+      "email": "morgan.parker@example.test",
+      "address": "123 Test Maple Street, Testville, ST 00001",
+      "propertyType": "3 bed / 1 bath residential home",
+      "leadSource": "Website request",
+      "notes": "Customer wants a standard clean and has two friendly dogs.",
+      "specialConcerns": "Pet hair on sofa and rugs. Confirm gate access before arrival."
+    },
+    "deepClean": {
+      "name": "Avery Coleman",
+      "phone": "555-0102",
+      "email": "avery.coleman@example.test",
+      "address": "456 Test Oak Avenue, Testville, ST 00002",
+      "propertyType": "4 bed / 2 bath family home",
+      "leadSource": "Referral",
+      "notes": "Customer requests a deep clean before hosting family.",
+      "specialConcerns": "Kitchen baseboards, bathroom detail work, cluttered playroom."
+    },
+    "recurringClean": {
+      "name": "Jordan Lee",
+      "phone": "555-0103",
+      "email": "jordan.lee@example.test",
+      "address": "789 Test Pine Road, Testville, ST 00003",
+      "propertyType": "2 bed / 2 bath apartment",
+      "leadSource": "Social media",
+      "notes": "Customer wants biweekly maintenance cleaning.",
+      "specialConcerns": "Customer works from home and prefers morning appointments."
+    }
+  },
+  "properties": {
+    "threeBedOneBathPets": {
+      "rooms": "3 bedrooms, 1 bathroom, kitchen, living room, hallway",
+      "squareFootageEstimate": 1350,
+      "clutterLevel": "Medium",
+      "petHairLevel": "High",
+      "lastCleaned": "Two weeks ago",
+      "specialNotes": "Two dogs, pet hair on furniture, back-door access.",
+      "expectedChecklistFocus": [
+        "Vacuum rugs and furniture edges",
+        "Dust bedrooms and living room",
+        "Clean bathroom surfaces",
+        "Mop kitchen and hallway"
+      ]
+    },
+    "deepCleanFamilyHome": {
+      "rooms": "4 bedrooms, 2 bathrooms, kitchen, dining room, living room, playroom",
+      "squareFootageEstimate": 2100,
+      "clutterLevel": "High",
+      "petHairLevel": "Medium",
+      "lastCleaned": "More than one month ago",
+      "specialNotes": "Extra attention needed for kitchen detail work and bathrooms.",
+      "expectedChecklistFocus": [
+        "Deep clean kitchen counters and appliance fronts",
+        "Detail bathrooms",
+        "Dust baseboards",
+        "Document anything that needs owner follow-up"
+      ]
+    }
+  },
+  "employees": {
+    "newHire": {
+      "name": "Taylor Brooks",
+      "role": "Cleaner",
+      "experienceLevel": "New hire",
+      "strengths": "Careful with checklists and notes",
+      "trainingNeeds": "Needs SOP help for deep-clean details",
+      "availabilityNotes": "Weekday mornings",
+      "deviceType": "Android phone"
+    },
+    "experiencedCleaner": {
+      "name": "Riley Carter",
+      "role": "Lead cleaner",
+      "experienceLevel": "Experienced",
+      "strengths": "Deep cleans, customer notes, and training support",
+      "trainingNeeds": "Light support only",
+      "availabilityNotes": "Weekdays and occasional Saturdays",
+      "deviceType": "iPhone"
+    }
+  },
+  "jobs": {
+    "standardCleanWithPets": {
+      "customerKey": "standardClean",
+      "propertyKey": "threeBedOneBathPets",
+      "employeeKey": "experiencedCleaner",
+      "serviceType": "Standard clean",
+      "difficulty": "Medium",
+      "estimateNotes": "Include pet hair effort and confirm standard-clean scope.",
+      "schedulingNotes": "Schedule weekday morning. Confirm gate and pet instructions.",
+      "employeeAssignmentNotes": "Assign a cleaner comfortable with pets.",
+      "checklistExpectations": [
+        "Review customer notes before arrival",
+        "Mark arrival",
+        "Complete standard-clean checklist",
+        "Add notes for heavy pet hair areas",
+        "Mark job complete"
+      ],
+      "completionExpectations": "Admin can see job status update after employee completion.",
+      "paymentStatusExpectation": "Track payment status only. Do not assume live payment processing."
+    },
+    "deepCleanWithAddOns": {
+      "customerKey": "deepClean",
+      "propertyKey": "deepCleanFamilyHome",
+      "employeeKey": "experiencedCleaner",
+      "serviceType": "Deep clean",
+      "difficulty": "High",
+      "estimateNotes": "Review added detail work before sending estimate.",
+      "schedulingNotes": "Allow a longer appointment window.",
+      "employeeAssignmentNotes": "Assign lead cleaner or experienced cleaner.",
+      "checklistExpectations": [
+        "Review deep-clean notes",
+        "Use bathroom and kitchen detail checklist",
+        "Document unfinished or out-of-scope items",
+        "Mark job complete only after review steps"
+      ],
+      "completionExpectations": "Admin can verify completion details and any issue notes.",
+      "paymentStatusExpectation": "Track deposit or final payment status if supported."
+    }
+  },
+  "paymentStatusCases": [
+    {
+      "name": "Deposit requested",
+      "expectedBehavior": "The job shows deposit requested without implying payment was collected."
+    },
+    {
+      "name": "Final payment pending",
+      "expectedBehavior": "The job can be complete while final payment remains pending."
+    },
+    {
+      "name": "Paid in full",
+      "expectedBehavior": "The payment status is clear and does not conflict with job completion status."
+    },
+    {
+      "name": "Payment status mismatch",
+      "expectedBehavior": "The app makes the mismatch visible for review instead of hiding it."
+    }
+  ]
+}

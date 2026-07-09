@@ -27,6 +27,7 @@ const routes = {
   '/servicesos': 'servicesos',
   '/servicesos-demo': 'servicesos-demo',
   '/servicesos-founder-access': 'servicesos-founder-access',
+  '/servicesos-faq': 'servicesos-faq',
   '/servicesos-training': 'servicesos-training',
 };
 
@@ -72,6 +73,14 @@ const routeMeta = {
     socialTitle: 'ServicesOS Founder Access',
     socialDescription:
       'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
+  },
+  '/servicesos-faq': {
+    title: 'ServicesOS FAQ',
+    description:
+      'Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later.',
+    socialTitle: 'ServicesOS FAQ',
+    socialDescription:
+      'Common ServicesOS questions for prospects, Founder Access users, and early cleaning-business customers.',
   },
   '/servicesos-training': {
     title: 'ServicesOS Training Center',
@@ -494,6 +503,198 @@ const servicesOSTrainingLessons = [
       'Feedback matters and can shape product priorities.',
       'Some workflows may change as the product matures.',
       'The goal is to solve real operating problems before adding complexity.',
+    ],
+  },
+];
+
+const servicesOSFaqGroups = [
+  {
+    title: 'General',
+    questions: [
+      {
+        question: 'What is ServicesOS?',
+        answer:
+          'ServicesOS is an operating system for service businesses, starting with cleaning companies. It helps owners manage customers, quote and request review, bookings, field visibility, and payments.',
+      },
+      {
+        question: 'Who is ServicesOS built for first?',
+        answer:
+          'It is being built first for cleaning companies, especially solo cleaners, small teams, family-run businesses, and early service businesses that need simpler operations.',
+      },
+      {
+        question: 'Is ServicesOS only for cleaning companies?',
+        answer:
+          'Cleaning companies are the first focus. The same workflow may fit other service businesses later, but early messaging and onboarding are cleaning-business first.',
+      },
+      {
+        question: 'What is Founder Access?',
+        answer:
+          'Founder Access means early access while the product is still improving, with a more direct feedback loop and hands-on onboarding.',
+      },
+      {
+        question: 'Is ServicesOS finished?',
+        answer:
+          'No. ServicesOS is in beta and still maturing. Some workflows may change as real cleaning businesses use it and give feedback.',
+      },
+    ],
+  },
+  {
+    title: 'Current features',
+    questions: [
+      {
+        question: 'What can ServicesOS do today?',
+        answer:
+          'Current V1 workflows include customer organization, quote and request review, booking and job visibility, read-only calendar, read-only Field Mode job packets, Stripe payment links when connected, manual payment recording, and basic revenue visibility.',
+      },
+      {
+        question: 'Can I manage customers?',
+        answer:
+          'Yes. ServicesOS is designed to keep customer contact details, property notes, service notes, and job context organized.',
+      },
+      {
+        question: 'Can I manage bookings?',
+        answer:
+          'Yes. Bookings is the job management center for schedule, job details, payment status, and owner review.',
+      },
+      {
+        question: 'Does ServicesOS have a calendar?',
+        answer:
+          'Yes, but Calendar is currently for read-only schedule visibility. Booking changes happen in Bookings.',
+      },
+      {
+        question: 'What is Field Mode?',
+        answer:
+          'Field Mode is a read-only job packet for workers. It shows job information without admin controls and is not the full employee mobile app yet.',
+      },
+      {
+        question: 'Can I track revenue?',
+        answer:
+          'ServicesOS can show basic expected revenue, collected revenue, and outstanding balance visibility so owners can separate booked work from money actually received.',
+      },
+    ],
+  },
+  {
+    title: 'Payments',
+    questions: [
+      {
+        question: 'Does ServicesOS process payments?',
+        answer:
+          'Online payments use Stripe Connect when connected. ServicesOS also supports owner-recorded manual payment tracking for payments collected another way.',
+      },
+      {
+        question: 'Do I need Stripe?',
+        answer:
+          'You need Stripe Connect for online payment links. If Stripe is not connected, owners can still record cash, check, or external payments manually.',
+      },
+      {
+        question: 'Can I record cash/check/manual payments?',
+        answer:
+          'Yes. Manual paid-another-way tracking is for cash, check, Venmo, Zelle, PayPal, or other external payment methods the owner verifies.',
+      },
+      {
+        question: 'Does creating a payment link mark a booking paid?',
+        answer:
+          'No. Payment links do not mark bookings paid by themselves. Stripe-paid status updates after confirmed payment.',
+      },
+      {
+        question: 'Who is responsible for refunds or chargebacks?',
+        answer:
+          'Business owners remain responsible for unusual payment cases, refunds, and chargebacks. ServicesOS is not adding new refund or dispute workflows in V1.',
+      },
+    ],
+  },
+  {
+    title: 'Beta / Founder Access',
+    questions: [
+      {
+        question: 'What should Founder Access users expect?',
+        answer:
+          'Founder Access users should expect a product that is useful but still improving. Early support is more hands-on while the workflow matures.',
+      },
+      {
+        question: 'Will features change?',
+        answer:
+          'Yes. Some workflows may change as ServicesOS learns from real cleaning businesses and simplifies the product.',
+      },
+      {
+        question: 'How should feedback be handled?',
+        answer:
+          'Feedback should be specific and tied to real owner workflows: customers, bookings, payments, Field Mode, schedule visibility, and follow-up.',
+      },
+      {
+        question: 'Is support hands-on?',
+        answer:
+          'Yes. Founder Access is intended to be more guided than a typical self-serve product launch.',
+      },
+    ],
+  },
+  {
+    title: 'What is not included yet',
+    questions: [
+      {
+        question: 'Is there a mobile employee app?',
+        answer:
+          'Not yet. Field Mode is mobile-friendly web visibility, not the full React Native employee app yet.',
+      },
+      {
+        question: 'Does ServicesOS support Tap to Pay?',
+        answer: 'Not yet. Tap to Pay is later and is parked until ServicesOS V1 is stable.',
+      },
+      {
+        question: 'Does it handle payroll?',
+        answer: 'No. Payroll is not part of ServicesOS V1.',
+      },
+      {
+        question: 'Does it do route optimization?',
+        answer: 'No. Route optimization is not part of V1 and should be treated as a later possibility.',
+      },
+      {
+        question: 'Does it replace full accounting software?',
+        answer:
+          'No. ServicesOS can show basic payment and revenue visibility, but it does not replace full accounting software.',
+      },
+      {
+        question: 'Does it auto-post marketing content?',
+        answer:
+          'No. Autonomous marketing and auto-posting are not V1 ServicesOS features.',
+      },
+    ],
+  },
+  {
+    title: 'AI philosophy',
+    questions: [
+      {
+        question: 'Does AI make decisions for the business?',
+        answer:
+          'No. AI may draft, suggest, summarize, or organize later, but humans remain responsible for important decisions.',
+      },
+      {
+        question: 'Will AI replace the owner?',
+        answer:
+          'No. ServicesOS is built around owner control. Human approval stays central for customer, pricing, scheduling, and payment decisions.',
+      },
+      {
+        question: 'How does SLAI think about AI?',
+        answer:
+          'AI should amplify humans, not replace them. ServicesOS should help owners work more clearly without pretending automation can run the business alone.',
+      },
+    ],
+  },
+  {
+    title: 'Getting started',
+    questions: [
+      {
+        question: 'How do I see the demo?',
+        answer: 'Use the ServicesOS demo page for a guided static walkthrough with fake data only.',
+      },
+      {
+        question: 'How do I request Founder Access?',
+        answer: 'Use the Founder Access page or the contact form to tell SLAI about your cleaning business.',
+      },
+      {
+        question: 'Where can I learn how to use ServicesOS?',
+        answer: 'Use the Training Center for beta-aware lessons on Dashboard, Customers, Bookings, Payments, Calendar, and Field Mode.',
+      },
     ],
   },
 ];
@@ -2108,6 +2309,110 @@ function ServicesOSTrainingPage() {
   );
 }
 
+function ServicesOSFaqPage() {
+  return (
+    <>
+      <PageHero
+        className="servicesos-hero servicesos-faq-hero"
+        eyebrow="ServicesOS FAQ"
+        title="ServicesOS FAQ"
+        copy="Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later."
+      >
+        <div className="hero-actions">
+          <PageLink className="button primary" href="/servicesos-demo">
+            View the demo
+            <ArrowRight size={18} aria-hidden="true" />
+          </PageLink>
+          <PageLink className="button secondary" href="/servicesos-founder-access">
+            Founder Access
+          </PageLink>
+          <PageLink className="button secondary" href="/servicesos-training">
+            Training Center
+          </PageLink>
+        </div>
+      </PageHero>
+
+      <section className="section faq-resource-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Quick answer</p>
+            <h2>ServicesOS is useful now, but still beta-aware.</h2>
+          </div>
+          <div>
+            <p>
+              ServicesOS is being built first for cleaning companies that need simpler customer, booking, field
+              visibility, and payment workflows. Founder Access means early use while the product keeps improving.
+            </p>
+            <div className="faq-quick-links">
+              <PageLink className="button secondary" href="/servicesos-demo">
+                Demo
+              </PageLink>
+              <PageLink className="button secondary" href="/servicesos-founder-access">
+                Founder Access
+              </PageLink>
+              <PageLink className="button secondary" href="/servicesos-training">
+                Training
+              </PageLink>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="section servicesos-faq-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Common questions</p>
+            <h2>Short answers for prospects and early users.</h2>
+            <p>
+              These answers are intentionally plain and conservative. ServicesOS is not being described as mature
+              enterprise software or as a replacement for tools that are not part of V1.
+            </p>
+          </div>
+          <div className="servicesos-faq-groups">
+            {servicesOSFaqGroups.map((group) => (
+              <section className="servicesos-faq-group" key={group.title} aria-labelledby={`faq-${group.title}`}>
+                <h3 id={`faq-${group.title}`}>{group.title}</h3>
+                <div className="servicesos-faq-card-grid">
+                  {group.questions.map((item) => (
+                    <article className="faq-card servicesos-faq-card" key={item.question}>
+                      <h4>{item.question}</h4>
+                      <p>{item.answer}</p>
+                    </article>
+                  ))}
+                </div>
+              </section>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section faq-final-cta-section">
+        <div className="shell value-panel faq-final-cta">
+          <div>
+            <p className="eyebrow">Still have questions?</p>
+            <h2>Request Founder Access or contact SLAI.</h2>
+            <p>
+              Share your cleaning business workflow, the tools you use today, and where customers, bookings, field
+              work, or payments are hardest to keep organized.
+            </p>
+          </div>
+          <div className="hero-actions">
+            <a className="button primary" href="#contact">
+              Request Founder Access
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <PageLink className="button secondary" href="/servicesos-training">
+              Read Training Center
+            </PageLink>
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA compact />
+    </>
+  );
+}
+
 function ResearchPage() {
   return (
     <>
@@ -2281,6 +2586,10 @@ function AppPage({ route }) {
 
   if (route === '/servicesos-founder-access') {
     return <ServicesOSFounderAccessPage />;
+  }
+
+  if (route === '/servicesos-faq') {
+    return <ServicesOSFaqPage />;
   }
 
   if (route === '/servicesos-training') {

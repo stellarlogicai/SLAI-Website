@@ -54,6 +54,17 @@ const publicRoutes = [
     visibleText: 'What is not included yet',
   },
   {
+    path: '/servicesos-faq',
+    title: 'ServicesOS FAQ',
+    description:
+      'Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later.',
+    socialTitle: 'ServicesOS FAQ',
+    socialDescription:
+      'Common ServicesOS questions for prospects, Founder Access users, and early cleaning-business customers.',
+    heading: 'ServicesOS FAQ',
+    visibleText: 'Short answers for prospects and early users.',
+  },
+  {
     path: '/servicesos-training',
     title: 'ServicesOS Training Center',
     description:

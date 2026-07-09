@@ -1352,6 +1352,67 @@ textarea[aria-invalid="true"] {
   gap: 14px;
 }
 
+.faq-resource-section,
+.faq-final-cta-section {
+  border-top: 1px solid var(--line);
+}
+
+.servicesos-faq-section {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.faq-quick-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.servicesos-faq-groups {
+  display: grid;
+  gap: 34px;
+}
+
+.servicesos-faq-group {
+  display: grid;
+  gap: 16px;
+}
+
+.servicesos-faq-group h3 {
+  margin-bottom: 0;
+  color: var(--text);
+  font-size: 1.45rem;
+  letter-spacing: 0;
+}
+
+.servicesos-faq-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.servicesos-faq-card h4 {
+  margin: 0 0 10px;
+  color: var(--text);
+  font-size: 1.08rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+
+.faq-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.faq-final-cta .hero-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
 @media (max-width: 920px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1372,7 +1433,8 @@ textarea[aria-invalid="true"] {
   .demo-details,
   .demo-step-grid,
   .training-flow-list,
-  .training-lesson-grid {
+  .training-lesson-grid,
+  .servicesos-faq-card-grid {
     grid-template-columns: 1fr;
   }
 
@@ -1402,6 +1464,15 @@ textarea[aria-invalid="true"] {
   .training-links-panel {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .faq-final-cta {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .faq-final-cta .hero-actions {
+    width: 100%;
   }
 
   .training-quick-links {

@@ -18,10 +18,14 @@ test.describe('ServicesOS beta public smoke checks', () => {
     await expect(page).toHaveTitle('ServicesOS by Stellar Logic AI | Early Access Pilot');
     await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'One operating platform for service businesses.' })).toBeVisible();
-    await expect(page.getByText('Preparing for real-world service business pilots.')).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Request a ServicesOS Demo' }).first()).toHaveAttribute(
+    await expect(page.getByText('Preparing for early real-world pilots.')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Request Founder Access' }).first()).toHaveAttribute(
       'href',
-      '#contact'
+      '/servicesos-founder-access'
+    );
+    await expect(page.getByRole('link', { name: 'View Demo' }).first()).toHaveAttribute(
+      'href',
+      '/servicesos-demo'
     );
     await expect(page.getByRole('contentinfo')).toBeVisible();
 

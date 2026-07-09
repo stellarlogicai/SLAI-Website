@@ -1,6 +1,5 @@
 import {
   ArrowRight,
-  BookOpenCheck,
   BrainCircuit,
   CalendarCheck,
   ClipboardCheck,
@@ -164,108 +163,44 @@ const productPreviews = [
 
 const serviceFeatures = [
   {
-    title: 'CRM / lead tracking',
-    description: 'Keep prospects, customer details, service history, notes, and follow-up work organized for small teams.',
+    title: 'Customers & leads',
+    description: 'Keep customer records, lead context, contact details, property notes, and follow-up needs organized.',
     icon: Users,
   },
   {
     title: 'Estimates and quotes',
-    description: 'Build clearer pricing conversations around service scopes, quotes, deposits, and approval steps.',
+    description: 'Review requests, clarify scope, and move owner-approved work toward a booking.',
     icon: FileSignature,
   },
   {
-    title: 'Contracts and agreements',
-    description: 'Keep service terms, accepted work, and customer expectations closer to the rest of the workflow.',
-    icon: ClipboardCheck,
-  },
-  {
-    title: 'Payments and deposits',
-    description: 'Connect payments, deposits, and job status so money does not sit apart from operations.',
-    icon: CreditCard,
-  },
-  {
-    title: 'Scheduling',
-    description: 'Help teams coordinate jobs, recurring work, crews, and customer expectations without scattered tools.',
+    title: 'Bookings & scheduling',
+    description: 'Use Bookings as the job management center for schedule, job notes, and payment status.',
     icon: CalendarCheck,
   },
   {
-    title: 'Employee assignment',
-    description: 'Assign team members to jobs, keep work visible, and reduce owner-only memory around who is doing what.',
-    icon: Users,
+    title: 'Payments',
+    description: 'Create Stripe payment links when connected and record manual payments collected another way.',
+    icon: CreditCard,
   },
   {
-    title: 'Job checklists',
-    description: 'Support repeatable job execution with checklists, completion notes, and service-specific standards.',
-    icon: ShieldCheck,
-  },
-  {
-    title: 'Training support',
-    description: 'Give new and existing employees a clearer place to learn standards, expectations, and job procedures.',
-    icon: BookOpenCheck,
-  },
-  {
-    title: 'Inventory and equipment',
-    description: 'Track important equipment, supplies, and job-readiness details without another separate spreadsheet.',
+    title: 'Field Mode',
+    description: 'Give workers read-only job packet visibility without exposing owner admin controls.',
     icon: ClipboardCheck,
   },
   {
-    title: 'Customer history',
-    description: 'Give owners and staff better context around previous jobs, communication, preferences, and recurring needs.',
-    icon: FileSignature,
-  },
-  {
-    title: 'Reporting and analytics',
-    description: 'Surface practical business signals around work volume, follow-up, payments, recurring jobs, and team activity.',
+    title: 'Revenue visibility',
+    description: 'Separate expected revenue, collected revenue, and outstanding balances in owner-friendly terms.',
     icon: LineChart,
   },
 ];
 
 const servicesOSAudience = [
-  'Cleaning businesses managing leads, estimates, crews, recurring customers, and quality expectations.',
-  'Local service companies that rely on repeat work, referrals, schedule discipline, and clear customer communication.',
-  'Owner-led teams that have outgrown notebooks, spreadsheets, text threads, and disconnected subscriptions.',
+  'Cleaning businesses that need cleaner customer, quote, and booking workflows.',
+  'Owner-led local service teams juggling leads, schedules, payments, and job notes.',
+  'Teams that want one clearer operating center before adding more software.',
 ];
 
-const servicesOSWorkflow = [
-  'Lead',
-  'Estimate',
-  'Contract',
-  'Payment',
-  'Scheduling',
-  'Employee assignment',
-  'Job execution',
-  'Completion',
-  'Review',
-  'Recurring service',
-  'Analytics',
-];
-
-const servicesOSToolGroups = [
-  'CRM and lead trackers',
-  'Quote and estimate tools',
-  'Contract or agreement workflows',
-  'Payment and deposit tools',
-  'Scheduling calendars',
-  'Job checklist systems',
-  'Training documents',
-  'Inventory or equipment spreadsheets',
-  'Reporting dashboards',
-];
-
-const servicesOSPricingPoints = [
-  'Early access and pilot pricing are available by request while the product is being shaped with real service businesses.',
-  'Early access pricing is intended to be practical for small service businesses, not enterprise software pricing.',
-  'The pricing goal is simple, transparent plans that make sense for small service teams.',
-  'ServicesOS is designed to reduce the need for many separate software subscriptions.',
-  'If payment processing is used, any processing or platform fees should be explained clearly before a business commits.',
-];
-
-const servicesOSPilotPoints = [
-  'Early access is by request.',
-  'Pilot pricing is discussed individually.',
-  'The goal is practical pricing for small service businesses, not enterprise software pricing.',
-  'Pilot users may start with one workflow first, such as leads/estimates or scheduling, before expanding into more operations.',
-];
+const servicesOSWorkflow = ['Request', 'Booking', 'Payment', 'Field visibility', 'Follow-up'];
 
 const servicesOSDemoCustomers = [
   {
@@ -339,51 +274,37 @@ const servicesOSDemoSteps = [
   {
     step: 'Step 1',
     title: 'Review the Dashboard',
-    notice: 'Dashboard tells you what needs attention.',
-    action: 'Compare expected revenue, collected revenue, open balances, pending requests, and upcoming work.',
-    takeaway: 'Start the day knowing what needs owner attention first.',
+    notice: "See today's revenue, requests, balances, and upcoming work at a glance.",
   },
   {
     step: 'Step 2',
     title: 'Review a new customer request',
-    notice: 'Requests become useful only after the owner reviews scope and customer context.',
-    action: 'Look at Aunt B Demo Client and decide whether the quote is ready to become a booking.',
-    takeaway: 'New work enters ServicesOS without creating a booking or payment too early.',
+    notice: 'Check scope and customer context before turning a request into a booking.',
   },
   {
     step: 'Step 3',
     title: 'Manage the booking',
-    notice: 'Bookings is the job management center.',
-    action: 'Open the booking context to confirm job price, schedule, service notes, and payment state.',
-    takeaway: 'Operational changes happen in Bookings, not scattered across multiple tools.',
+    notice: 'Keep job details, schedule, service notes, and payment status together.',
   },
   {
     step: 'Step 4',
     title: 'Understand payment status',
-    notice: 'Payments can be Stripe or manually recorded.',
-    action: 'Check amount owed, amount received, and whether payment is unpaid, manually recorded, or confirmed.',
-    takeaway: 'Booked revenue is not treated as collected money until payment is actually recorded.',
+    notice: 'Track what is owed, what was received, and how payment was recorded.',
   },
   {
     step: 'Step 5',
     title: 'View the schedule',
-    notice: 'Calendar is read-only visibility.',
-    action: 'Use Calendar to see the week without accidentally changing booking records.',
-    takeaway: 'Owners and teams get visibility while job edits stay in the right place.',
+    notice: 'Use Calendar for read-only schedule visibility.',
   },
   {
     step: 'Step 6',
     title: 'Open Field Mode',
-    notice: 'Field Mode is read-only job information.',
-    action: 'Give workers the customer, address, service notes, and checklist without admin controls.',
-    takeaway: 'The field team gets what it needs without exposing owner tools.',
+    notice: 'Give workers job details without exposing admin controls.',
   },
   {
     step: 'Step 7',
     title: 'Request Founder Access',
-    notice: 'ServicesOS is built first for cleaning companies.',
-    action: 'Use Founder Access to discuss fit, early workflows, and pilot expectations.',
-    takeaway: 'Early users help shape the human-controlled AI roadmap before wider launch.',
+    notice: 'Ask about early access if the workflow fits your cleaning business.',
   },
 ];
 
@@ -706,54 +627,6 @@ const servicesOSFaqGroups = [
   },
 ];
 
-const servicesOSFaqs = [
-  {
-    question: 'Is ServicesOS only for cleaning businesses?',
-    answer:
-      'Cleaning businesses are the first strong fit, but the workflow is being designed for service businesses that manage leads, estimates, scheduling, staff, job execution, and recurring customers.',
-  },
-  {
-    question: 'Is ServicesOS fully launched?',
-    answer:
-      'ServicesOS is the active near-term product priority. Public messaging should be treated as early access and pilot-oriented, not a claim that every planned feature is complete.',
-  },
-  {
-    question: 'Will ServicesOS replace every tool immediately?',
-    answer:
-      'The goal is to reduce software sprawl over time, but adoption should be practical. Some businesses may start with one workflow before moving more operations into the platform.',
-  },
-  {
-    question: 'How much setup is required?',
-    answer:
-      'Early pilots can start with one workflow, such as leads and estimates or scheduling, before moving more operations into ServicesOS.',
-  },
-  {
-    question: 'Can I pay for ServicesOS on the website today?',
-    answer:
-      'Not yet. Early access is handled by request so we can make sure ServicesOS is a good fit before onboarding a business.',
-  },
-  {
-    question: 'Will ServicesOS support payments?',
-    answer:
-      'The plan is for ServicesOS to support Stripe and Stripe Connect so service businesses can collect deposits, final payments, and eventually in-person payments. Payment features will be tested carefully before wider release.',
-  },
-  {
-    question: 'How does early access work?',
-    answer:
-      'Early pilots can start with a focused workflow, such as leads and estimates or scheduling, then expand as the business is ready.',
-  },
-  {
-    question: 'Does ServicesOS make decisions automatically?',
-    answer:
-      'No. AI assistance should summarize, draft, recommend, and organize. Owners, managers, and employees remain responsible for important decisions.',
-  },
-  {
-    question: 'How do I ask about pricing?',
-    answer:
-      'Use the request demo form and mention early access pricing. SLAI can discuss pilot fit, business size, and the workflows you want to simplify.',
-  },
-];
-
 const researchAreas = [
   {
     title: 'Human-Centered AI',
@@ -917,7 +790,11 @@ function PageHero({ className = '', eyebrow, title, copy, children }) {
   );
 }
 
-function ServicesOSResourceLinks({ includeContact = false }) {
+function ServicesOSResourceLinks({ includeContact = false, omitDemo = false }) {
+  const resourceLinks = omitDemo
+    ? servicesOSResourceLinks.filter((link) => link.href !== '/servicesos-demo')
+    : servicesOSResourceLinks;
+
   return (
     <section className="section servicesos-resource-section" aria-labelledby="servicesos-resource-heading">
       <div className="shell value-panel servicesos-resource-panel">
@@ -930,7 +807,7 @@ function ServicesOSResourceLinks({ includeContact = false }) {
           </p>
         </div>
         <div className="servicesos-resource-links">
-          {servicesOSResourceLinks.map((link) => (
+          {resourceLinks.map((link) => (
             <PageLink className="button secondary" href={link.href} key={link.href}>
               {link.label}
             </PageLink>
@@ -1443,15 +1320,16 @@ function ServicesOSPage() {
         copy="ServicesOS is SLAI's main near-term product: a practical system for service businesses that need less software sprawl, fewer manual handoffs, and clearer daily operations."
       >
         <div className="hero-actions">
-          <a className="button primary" href="#contact">
-            Request a ServicesOS Demo
+          <PageLink className="button primary" href="/servicesos-founder-access">
+            Request Founder Access
             <ArrowRight size={18} aria-hidden="true" />
-          </a>
-          <a className="button secondary" href="#contact">
-            Ask About Pilot Pricing
-          </a>
+          </PageLink>
           <PageLink className="button secondary" href="/servicesos-demo">
-            View Guided Demo
+            View Demo
+          </PageLink>
+          <PageLink className="text-link" href="/servicesos-faq">
+            Read FAQ
+            <ArrowRight size={16} aria-hidden="true" />
           </PageLink>
         </div>
       </PageHero>
@@ -1459,17 +1337,12 @@ function ServicesOSPage() {
         <div className="shell two-column">
           <div>
             <p className="eyebrow">Who it is for</p>
-            <h2>Built for owner-led service teams that need one operating center.</h2>
+            <h2>Built first for cleaning businesses and owner-led local service teams.</h2>
           </div>
           <div>
             <p>
-              ServicesOS helps you track leads, send estimates, schedule jobs, assign cleaners, collect payments, and
-              manage recurring customers from one place.
-            </p>
-            <p>
-              ServicesOS is being shaped around cleaning and local service businesses that need clearer workflows from
-              first inquiry through recurring service. The product is business-focused: fewer scattered tools, less
-              repeated admin work, and a better shared view of daily operations.
+              ServicesOS is for teams juggling leads, quotes, schedules, payments, and job notes without a clear shared
+              operating center.
             </p>
             <ul className="plain-list">
               {servicesOSAudience.map((item) => (
@@ -1479,46 +1352,14 @@ function ServicesOSPage() {
           </div>
         </div>
       </section>
-      <section className="section problem-section">
-        <h2 className="sr-only">ServicesOS problem and solution</h2>
-        <div className="shell three-column">
-          <article>
-            <p className="eyebrow">Problem</p>
-            <h3>Too many subscriptions.</h3>
-            <p>Service businesses often stitch together separate tools for customers, estimates, payments, scheduling, and training.</p>
-          </article>
-          <article>
-            <p className="eyebrow">Friction</p>
-            <h3>Too much manual work.</h3>
-            <p>Important details get copied between systems, handled in messages, or remembered by the person who happened to do it last.</p>
-            <ul className="plain-list">
-              <li>Missed follow-ups after estimates</li>
-              <li>Jobs getting scheduled in texts or memory</li>
-              <li>Cleaners not knowing exact scope or checklist</li>
-              <li>Recurring customers needing repeat scheduling</li>
-              <li>Payment/deposit status not being clear before a job</li>
-            </ul>
-          </article>
-          <article>
-            <p className="eyebrow">Solution</p>
-            <h3>A clearer operating core.</h3>
-            <p>ServicesOS brings the major workflows together so owners and teams can operate from a shared source of truth.</p>
-          </article>
-        </div>
-      </section>
       <section className="section workflow-section">
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Core Workflow</p>
-            <h2>From lead to recurring customer.</h2>
+            <h2>One clear path from request to follow-up.</h2>
             <p>
-              ServicesOS is organized around the work service businesses repeat every day, not around a collection of
-              disconnected apps.
-            </p>
-            <p>The goal is to keep each job moving without losing context between the customer, office, and field team.</p>
-            <p>
-              Cleaners can see assigned jobs, customer notes, checklists, special instructions, and completion steps so
-              the owner does not have to repeat every detail manually.
+              Request to Booking to Payment to Field visibility to Follow-up. The goal is to keep the work moving
+              without losing context between the customer, owner, and field team.
             </p>
           </div>
           <ol className="workflow-list">
@@ -1534,11 +1375,10 @@ function ServicesOSPage() {
       <section className="section feature-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Features</p>
-            <h2>Practical tools for the operating work behind every job.</h2>
+            <p className="eyebrow">Current Focus</p>
+            <h2>Core tools for the work behind each job.</h2>
             <p>
-              The platform is designed around practical operations first. AI assistance supports the work but does not
-              replace human judgment, customer relationships, or owner responsibility.
+              ServicesOS is operations-first. Detailed how-to guidance now lives in the Training Center.
             </p>
           </div>
           <div className="feature-grid services-feature-grid">
@@ -1557,128 +1397,49 @@ function ServicesOSPage() {
           </div>
         </div>
       </section>
-      <section className="section tool-reduction-section">
-        <div className="shell two-column value-panel">
-          <div>
-            <p className="eyebrow">Tool Consolidation</p>
-            <h2>Designed to reduce subscription sprawl.</h2>
-            <p>
-              ServicesOS is not positioned as another single-purpose app. The goal is to bring the major operating
-              workflows closer together so a service business can rely on fewer disconnected subscriptions over time.
-            </p>
-          </div>
-          <ul className="plain-list tool-list">
-            {servicesOSToolGroups.map((tool) => (
-              <li key={tool}>{tool}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
       <section className="section product-detail-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">Product Position</p>
-            <h2>Main near-term platform, conservative AI posture.</h2>
+            <p className="eyebrow">AI Posture</p>
+            <h2>Human-controlled and operations-first.</h2>
           </div>
           <div>
             <p>
-              ServicesOS is the first public product priority for SLAI. It is positioned as operational software for
-              real service teams, not a promise that automation can replace owners, managers, or employees.
+              AI may draft, suggest, and organize later. Humans remain responsible for important customer, pricing,
+              scheduling, and payment decisions.
             </p>
-            <p>
-              AI features should summarize, recommend, draft, and assist. Important decisions stay with humans, and low
-              confidence should lead to review rather than guessing.
-            </p>
-            <p>
-              Owners stay in control of customer communication, pricing decisions, staff assignments, and final
-              approvals.
-            </p>
+            <p>ServicesOS is not automation-first. It is practical operating software first.</p>
           </div>
         </div>
       </section>
       <section className="section pilot-section">
         <div className="shell two-column value-panel pilot-panel">
           <div>
-            <p className="eyebrow">Early Access / Pilot</p>
-            <h2>Preparing for real-world service business pilots.</h2>
+            <p className="eyebrow">Founder Access</p>
+            <h2>Preparing for early real-world pilots.</h2>
             <p>
-              ServicesOS is currently preparing for early real-world pilot testing with cleaning and service
-              businesses. Early access is intended for owners who want a simpler way to manage leads, estimates,
-              scheduling, employee workflows, job completion, and payment tracking from one place.
+              ServicesOS is preparing for early pilots with cleaning businesses. Founder Access is available by request
+              for owners who want to help shape the product while it matures.
             </p>
             <div className="hero-actions">
-              <a className="button primary" href="#contact">
-                Request Early Access
+              <PageLink className="button primary" href="/servicesos-founder-access">
+                Request Founder Access
                 <ArrowRight size={18} aria-hidden="true" />
-              </a>
-              <a className="button secondary" href="#contact">
-                Ask About Pilot Pricing
-              </a>
-              <a className="button secondary" href="#contact">
-                Request a ServicesOS Demo
-              </a>
+              </PageLink>
+              <PageLink className="button secondary" href="/servicesos-demo">
+                View Demo
+              </PageLink>
             </div>
           </div>
           <div>
             <article className="status-callout">
               <p className="eyebrow">Current Status</p>
-              <h3>Active development before wider launch.</h3>
+              <h3>Beta-aware and still improving.</h3>
               <p>
-                ServicesOS is in active development and preparing for early real-world testing. The current focus is
-                workflow stability, beta feedback, UI refinement, and payment testing before wider launch.
+                Some workflows may change as the product learns from real users. Training, FAQ, and demo pages explain
+                the current direction without overclaiming what is finished.
               </p>
             </article>
-            <ul className="plain-list">
-              {servicesOSPilotPoints.map((point) => (
-                <li key={point}>{point}</li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-      <section className="section pricing-section">
-        <div className="shell two-column value-panel">
-          <div>
-            <p className="eyebrow">Pricing Approach</p>
-            <h2>Early access pricing by request.</h2>
-            <p>
-              Public final pricing is not being listed yet. The near-term focus is learning from real service
-              businesses and offering pilot conversations that are clear about fit, scope, and fees.
-            </p>
-            <div className="hero-actions">
-              <a className="button primary" href="#contact">
-                Request a ServicesOS Demo
-                <ArrowRight size={18} aria-hidden="true" />
-              </a>
-              <a className="button secondary" href="#contact">
-                Ask About Pilot Pricing
-              </a>
-            </div>
-          </div>
-          <ul className="plain-list">
-            {servicesOSPricingPoints.map((point) => (
-              <li key={point}>{point}</li>
-            ))}
-          </ul>
-        </div>
-      </section>
-      <section className="section faq-section">
-        <div className="shell">
-          <div className="section-header">
-            <p className="eyebrow">FAQ</p>
-            <h2>Common early-access questions.</h2>
-            <p>
-              Straightforward answers for service business owners evaluating whether ServicesOS is worth a demo
-              conversation.
-            </p>
-          </div>
-          <div className="faq-grid">
-            {servicesOSFaqs.map((item) => (
-              <article className="faq-card" key={item.question}>
-                <h3>{item.question}</h3>
-                <p>{item.answer}</p>
-              </article>
-            ))}
           </div>
         </div>
       </section>
@@ -1722,10 +1483,9 @@ function ServicesOSDemoPage() {
       <section className="section demo-notice-section">
         <div className="shell demo-notice">
           <p className="eyebrow">Demo boundary</p>
-          <h2>Fake data only. No backend actions.</h2>
+          <h2>Demo only: fake data, no backend actions.</h2>
           <p>
-            This walkthrough shows how ServicesOS is intended to feel for a cleaning business owner. Names, jobs,
-            payments, and schedules are static examples, and every demo action stays on this page.
+            This walkthrough shows how ServicesOS works without connecting to real customer, payment, or schedule data.
           </p>
         </div>
       </section>
@@ -1756,17 +1516,14 @@ function ServicesOSDemoPage() {
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Step 1: Review the Dashboard</p>
-            <h2>Dashboard tells you what needs attention.</h2>
-            <p>
-              Short explanation: ServicesOS separates expected revenue from collected revenue so owners do not confuse
-              scheduled work with money already received.
-            </p>
+            <h2>A quick snapshot of today's business.</h2>
+            <p>Dashboard keeps attention on requests, upcoming jobs, collected revenue, and open balances.</p>
           </div>
           <div className="demo-training-callout">
-            <strong>What the owner should notice</strong>
-            <p>Pending requests, upcoming jobs, outstanding balances, and collected revenue are visible together.</p>
-            <strong>Owner takeaway</strong>
-            <p>Start the day with the work that needs attention instead of rebuilding context from memory.</p>
+            <strong>What you see</strong>
+            <p>Expected revenue, collected revenue, outstanding balances, pending requests, and upcoming jobs.</p>
+            <strong>Why it matters</strong>
+            <p>Owners can tell what needs attention without rebuilding context from memory.</p>
           </div>
           <div className="demo-metric-grid">
             {servicesOSDemoMetrics.map((metric) => (
@@ -1785,15 +1542,12 @@ function ServicesOSDemoPage() {
           <div>
             <p className="eyebrow">Step 2: Review a new customer request</p>
             <h2>Customer details stay close to service notes and payment context.</h2>
-            <p>
-              Short explanation: owner-reviewed requests can become bookings when the job scope, customer details, and
-              price are ready.
-            </p>
+            <p>Customer records keep contact details, property notes, service context, and payment status together.</p>
             <div className="demo-training-callout">
-              <strong>What the owner should notice</strong>
+              <strong>What you see</strong>
               <p>Aunt B Demo Client is still a quote request, not a confirmed booking or paid job.</p>
-              <strong>Owner takeaway</strong>
-              <p>New work enters ServicesOS without creating a booking or payment too early.</p>
+              <strong>Why it matters</strong>
+              <p>New work can be reviewed before it becomes a scheduled job.</p>
             </div>
             <button
               className="button secondary demo-action-button"
@@ -1850,15 +1604,12 @@ function ServicesOSDemoPage() {
           <div className="section-header">
             <p className="eyebrow">Step 3: Manage the booking</p>
             <h2>Bookings is the job management center.</h2>
-            <p>
-              Short explanation: the booking detail view is where an owner can see scheduled work, amount owed, amount
-              received, service notes, and whether payment was recorded manually or confirmed through Stripe.
-            </p>
+            <p>The booking detail view keeps scheduled work, service notes, job price, and payment status together.</p>
           </div>
           <div className="demo-training-callout">
-            <strong>What the owner should notice</strong>
-            <p>Job status, customer context, price, payment state, and manual payment details live with the booking.</p>
-            <strong>Owner takeaway</strong>
+            <strong>What you see</strong>
+            <p>Job status, customer context, price, amount owed, and manual payment details.</p>
+            <strong>Why it matters</strong>
             <p>Bookings is where job management happens. Calendar and Field Mode are visibility surfaces.</p>
           </div>
           <div className="demo-booking-grid">
@@ -1915,15 +1666,14 @@ function ServicesOSDemoPage() {
             <p className="eyebrow">Step 4: Understand payment status</p>
             <h2>Stripe-first, manual-friendly payment tracking.</h2>
             <p>
-              Short explanation: ServicesOS is designed so owners can send a Stripe payment link for a booked job when
-              Stripe Connect is ready, while still recording cash, check, Venmo, Cash App, Zelle, PayPal, or other
-              manual payments.
+              Payment links do not mark paid by themselves. Paid status updates after confirmed payment, or after the
+              owner records a manual payment.
             </p>
             <div className="demo-training-callout">
-              <strong>What the owner should notice</strong>
+              <strong>What you see</strong>
               <p>Payment status describes what has actually happened, not what the owner hopes will happen.</p>
-              <strong>Owner takeaway</strong>
-              <p>Payments can be Stripe-confirmed or manually recorded, but the app should not fake paid status.</p>
+              <strong>Why it matters</strong>
+              <p>Owners can separate online payments from cash, check, Venmo, Cash App, Zelle, PayPal, or other methods.</p>
             </div>
             <button
               className="button secondary demo-action-button"
@@ -1962,15 +1712,12 @@ function ServicesOSDemoPage() {
           <div>
             <p className="eyebrow">Step 5: View the schedule</p>
             <h2>A read-only schedule view for visibility.</h2>
-            <p>
-              Short explanation: Calendar is for visibility. Booking changes happen in Bookings so owners always know
-              where the source of truth lives.
-            </p>
+            <p>Calendar is visibility. Booking changes happen in Bookings.</p>
             <div className="demo-training-callout">
-              <strong>What the owner should notice</strong>
+              <strong>What you see</strong>
               <p>The schedule shows upcoming work without payment buttons or edit controls.</p>
-              <strong>Owner takeaway</strong>
-              <p>Calendar helps the team see the week without turning schedule visibility into a second booking system.</p>
+              <strong>Why it matters</strong>
+              <p>The team can see the week without turning Calendar into a second booking system.</p>
             </div>
             <button
               className="button secondary demo-action-button"
@@ -2004,14 +1751,11 @@ function ServicesOSDemoPage() {
           <div>
             <p className="eyebrow">Step 6: Open Field Mode</p>
             <h2>A read-only job packet for the team in the field.</h2>
-            <p>
-              Short explanation: Field Mode gives workers job visibility without exposing admin controls. Staff can
-              review the customer, address, service notes, and checklist before arriving.
-            </p>
+            <p>Field Mode shows job details without admin controls.</p>
             <div className="demo-training-callout">
-              <strong>What the owner should notice</strong>
+              <strong>What you see</strong>
               <p>Field Mode shows job information, not payment collection, scheduling edits, or owner-only controls.</p>
-              <strong>Owner takeaway</strong>
+              <strong>Why it matters</strong>
               <p>Workers get clarity for the job while the owner keeps admin control in Bookings.</p>
             </div>
           </div>
@@ -2044,10 +1788,8 @@ function ServicesOSDemoPage() {
             <p className="eyebrow">Step 7: Request Founder Access</p>
             <h2>Built first for cleaning companies.</h2>
             <p>
-              Manage customers, bookings, field visibility, and payments in one place. Founder Access is for early
-              cleaning businesses that want to help shape the workflow before wider launch. The roadmap is
-              human-controlled: AI can assist, but owners stay responsible for customer, pricing, schedule, and payment
-              decisions.
+              Manage customers, bookings, field visibility, and payments in one place. Founder Access is available for
+              early cleaning businesses that want a hands-on rollout while the product matures.
             </p>
           </div>
           <div className="hero-actions">
@@ -2058,18 +1800,14 @@ function ServicesOSDemoPage() {
             <PageLink className="button secondary" href="/servicesos-founder-access">
               Read Founder Access Details
             </PageLink>
-            <a
-              className="button secondary"
-              href="mailto:stellar.logic.ai@gmail.com?subject=ServicesOS%20Founder%20Access"
-            >
-              Email SLAI
-              <Mail size={18} aria-hidden="true" />
+            <a className="button secondary" href="#contact">
+              Contact SLAI
             </a>
           </div>
         </div>
       </section>
 
-      <ServicesOSResourceLinks includeContact />
+      <ServicesOSResourceLinks includeContact omitDemo />
       <ContactCTA compact />
     </>
   );

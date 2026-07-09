@@ -29,7 +29,7 @@ const publicRoutes = [
     socialDescription:
       'A workflow platform being built for cleaning and service businesses to manage leads, estimates, scheduling, employees, job completion, and future payment workflows from one place.',
     heading: 'One operating platform for service businesses.',
-    visibleText: 'Preparing for real-world service business pilots.',
+    visibleText: 'Preparing for early real-world pilots.',
   },
   {
     path: '/servicesos-demo',
@@ -40,7 +40,7 @@ const publicRoutes = [
     socialDescription:
       'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
     heading: 'See how ServicesOS works',
-    visibleText: 'Fake data only. No backend actions.',
+    visibleText: 'Demo only: fake data, no backend actions.',
   },
   {
     path: '/servicesos-founder-access',

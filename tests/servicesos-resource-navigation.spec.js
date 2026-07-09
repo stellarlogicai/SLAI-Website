@@ -24,14 +24,16 @@ function watchForbiddenRequests(page) {
   return blockedIntegrationRequests;
 }
 
-async function expectServicesOSResourceLinks(page, { hasContact = false } = {}) {
-  const resourcePanel = page.locator('.servicesos-resource-panel').first();
+async function expectServicesOSResourceLinks(page, { hasContact = false, omitDemo = false } = {}) {
+  const resourcePanel = page.locator('.servicesos-resource-section .servicesos-resource-panel').first();
 
   await expect(resourcePanel).toBeVisible();
-  await expect(resourcePanel.getByRole('link', { name: 'See the demo', exact: true })).toHaveAttribute(
-    'href',
-    '/servicesos-demo'
-  );
+  const demoLink = resourcePanel.getByRole('link', { name: 'See the demo', exact: true });
+  if (omitDemo) {
+    await expect(demoLink).toHaveCount(0);
+  } else {
+    await expect(demoLink).toHaveAttribute('href', '/servicesos-demo');
+  }
   await expect(resourcePanel.getByRole('link', { name: 'Request Founder Access', exact: true })).toHaveAttribute(
     'href',
     '/servicesos-founder-access'
@@ -72,7 +74,7 @@ test.describe('ServicesOS resource navigation', () => {
       await page.goto(path);
 
       await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
-      await expectServicesOSResourceLinks(page, { hasContact: path !== '/' });
+      await expectServicesOSResourceLinks(page, { hasContact: path !== '/', omitDemo: path === '/servicesos-demo' });
 
       expect(blockedIntegrationRequests).toEqual([]);
     });

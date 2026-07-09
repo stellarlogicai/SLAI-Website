@@ -8,6 +8,7 @@ process.env.PLAYWRIGHT_BROWSERS_PATH ??= path.join(projectRoot, '.ms-playwright'
 export default defineConfig({
   testDir: './tests',
   timeout: 30_000,
+  workers: 4,
   expect: {
     timeout: 5_000,
   },
@@ -16,7 +17,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'node scripts/static-server.mjs --auto-exit-ms=60000',
+    command: 'node scripts/static-server.mjs --auto-exit-ms=300000',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

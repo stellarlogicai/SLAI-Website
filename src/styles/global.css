@@ -985,20 +985,20 @@ textarea[aria-invalid="true"] {
 }
 
 .demo-notice-section {
-  padding: 42px 0;
+  padding: 28px 0;
   border-bottom: 1px solid var(--line);
 }
 
 .demo-notice {
   border: 1px solid rgba(255, 209, 102, 0.28);
   border-radius: 8px;
-  padding: 28px;
+  padding: 20px 22px;
   background: rgba(255, 209, 102, 0.08);
 }
 
 .demo-notice h2 {
-  margin-bottom: 12px;
-  font-size: clamp(1.6rem, 3vw, 2.2rem);
+  margin-bottom: 8px;
+  font-size: clamp(1.25rem, 2vw, 1.55rem);
 }
 
 .demo-notice p:last-child {
@@ -1027,10 +1027,10 @@ textarea[aria-invalid="true"] {
 }
 
 .demo-step-card {
-  min-height: 190px;
+  min-height: 160px;
   border: 1px solid var(--line);
   border-radius: 8px;
-  padding: 18px;
+  padding: 16px;
   background: rgba(6, 26, 51, 0.58);
 }
 

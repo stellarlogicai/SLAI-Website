@@ -301,6 +301,58 @@ const servicesOSDemoCalendarItems = [
   { day: 'Friday', time: '10:00 AM', title: 'Mark Evans', detail: 'Completed move-out clean review' },
 ];
 
+const servicesOSDemoSteps = [
+  {
+    step: 'Step 1',
+    title: 'Review the Dashboard',
+    notice: 'Dashboard tells you what needs attention.',
+    action: 'Compare expected revenue, collected revenue, open balances, pending requests, and upcoming work.',
+    takeaway: 'Start the day knowing what needs owner attention first.',
+  },
+  {
+    step: 'Step 2',
+    title: 'Review a new customer request',
+    notice: 'Requests become useful only after the owner reviews scope and customer context.',
+    action: 'Look at Aunt B Demo Client and decide whether the quote is ready to become a booking.',
+    takeaway: 'New work enters ServicesOS without creating a booking or payment too early.',
+  },
+  {
+    step: 'Step 3',
+    title: 'Manage the booking',
+    notice: 'Bookings is the job management center.',
+    action: 'Open the booking context to confirm job price, schedule, service notes, and payment state.',
+    takeaway: 'Operational changes happen in Bookings, not scattered across multiple tools.',
+  },
+  {
+    step: 'Step 4',
+    title: 'Understand payment status',
+    notice: 'Payments can be Stripe or manually recorded.',
+    action: 'Check amount owed, amount received, and whether payment is unpaid, manually recorded, or confirmed.',
+    takeaway: 'Booked revenue is not treated as collected money until payment is actually recorded.',
+  },
+  {
+    step: 'Step 5',
+    title: 'View the schedule',
+    notice: 'Calendar is read-only visibility.',
+    action: 'Use Calendar to see the week without accidentally changing booking records.',
+    takeaway: 'Owners and teams get visibility while job edits stay in the right place.',
+  },
+  {
+    step: 'Step 6',
+    title: 'Open Field Mode',
+    notice: 'Field Mode is read-only job information.',
+    action: 'Give workers the customer, address, service notes, and checklist without admin controls.',
+    takeaway: 'The field team gets what it needs without exposing owner tools.',
+  },
+  {
+    step: 'Step 7',
+    title: 'Request Founder Access',
+    notice: 'ServicesOS is built first for cleaning companies.',
+    action: 'Use Founder Access to discuss fit, early workflows, and pilot expectations.',
+    takeaway: 'Early users help shape the human-controlled AI roadmap before wider launch.',
+  },
+];
+
 const servicesOSFaqs = [
   {
     question: 'Is ServicesOS only for cleaning businesses?',
@@ -1291,15 +1343,43 @@ function ServicesOSDemoPage() {
         </div>
       </section>
 
+      <section className="section demo-walkthrough-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Guided Owner Walkthrough</p>
+            <h2>Follow the ServicesOS workflow from request to follow-up.</h2>
+            <p>
+              Core flow: Request to Booking to Payment to Field visibility to Follow-up. The owner stays in control at
+              every step, and each surface has a clear job.
+            </p>
+          </div>
+          <ol className="demo-step-grid">
+            {servicesOSDemoSteps.map((item) => (
+              <li className="demo-step-card" key={item.title}>
+                <span>{item.step}</span>
+                <h3>{item.title}</h3>
+                <p>{item.notice}</p>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </section>
+
       <section className="section demo-dashboard-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Dashboard Preview</p>
-            <h2>An owner can see what is booked, collected, owed, and waiting for review.</h2>
+            <p className="eyebrow">Step 1: Review the Dashboard</p>
+            <h2>Dashboard tells you what needs attention.</h2>
             <p>
-              ServicesOS separates expected revenue from collected revenue so owners do not confuse scheduled work with
-              money already received.
+              Short explanation: ServicesOS separates expected revenue from collected revenue so owners do not confuse
+              scheduled work with money already received.
             </p>
+          </div>
+          <div className="demo-training-callout">
+            <strong>What the owner should notice</strong>
+            <p>Pending requests, upcoming jobs, outstanding balances, and collected revenue are visible together.</p>
+            <strong>Owner takeaway</strong>
+            <p>Start the day with the work that needs attention instead of rebuilding context from memory.</p>
           </div>
           <div className="demo-metric-grid">
             {servicesOSDemoMetrics.map((metric) => (
@@ -1316,12 +1396,29 @@ function ServicesOSDemoPage() {
       <section className="section demo-customers-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">Customers Preview</p>
+            <p className="eyebrow">Step 2: Review a new customer request</p>
             <h2>Customer details stay close to service notes and payment context.</h2>
             <p>
-              Owners can review contact details, property notes, recurring work, and quote context without hunting
-              through texts or spreadsheets.
+              Short explanation: owner-reviewed requests can become bookings when the job scope, customer details, and
+              price are ready.
             </p>
+            <div className="demo-training-callout">
+              <strong>What the owner should notice</strong>
+              <p>Aunt B Demo Client is still a quote request, not a confirmed booking or paid job.</p>
+              <strong>Owner takeaway</strong>
+              <p>New work enters ServicesOS without creating a booking or payment too early.</p>
+            </div>
+            <button
+              className="button secondary demo-action-button"
+              type="button"
+              onClick={() =>
+                explainDemoAction(
+                  'In the real app, the owner reviews a new customer request before approving a booking. This demo keeps the request static.'
+                )
+              }
+            >
+              Explain request review
+            </button>
           </div>
           <div className="demo-customer-list">
             {servicesOSDemoCustomers.map((customer) => (
@@ -1364,12 +1461,18 @@ function ServicesOSDemoPage() {
       <section className="section demo-bookings-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Bookings Preview</p>
-            <h2>Bookings are the owner workspace for job status and payment review.</h2>
+            <p className="eyebrow">Step 3: Manage the booking</p>
+            <h2>Bookings is the job management center.</h2>
             <p>
-              The booking detail view is where an owner can see scheduled work, amount owed, amount received, and
-              whether payment was recorded manually or confirmed through Stripe.
+              Short explanation: the booking detail view is where an owner can see scheduled work, amount owed, amount
+              received, service notes, and whether payment was recorded manually or confirmed through Stripe.
             </p>
+          </div>
+          <div className="demo-training-callout">
+            <strong>What the owner should notice</strong>
+            <p>Job status, customer context, price, payment state, and manual payment details live with the booking.</p>
+            <strong>Owner takeaway</strong>
+            <p>Bookings is where job management happens. Calendar and Field Mode are visibility surfaces.</p>
           </div>
           <div className="demo-booking-grid">
             {servicesOSDemoBookings.map((booking) => (
@@ -1404,7 +1507,7 @@ function ServicesOSDemoPage() {
                   type="button"
                   onClick={() =>
                     explainDemoAction(
-                      'Demo-only payment link: in the real app, owners create a booking-scoped Stripe link from Bookings. The booking is marked paid only after payment is confirmed.'
+                      'In the real app, this creates a Stripe Checkout link after Stripe is connected. Creating the link does not mark the booking paid.'
                     )
                   }
                 >
@@ -1419,12 +1522,80 @@ function ServicesOSDemoPage() {
         </div>
       </section>
 
+      <section className="section demo-payments-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">Step 4: Understand payment status</p>
+            <h2>Stripe-first, manual-friendly payment tracking.</h2>
+            <p>
+              Short explanation: ServicesOS is designed so owners can send a Stripe payment link for a booked job when
+              Stripe Connect is ready, while still recording cash, check, Venmo, Cash App, Zelle, PayPal, or other
+              manual payments.
+            </p>
+            <div className="demo-training-callout">
+              <strong>What the owner should notice</strong>
+              <p>Payment status describes what has actually happened, not what the owner hopes will happen.</p>
+              <strong>Owner takeaway</strong>
+              <p>Payments can be Stripe-confirmed or manually recorded, but the app should not fake paid status.</p>
+            </div>
+            <button
+              className="button secondary demo-action-button"
+              type="button"
+              onClick={() =>
+                explainDemoAction(
+                  'In the real app, paid status updates after payment confirmation, or after the owner manually records a non-Stripe payment.'
+                )
+              }
+            >
+              Explain payment status
+            </button>
+          </div>
+          <div className="demo-payment-flow">
+            <article>
+              <span>1</span>
+              <h3>Owner checks the booking.</h3>
+              <p>The booking shows job price, amount received, and amount still owed.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Payment link is sent when ready.</h3>
+              <p>Creating a link does not mean the customer has paid.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Status updates after confirmed payment.</h3>
+              <p>Owners see paid status after payment is confirmed, or after they manually record another method.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
       <section className="section demo-calendar-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">Calendar Preview</p>
+            <p className="eyebrow">Step 5: View the schedule</p>
             <h2>A read-only schedule view for visibility.</h2>
-            <p>Calendar is for visibility. Booking changes happen in Bookings.</p>
+            <p>
+              Short explanation: Calendar is for visibility. Booking changes happen in Bookings so owners always know
+              where the source of truth lives.
+            </p>
+            <div className="demo-training-callout">
+              <strong>What the owner should notice</strong>
+              <p>The schedule shows upcoming work without payment buttons or edit controls.</p>
+              <strong>Owner takeaway</strong>
+              <p>Calendar helps the team see the week without turning schedule visibility into a second booking system.</p>
+            </div>
+            <button
+              className="button secondary demo-action-button"
+              type="button"
+              onClick={() =>
+                explainDemoAction(
+                  'In the real app, booking changes happen in Bookings, not Calendar. Calendar stays read-only for visibility.'
+                )
+              }
+            >
+              Explain Calendar role
+            </button>
           </div>
           <div className="demo-calendar-list">
             {servicesOSDemoCalendarItems.map((item) => (
@@ -1444,12 +1615,18 @@ function ServicesOSDemoPage() {
       <section className="section demo-field-section">
         <div className="shell two-column value-panel">
           <div>
-            <p className="eyebrow">Field Mode Preview</p>
+            <p className="eyebrow">Step 6: Open Field Mode</p>
             <h2>A read-only job packet for the team in the field.</h2>
             <p>
-              Field Mode gives workers job visibility without exposing admin controls. Staff can review the customer,
-              address, service notes, and checklist before arriving.
+              Short explanation: Field Mode gives workers job visibility without exposing admin controls. Staff can
+              review the customer, address, service notes, and checklist before arriving.
             </p>
+            <div className="demo-training-callout">
+              <strong>What the owner should notice</strong>
+              <p>Field Mode shows job information, not payment collection, scheduling edits, or owner-only controls.</p>
+              <strong>Owner takeaway</strong>
+              <p>Workers get clarity for the job while the owner keeps admin control in Bookings.</p>
+            </div>
           </div>
           <article className="demo-job-packet">
             <h3>Sarah Mitchell - Standard recurring clean</h3>
@@ -1474,44 +1651,16 @@ function ServicesOSDemoPage() {
         </div>
       </section>
 
-      <section className="section demo-payments-section">
-        <div className="shell two-column">
-          <div>
-            <p className="eyebrow">Payments Preview</p>
-            <h2>Stripe-first, manual-friendly payment tracking.</h2>
-            <p>
-              ServicesOS is designed so owners can send a Stripe payment link for a booked job when Stripe Connect is
-              ready, while still recording cash, check, Venmo, Cash App, Zelle, PayPal, or other manual payments.
-            </p>
-          </div>
-          <div className="demo-payment-flow">
-            <article>
-              <span>1</span>
-              <h3>Owner checks the booking.</h3>
-              <p>The booking shows job price, amount received, and amount still owed.</p>
-            </article>
-            <article>
-              <span>2</span>
-              <h3>Payment link is sent when ready.</h3>
-              <p>Creating a link does not mean the customer has paid.</p>
-            </article>
-            <article>
-              <span>3</span>
-              <h3>Status updates after confirmed payment.</h3>
-              <p>Owners see paid status after payment is confirmed, or after they manually record another method.</p>
-            </article>
-          </div>
-        </div>
-      </section>
-
       <section className="section demo-founder-section" id="founder-access">
         <div className="shell value-panel demo-founder-panel">
           <div>
-            <p className="eyebrow">Founder Access</p>
+            <p className="eyebrow">Step 7: Request Founder Access</p>
             <h2>Built first for cleaning companies.</h2>
             <p>
               Manage customers, bookings, field visibility, and payments in one place. Founder Access is for early
-              cleaning businesses that want to help shape the workflow before wider launch.
+              cleaning businesses that want to help shape the workflow before wider launch. The roadmap is
+              human-controlled: AI can assist, but owners stay responsible for customer, pricing, schedule, and payment
+              decisions.
             </p>
           </div>
           <div className="hero-actions">

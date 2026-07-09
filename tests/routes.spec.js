@@ -32,6 +32,17 @@ const publicRoutes = [
     visibleText: 'Preparing for real-world service business pilots.',
   },
   {
+    path: '/servicesos-demo',
+    title: 'See how ServicesOS works | Static Demo Walkthrough',
+    description:
+      'A static ServicesOS walkthrough using fake demo data to preview dashboard, customers, bookings, calendar, field mode, and payment workflows without app access.',
+    socialTitle: 'See how ServicesOS works',
+    socialDescription:
+      'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
+    heading: 'See how ServicesOS works',
+    visibleText: 'Fake data only. No backend actions.',
+  },
+  {
     path: '/research',
     title: 'Research | Stellar Logic AI',
     description:

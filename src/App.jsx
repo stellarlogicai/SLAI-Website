@@ -25,6 +25,7 @@ const routes = {
   '/competitive-integrity': 'competitive-integrity',
   '/research': 'research',
   '/servicesos': 'servicesos',
+  '/servicesos-demo': 'servicesos-demo',
 };
 
 const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
@@ -53,6 +54,14 @@ const routeMeta = {
     description: servicesOSDescription,
     socialTitle: servicesOSSocialTitle,
     socialDescription: servicesOSSocialDescription,
+  },
+  '/servicesos-demo': {
+    title: 'See how ServicesOS works | Static Demo Walkthrough',
+    description:
+      'A static ServicesOS walkthrough using fake demo data to preview dashboard, customers, bookings, calendar, field mode, and payment workflows without app access.',
+    socialTitle: 'See how ServicesOS works',
+    socialDescription:
+      'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
   },
   '/research': {
     title: 'Research | Stellar Logic AI',
@@ -222,6 +231,74 @@ const servicesOSPilotPoints = [
   'Pilot pricing is discussed individually.',
   'The goal is practical pricing for small service businesses, not enterprise software pricing.',
   'Pilot users may start with one workflow first, such as leads/estimates or scheduling, before expanding into more operations.',
+];
+
+const servicesOSDemoCustomers = [
+  {
+    name: 'Sarah Mitchell',
+    service: 'Standard recurring clean',
+    schedule: 'Scheduled next Tuesday',
+    payment: 'Unpaid',
+    amount: '$185',
+    phone: '(555) 014-2180',
+    email: 'sarah.demo@example.com',
+    notes: 'Prefers the kitchen and bathrooms prioritized before recurring living area touch-ups.',
+  },
+  {
+    name: 'Mark Evans',
+    service: 'Move-out deep clean',
+    schedule: 'Completed',
+    payment: 'Paid',
+    amount: '$320',
+    phone: '(555) 019-4420',
+    email: 'mark.demo@example.com',
+    notes: 'Apartment turnover clean with inside appliances, baseboards, and final walkthrough notes.',
+  },
+  {
+    name: 'Aunt B Demo Client',
+    service: 'First-time deep clean',
+    schedule: 'Quote requested',
+    payment: 'Pending owner review',
+    amount: '$240 estimated',
+    phone: '(555) 012-7710',
+    email: 'demo.client@example.com',
+    notes: 'Owner reviews the requested scope before confirming schedule and final price.',
+  },
+];
+
+const servicesOSDemoMetrics = [
+  { label: 'Expected Revenue', value: '$745', note: 'Booked and quoted work owners are watching.' },
+  { label: 'Collected Revenue', value: '$320', note: 'Only money recorded as received.' },
+  { label: 'Outstanding Balance', value: '$425', note: 'Work still unpaid or pending review.' },
+  { label: 'Pending quote requests', value: '1', note: 'A new customer request waiting on owner approval.' },
+  { label: 'Upcoming jobs', value: '2', note: 'Scheduled work visible before the day starts.' },
+];
+
+const servicesOSDemoBookings = [
+  {
+    customer: 'Sarah Mitchell',
+    service: 'Standard recurring clean',
+    status: 'Scheduled',
+    paymentStatus: 'Unpaid',
+    owed: '$185',
+    received: '$0',
+    method: 'Not collected yet',
+  },
+  {
+    customer: 'Mark Evans',
+    service: 'Move-out deep clean',
+    status: 'Completed',
+    paymentStatus: 'Paid another way',
+    owed: '$0',
+    received: '$320',
+    method: 'Manual payment recorded',
+  },
+];
+
+const servicesOSDemoCalendarItems = [
+  { day: 'Tuesday', time: '9:00 AM', title: 'Sarah Mitchell', detail: 'Recurring clean - unpaid' },
+  { day: 'Wednesday', time: '1:30 PM', title: 'Aunt B Demo Client', detail: 'Quote follow-up before scheduling' },
+  { day: 'Friday', time: '10:00 AM', title: 'Mark Evans', detail: 'Completed move-out clean review' },
 ];
 
 const servicesOSFaqs = [
@@ -938,6 +1015,9 @@ function ServicesOSPage() {
           <a className="button secondary" href="#contact">
             Ask About Pilot Pricing
           </a>
+          <PageLink className="button secondary" href="/servicesos-demo">
+            View Guided Demo
+          </PageLink>
         </div>
       </PageHero>
       <section className="section services-fit-section">
@@ -1172,6 +1252,289 @@ function ServicesOSPage() {
   );
 }
 
+function ServicesOSDemoPage() {
+  const [demoMessage, setDemoMessage] = useState(
+    'Demo buttons explain the workflow only. They do not submit data or contact any live system.'
+  );
+
+  function explainDemoAction(message) {
+    setDemoMessage(message);
+  }
+
+  return (
+    <>
+      <PageHero
+        className="servicesos-hero servicesos-demo-hero"
+        eyebrow="Static ServicesOS Demo"
+        title="See how ServicesOS works"
+        copy="Walk through the owner-side workflow with fake cleaning business data. This page does not require login and does not connect to the real ServicesOS app, Firebase, Stripe, cloud functions, or customer records."
+      >
+        <div className="hero-actions">
+          <a className="button primary" href="#founder-access">
+            Request Founder Access
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+          <PageLink className="button secondary" href="/servicesos">
+            Back to ServicesOS
+          </PageLink>
+        </div>
+      </PageHero>
+
+      <section className="section demo-notice-section">
+        <div className="shell demo-notice">
+          <p className="eyebrow">Demo boundary</p>
+          <h2>Fake data only. No backend actions.</h2>
+          <p>
+            This walkthrough shows how ServicesOS is intended to feel for a cleaning business owner. Names, jobs,
+            payments, and schedules are static examples, and every demo action stays on this page.
+          </p>
+        </div>
+      </section>
+
+      <section className="section demo-dashboard-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Dashboard Preview</p>
+            <h2>An owner can see what is booked, collected, owed, and waiting for review.</h2>
+            <p>
+              ServicesOS separates expected revenue from collected revenue so owners do not confuse scheduled work with
+              money already received.
+            </p>
+          </div>
+          <div className="demo-metric-grid">
+            {servicesOSDemoMetrics.map((metric) => (
+              <article className="demo-metric-card" key={metric.label}>
+                <span>{metric.label}</span>
+                <strong>{metric.value}</strong>
+                <p>{metric.note}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section demo-customers-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">Customers Preview</p>
+            <h2>Customer details stay close to service notes and payment context.</h2>
+            <p>
+              Owners can review contact details, property notes, recurring work, and quote context without hunting
+              through texts or spreadsheets.
+            </p>
+          </div>
+          <div className="demo-customer-list">
+            {servicesOSDemoCustomers.map((customer) => (
+              <article className="demo-record-card" key={customer.name}>
+                <div className="demo-record-top">
+                  <div>
+                    <h3>{customer.name}</h3>
+                    <p>{customer.service}</p>
+                  </div>
+                  <span className="status">{customer.payment}</span>
+                </div>
+                <dl className="demo-details">
+                  <div>
+                    <dt>Schedule</dt>
+                    <dd>{customer.schedule}</dd>
+                  </div>
+                  <div>
+                    <dt>Amount</dt>
+                    <dd>{customer.amount}</dd>
+                  </div>
+                  <div>
+                    <dt>Contact</dt>
+                    <dd>
+                      {customer.phone}
+                      <br />
+                      {customer.email}
+                    </dd>
+                  </div>
+                  <div>
+                    <dt>Notes</dt>
+                    <dd>{customer.notes}</dd>
+                  </div>
+                </dl>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section demo-bookings-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Bookings Preview</p>
+            <h2>Bookings are the owner workspace for job status and payment review.</h2>
+            <p>
+              The booking detail view is where an owner can see scheduled work, amount owed, amount received, and
+              whether payment was recorded manually or confirmed through Stripe.
+            </p>
+          </div>
+          <div className="demo-booking-grid">
+            {servicesOSDemoBookings.map((booking) => (
+              <article className="demo-record-card" key={`${booking.customer}-${booking.service}`}>
+                <div className="demo-record-top">
+                  <div>
+                    <h3>{booking.customer}</h3>
+                    <p>{booking.service}</p>
+                  </div>
+                  <span className="status">{booking.status}</span>
+                </div>
+                <dl className="demo-details compact">
+                  <div>
+                    <dt>Payment status</dt>
+                    <dd>{booking.paymentStatus}</dd>
+                  </div>
+                  <div>
+                    <dt>Still owed</dt>
+                    <dd>{booking.owed}</dd>
+                  </div>
+                  <div>
+                    <dt>Amount received</dt>
+                    <dd>{booking.received}</dd>
+                  </div>
+                  <div>
+                    <dt>Payment method</dt>
+                    <dd>{booking.method}</dd>
+                  </div>
+                </dl>
+                <button
+                  className="button secondary demo-action-button"
+                  type="button"
+                  onClick={() =>
+                    explainDemoAction(
+                      'Demo-only payment link: in the real app, owners create a booking-scoped Stripe link from Bookings. The booking is marked paid only after payment is confirmed.'
+                    )
+                  }
+                >
+                  Demo-only payment link
+                </button>
+              </article>
+            ))}
+          </div>
+          <p className="demo-action-message" role="status">
+            {demoMessage}
+          </p>
+        </div>
+      </section>
+
+      <section className="section demo-calendar-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">Calendar Preview</p>
+            <h2>A read-only schedule view for visibility.</h2>
+            <p>Calendar is for visibility. Booking changes happen in Bookings.</p>
+          </div>
+          <div className="demo-calendar-list">
+            {servicesOSDemoCalendarItems.map((item) => (
+              <article className="demo-schedule-row" key={`${item.day}-${item.time}-${item.title}`}>
+                <span>{item.day}</span>
+                <strong>{item.time}</strong>
+                <div>
+                  <h3>{item.title}</h3>
+                  <p>{item.detail}</p>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section demo-field-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Field Mode Preview</p>
+            <h2>A read-only job packet for the team in the field.</h2>
+            <p>
+              Field Mode gives workers job visibility without exposing admin controls. Staff can review the customer,
+              address, service notes, and checklist before arriving.
+            </p>
+          </div>
+          <article className="demo-job-packet">
+            <h3>Sarah Mitchell - Standard recurring clean</h3>
+            <p className="demo-address">Demo address: 1200 Clean Street, Springfield, ST</p>
+            <ul className="plain-list">
+              <li>Focus on kitchen counters, bathrooms, floors, and entryway dusting.</li>
+              <li>Use customer-provided product on hardwood floors.</li>
+              <li>Checklist preview: arrival check, room-by-room clean, final owner notes.</li>
+            </ul>
+            <button
+              className="button secondary demo-action-button"
+              type="button"
+              onClick={() =>
+                explainDemoAction(
+                  'Demo-only field action: the real Field Mode is read-only and does not expose owner payment, booking, or admin controls.'
+                )
+              }
+            >
+              Explain Field Mode
+            </button>
+          </article>
+        </div>
+      </section>
+
+      <section className="section demo-payments-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">Payments Preview</p>
+            <h2>Stripe-first, manual-friendly payment tracking.</h2>
+            <p>
+              ServicesOS is designed so owners can send a Stripe payment link for a booked job when Stripe Connect is
+              ready, while still recording cash, check, Venmo, Cash App, Zelle, PayPal, or other manual payments.
+            </p>
+          </div>
+          <div className="demo-payment-flow">
+            <article>
+              <span>1</span>
+              <h3>Owner checks the booking.</h3>
+              <p>The booking shows job price, amount received, and amount still owed.</p>
+            </article>
+            <article>
+              <span>2</span>
+              <h3>Payment link is sent when ready.</h3>
+              <p>Creating a link does not mean the customer has paid.</p>
+            </article>
+            <article>
+              <span>3</span>
+              <h3>Status updates after confirmed payment.</h3>
+              <p>Owners see paid status after payment is confirmed, or after they manually record another method.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section className="section demo-founder-section" id="founder-access">
+        <div className="shell value-panel demo-founder-panel">
+          <div>
+            <p className="eyebrow">Founder Access</p>
+            <h2>Built first for cleaning companies.</h2>
+            <p>
+              Manage customers, bookings, field visibility, and payments in one place. Founder Access is for early
+              cleaning businesses that want to help shape the workflow before wider launch.
+            </p>
+          </div>
+          <div className="hero-actions">
+            <a className="button primary" href="#contact">
+              Request Founder Access
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <a
+              className="button secondary"
+              href="mailto:stellar.logic.ai@gmail.com?subject=ServicesOS%20Founder%20Access"
+            >
+              Email SLAI
+              <Mail size={18} aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA compact />
+    </>
+  );
+}
+
 function ResearchPage() {
   return (
     <>
@@ -1337,6 +1700,10 @@ function AppPage({ route }) {
 
   if (route === '/servicesos') {
     return <ServicesOSPage />;
+  }
+
+  if (route === '/servicesos-demo') {
+    return <ServicesOSDemoPage />;
   }
 
   if (route === '/research') {

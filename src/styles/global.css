@@ -955,6 +955,31 @@ textarea[aria-invalid="true"] {
   font-size: 0.95rem;
 }
 
+.servicesos-resource-section {
+  padding: 34px 0;
+  border-top: 1px solid var(--line);
+}
+
+.servicesos-resource-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.servicesos-resource-panel h2 {
+  margin-bottom: 12px;
+  font-size: clamp(1.55rem, 3vw, 2.2rem);
+}
+
+.servicesos-resource-links {
+  display: flex;
+  flex: 0 0 auto;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
 .servicesos-demo-hero .page-hero-inner {
   padding-bottom: 78px;
 }
@@ -1459,6 +1484,16 @@ textarea[aria-invalid="true"] {
   .founder-final-cta {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .servicesos-resource-panel {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .servicesos-resource-links {
+    width: 100%;
+    justify-content: flex-start;
   }
 
   .training-links-panel {

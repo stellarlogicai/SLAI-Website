@@ -118,6 +118,13 @@ const navLinks = [
   { label: 'Contact', href: '#contact' },
 ];
 
+const servicesOSResourceLinks = [
+  { label: 'See the demo', href: '/servicesos-demo' },
+  { label: 'Request Founder Access', href: '/servicesos-founder-access' },
+  { label: 'Learn how it works', href: '/servicesos-training' },
+  { label: 'Read common questions', href: '/servicesos-faq' },
+];
+
 const productPreviews = [
   {
     name: 'ServicesOS',
@@ -910,6 +917,35 @@ function PageHero({ className = '', eyebrow, title, copy, children }) {
   );
 }
 
+function ServicesOSResourceLinks({ includeContact = false }) {
+  return (
+    <section className="section servicesos-resource-section" aria-labelledby="servicesos-resource-heading">
+      <div className="shell value-panel servicesos-resource-panel">
+        <div>
+          <p className="eyebrow">ServicesOS resources</p>
+          <h2 id="servicesos-resource-heading">Keep exploring ServicesOS.</h2>
+          <p>
+            Use these static website resources to understand the demo, Founder Access, basic training, and common
+            questions before requesting access.
+          </p>
+        </div>
+        <div className="servicesos-resource-links">
+          {servicesOSResourceLinks.map((link) => (
+            <PageLink className="button secondary" href={link.href} key={link.href}>
+              {link.label}
+            </PageLink>
+          ))}
+          {includeContact && (
+            <a className="button primary" href="#contact">
+              Contact SLAI
+            </a>
+          )}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 function MissionSection() {
   return (
     <section className="section mission-section">
@@ -951,6 +987,7 @@ function ProductPreview({ detailed = false }) {
           ))}
         </div>
       </div>
+      <ServicesOSResourceLinks />
     </section>
   );
 }
@@ -1645,6 +1682,7 @@ function ServicesOSPage() {
           </div>
         </div>
       </section>
+      <ServicesOSResourceLinks includeContact />
       <ContactCTA />
     </>
   );
@@ -2031,6 +2069,7 @@ function ServicesOSDemoPage() {
         </div>
       </section>
 
+      <ServicesOSResourceLinks includeContact />
       <ContactCTA compact />
     </>
   );
@@ -2203,6 +2242,7 @@ function ServicesOSFounderAccessPage() {
         </div>
       </section>
 
+      <ServicesOSResourceLinks includeContact />
       <ContactCTA compact />
     </>
   );
@@ -2304,6 +2344,7 @@ function ServicesOSTrainingPage() {
         </div>
       </section>
 
+      <ServicesOSResourceLinks includeContact />
       <ContactCTA compact />
     </>
   );
@@ -2408,6 +2449,7 @@ function ServicesOSFaqPage() {
         </div>
       </section>
 
+      <ServicesOSResourceLinks includeContact />
       <ContactCTA compact />
     </>
   );

@@ -26,6 +26,7 @@ const routes = {
   '/research': 'research',
   '/servicesos': 'servicesos',
   '/servicesos-demo': 'servicesos-demo',
+  '/servicesos-founder-access': 'servicesos-founder-access',
 };
 
 const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
@@ -62,6 +63,14 @@ const routeMeta = {
     socialTitle: 'See how ServicesOS works',
     socialDescription:
       'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
+  },
+  '/servicesos-founder-access': {
+    title: 'ServicesOS Founder Access',
+    description:
+      'Founder Access for cleaning businesses that want early access to ServicesOS while helping shape customer, booking, field visibility, and payment workflows.',
+    socialTitle: 'ServicesOS Founder Access',
+    socialDescription:
+      'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
   },
   '/research': {
     title: 'Research | Stellar Logic AI',
@@ -351,6 +360,56 @@ const servicesOSDemoSteps = [
     action: 'Use Founder Access to discuss fit, early workflows, and pilot expectations.',
     takeaway: 'Early users help shape the human-controlled AI roadmap before wider launch.',
   },
+];
+
+const founderAccessAudience = [
+  'Solo cleaners who need one simple place to manage customers, jobs, and payment status.',
+  'Small cleaning teams that are ready to move beyond notebooks, text threads, and scattered spreadsheets.',
+  'Family-run cleaning businesses where the owner still needs hands-on visibility into daily work.',
+  'Early service businesses that want simpler operations before adding more tools or staff.',
+];
+
+const founderAccessToday = [
+  'Customer organization',
+  'Quote and request review',
+  'Booking visibility',
+  'Read-only calendar',
+  'Read-only Field Mode job packets',
+  'Stripe payment links when connected',
+  'Manual payment recording',
+  'Basic revenue visibility',
+];
+
+const founderAccessMeans = [
+  'Early access while ServicesOS is still being shaped with real cleaning businesses.',
+  'A direct feedback loop so the product improves around actual owner workflows.',
+  'Simpler pricing conversations while the product matures.',
+  'Human-guided onboarding instead of handing owners a login and hoping they figure it out.',
+  'A roadmap shaped by real users, not enterprise feature checklists.',
+];
+
+const founderAccessNotIncluded = [
+  'No full mobile employee app yet',
+  'No Tap to Pay yet',
+  'No payroll',
+  'No route optimization',
+  'No advanced accounting',
+  'No auto-posting or autonomous AI',
+  'Some workflows may still be beta',
+];
+
+const founderAccessPhilosophy = [
+  'AI should amplify humans, not replace them.',
+  'Business owners remain responsible for important decisions.',
+  'Build simple first; complexity is earned.',
+  'MVPs solve real problems.',
+];
+
+const founderAccessExpectations = [
+  'Founder Access users should expect improvements over time.',
+  'Feedback matters and may directly affect product priorities.',
+  'Some features may change as the workflow gets clearer.',
+  'Support is hands-on during the early rollout.',
 ];
 
 const servicesOSFaqs = [
@@ -1329,6 +1388,9 @@ function ServicesOSDemoPage() {
           <PageLink className="button secondary" href="/servicesos">
             Back to ServicesOS
           </PageLink>
+          <PageLink className="button secondary" href="/servicesos-founder-access">
+            Founder Access Details
+          </PageLink>
         </div>
       </PageHero>
 
@@ -1668,6 +1730,9 @@ function ServicesOSDemoPage() {
               Request Founder Access
               <ArrowRight size={18} aria-hidden="true" />
             </a>
+            <PageLink className="button secondary" href="/servicesos-founder-access">
+              Read Founder Access Details
+            </PageLink>
             <a
               className="button secondary"
               href="mailto:stellar.logic.ai@gmail.com?subject=ServicesOS%20Founder%20Access"
@@ -1675,6 +1740,178 @@ function ServicesOSDemoPage() {
               Email SLAI
               <Mail size={18} aria-hidden="true" />
             </a>
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA compact />
+    </>
+  );
+}
+
+function ServicesOSFounderAccessPage() {
+  return (
+    <>
+      <PageHero
+        className="servicesos-hero founder-access-hero"
+        eyebrow="ServicesOS Founder Access"
+        title="Founder Access for cleaning businesses"
+        copy="Help shape ServicesOS while getting early access to a simpler operating system for customers, bookings, job visibility, and payments."
+      >
+        <div className="hero-actions">
+          <a className="button primary" href="#contact">
+            Request Founder Access
+            <ArrowRight size={18} aria-hidden="true" />
+          </a>
+          <PageLink className="button secondary" href="/servicesos-demo">
+            View the demo
+          </PageLink>
+        </div>
+      </PageHero>
+
+      <section className="section founder-intro-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Main Message</p>
+            <h2>ServicesOS is being built first for cleaning companies.</h2>
+          </div>
+          <div>
+            <p>
+              ServicesOS is for cleaning businesses that need a simpler way to manage customers, bookings, field
+              visibility, and payments without spreading daily operations across too many tools.
+            </p>
+            <p>
+              Founder Access is intentionally early and hands-on. The goal is to help real owners use the product,
+              learn what matters, and improve the workflow before a wider launch.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section founder-audience-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Who it is for</p>
+            <h2>Built for owner-led cleaning businesses that need simpler operations.</h2>
+          </div>
+          <div className="feature-grid">
+            {founderAccessAudience.map((item) => (
+              <article className="feature-card founder-access-card" key={item}>
+                <span className="icon-wrap">
+                  <Users size={24} aria-hidden="true" />
+                </span>
+                <p>{item}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section founder-today-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">What ServicesOS helps with today</p>
+            <h2>Useful V1 workflows, described honestly.</h2>
+            <p>
+              Founder Access focuses on practical owner workflows first. Some parts are still beta, and the product is
+              not being presented as a finished enterprise suite.
+            </p>
+          </div>
+          <ul className="plain-list founder-list">
+            {founderAccessToday.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section founder-meaning-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">What Founder Access means</p>
+            <h2>Early access with a direct feedback loop.</h2>
+            <p>
+              Founder Access is not a passive waitlist. It is a practical early rollout for cleaning businesses willing
+              to use the product, give feedback, and help shape what comes next.
+            </p>
+          </div>
+          <ul className="plain-list">
+            {founderAccessMeans.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section founder-not-included-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">What is not included yet</p>
+            <h2>Clear boundaries for the early version.</h2>
+            <p>
+              ServicesOS is being built carefully. Founder Access does not promise every future workflow on day one.
+            </p>
+          </div>
+          <div className="founder-boundary-grid">
+            {founderAccessNotIncluded.map((item) => (
+              <article className="status-callout founder-boundary-card" key={item}>
+                <h3>{item}</h3>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section founder-philosophy-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">ServicesOS philosophy</p>
+            <h2>Practical software first. Human judgment always.</h2>
+            <p>
+              The ServicesOS roadmap can include AI assistance, but the product is built around owner control,
+              responsible decisions, and useful workflows before complexity.
+            </p>
+          </div>
+          <ul className="plain-list founder-list">
+            {founderAccessPhilosophy.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section founder-expectations-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Early user expectations</p>
+            <h2>Hands-on support while the product matures.</h2>
+          </div>
+          <ul className="plain-list">
+            {founderAccessExpectations.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      </section>
+
+      <section className="section founder-final-cta-section">
+        <div className="shell value-panel founder-final-cta">
+          <div>
+            <p className="eyebrow">Request Access</p>
+            <h2>Founder Access is for cleaning companies ready to simplify operations.</h2>
+            <p>
+              Tell SLAI about your business, the workflows causing the most friction, and whether you want to start
+              with customers, bookings, field visibility, or payment tracking.
+            </p>
+          </div>
+          <div className="hero-actions">
+            <a className="button primary" href="#contact">
+              Request Founder Access
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+            <PageLink className="button secondary" href="/servicesos-demo">
+              View the demo
+            </PageLink>
           </div>
         </div>
       </section>
@@ -1853,6 +2090,10 @@ function AppPage({ route }) {
 
   if (route === '/servicesos-demo') {
     return <ServicesOSDemoPage />;
+  }
+
+  if (route === '/servicesos-founder-access') {
+    return <ServicesOSFounderAccessPage />;
   }
 
   if (route === '/research') {

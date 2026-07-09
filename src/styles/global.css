@@ -1215,6 +1215,62 @@ textarea[aria-invalid="true"] {
   margin-top: 0;
 }
 
+.founder-intro-section,
+.founder-meaning-section,
+.founder-expectations-section {
+  border-top: 1px solid var(--line);
+}
+
+.founder-audience-section,
+.founder-not-included-section,
+.founder-final-cta-section {
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.035);
+}
+
+.founder-access-card {
+  min-height: 190px;
+}
+
+.founder-access-card p {
+  margin-bottom: 0;
+  color: var(--text);
+  font-weight: 700;
+}
+
+.founder-list {
+  margin-top: 0;
+}
+
+.founder-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.founder-boundary-card {
+  min-height: 118px;
+  margin-bottom: 0;
+}
+
+.founder-boundary-card h3 {
+  margin-bottom: 0;
+  font-size: 1.08rem;
+}
+
+.founder-final-cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.founder-final-cta .hero-actions {
+  flex: 0 0 auto;
+  margin-top: 0;
+}
+
 @media (max-width: 920px) {
   .product-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1246,8 +1302,18 @@ textarea[aria-invalid="true"] {
     flex-direction: column;
   }
 
-  .demo-founder-panel .hero-actions {
+  .founder-boundary-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .demo-founder-panel .hero-actions,
+  .founder-final-cta .hero-actions {
     width: 100%;
+  }
+
+  .founder-final-cta {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .two-column,

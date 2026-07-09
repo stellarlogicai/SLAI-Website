@@ -16,7 +16,7 @@ export default defineConfig({
     trace: 'on-first-retry',
   },
   webServer: {
-    command: 'node scripts/static-server.mjs --auto-exit-ms=15000',
+    command: 'node scripts/static-server.mjs --auto-exit-ms=60000',
     url: 'http://127.0.0.1:4173',
     reuseExistingServer: !process.env.CI,
     timeout: 120_000,

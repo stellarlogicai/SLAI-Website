@@ -43,6 +43,17 @@ const publicRoutes = [
     visibleText: 'Fake data only. No backend actions.',
   },
   {
+    path: '/servicesos-founder-access',
+    title: 'ServicesOS Founder Access',
+    description:
+      'Founder Access for cleaning businesses that want early access to ServicesOS while helping shape customer, booking, field visibility, and payment workflows.',
+    socialTitle: 'ServicesOS Founder Access',
+    socialDescription:
+      'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
+    heading: 'Founder Access for cleaning businesses',
+    visibleText: 'What is not included yet',
+  },
+  {
     path: '/research',
     title: 'Research | Stellar Logic AI',
     description:

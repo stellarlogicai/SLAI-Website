@@ -27,6 +27,7 @@ const routes = {
   '/servicesos': 'servicesos',
   '/servicesos-demo': 'servicesos-demo',
   '/servicesos-founder-access': 'servicesos-founder-access',
+  '/servicesos-training': 'servicesos-training',
 };
 
 const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
@@ -71,6 +72,14 @@ const routeMeta = {
     socialTitle: 'ServicesOS Founder Access',
     socialDescription:
       'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
+  },
+  '/servicesos-training': {
+    title: 'ServicesOS Training Center',
+    description:
+      'Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments during early beta and Founder Access rollout.',
+    socialTitle: 'ServicesOS Training Center',
+    socialDescription:
+      'Simple ServicesOS training for cleaning business owners covering dashboard, customers, bookings, payments, calendar, and Field Mode basics.',
   },
   '/research': {
     title: 'Research | Stellar Logic AI',
@@ -410,6 +419,83 @@ const founderAccessExpectations = [
   'Feedback matters and may directly affect product priorities.',
   'Some features may change as the workflow gets clearer.',
   'Support is hands-on during the early rollout.',
+];
+
+const servicesOSTrainingLessons = [
+  {
+    title: 'Getting started',
+    summary: 'Use the basic flow to understand where each piece of work belongs.',
+    points: [
+      'Request to Booking to Payment to Field visibility to Follow-up is the core ServicesOS path.',
+      'Requests should be reviewed before they become confirmed jobs.',
+      'Bookings become the source of truth once work is approved and scheduled.',
+    ],
+  },
+  {
+    title: 'Dashboard',
+    summary: 'The Dashboard shows what needs attention before the day gets away from you.',
+    points: [
+      'Review pending requests and upcoming jobs.',
+      'Compare expected revenue with collected revenue.',
+      'Use outstanding balance to see which jobs still need payment follow-up.',
+    ],
+  },
+  {
+    title: 'Customers',
+    summary: 'Customer records keep contact, property, and service notes organized.',
+    points: [
+      'Keep current customer records clean and accurate during beta.',
+      'Use customer notes for preferences, property details, and service context.',
+      'Avoid creating duplicate records when an existing customer can be updated.',
+    ],
+  },
+  {
+    title: 'Bookings',
+    summary: 'Bookings is the job management center.',
+    points: [
+      'Schedule, job details, and payment status live with the booking.',
+      'Payment links do not mark a booking paid by themselves.',
+      'Manual payments are owner-recorded for cash, check, or external payment methods.',
+    ],
+  },
+  {
+    title: 'Payments',
+    summary: 'Payment tracking should describe what actually happened.',
+    points: [
+      'Stripe must be connected before online payment links can be used.',
+      'Stripe-paid status updates after payment confirmation.',
+      'Manual paid-another-way is for cash, check, Venmo, Zelle, PayPal, or other external payments.',
+      'The owner remains responsible for verifying unusual cases.',
+    ],
+  },
+  {
+    title: 'Calendar',
+    summary: 'Calendar is read-only visibility.',
+    points: [
+      'Use Calendar to understand the schedule.',
+      'Booking changes happen in Bookings.',
+      'Calendar should not become a second place to manage jobs.',
+    ],
+  },
+  {
+    title: 'Field Mode',
+    summary: 'Field Mode is a read-only job packet.',
+    points: [
+      'It shows job information without admin controls.',
+      'Workers can review customer, address, service notes, and checklist context.',
+      'It is not the full employee mobile app yet.',
+    ],
+  },
+  {
+    title: 'Beta expectations',
+    summary: 'ServicesOS is being built simple first.',
+    points: [
+      'Founder Access users may see improvements over time.',
+      'Feedback matters and can shape product priorities.',
+      'Some workflows may change as the product matures.',
+      'The goal is to solve real operating problems before adding complexity.',
+    ],
+  },
 ];
 
 const servicesOSFaqs = [
@@ -1921,6 +2007,107 @@ function ServicesOSFounderAccessPage() {
   );
 }
 
+function ServicesOSTrainingPage() {
+  return (
+    <>
+      <PageHero
+        className="servicesos-hero servicesos-training-hero"
+        eyebrow="ServicesOS Training Center"
+        title="ServicesOS Training Center"
+        copy="Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments."
+      >
+        <div className="hero-actions">
+          <PageLink className="button primary" href="/servicesos-demo">
+            View the demo
+            <ArrowRight size={18} aria-hidden="true" />
+          </PageLink>
+          <PageLink className="button secondary" href="/servicesos-founder-access">
+            Founder Access
+          </PageLink>
+        </div>
+      </PageHero>
+
+      <section className="section training-start-section">
+        <div className="shell two-column value-panel">
+          <div>
+            <p className="eyebrow">Start here</p>
+            <h2>The basic ServicesOS flow.</h2>
+          </div>
+          <div>
+            <p>
+              For beta and Founder Access users, the safest way to understand ServicesOS is to follow the work from
+              first request through follow-up.
+            </p>
+            <ol className="training-flow-list">
+              <li>Request</li>
+              <li>Booking</li>
+              <li>Payment</li>
+              <li>Field visibility</li>
+              <li>Follow-up</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section className="section training-lessons-section">
+        <div className="shell">
+          <div className="section-header">
+            <p className="eyebrow">Training lessons</p>
+            <h2>Simple operating guidance for cleaning business owners.</h2>
+            <p>
+              These notes are intentionally practical and beta-aware. They explain where work belongs without promising
+              that every future ServicesOS workflow is finished today.
+            </p>
+          </div>
+          <div className="training-lesson-grid">
+            {servicesOSTrainingLessons.map((lesson, index) => (
+              <article className="training-lesson-card" key={lesson.title}>
+                <div className="training-lesson-top">
+                  <span>{String(index + 1).padStart(2, '0')}</span>
+                  <h3>{lesson.title}</h3>
+                </div>
+                <p>{lesson.summary}</p>
+                <ul className="plain-list">
+                  {lesson.points.map((point) => (
+                    <li key={point}>{point}</li>
+                  ))}
+                </ul>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="section training-links-section">
+        <div className="shell value-panel training-links-panel">
+          <div>
+            <p className="eyebrow">Quick links</p>
+            <h2>Use these pages for demos, onboarding, and support conversations.</h2>
+            <p>
+              These links are public website resources only. They do not require login and do not connect to the live
+              ServicesOS app.
+            </p>
+          </div>
+          <div className="training-quick-links">
+            <PageLink className="button primary" href="/servicesos-demo">
+              ServicesOS Demo
+              <ArrowRight size={18} aria-hidden="true" />
+            </PageLink>
+            <PageLink className="button secondary" href="/servicesos-founder-access">
+              Founder Access
+            </PageLink>
+            <a className="button secondary" href="#contact">
+              Request Access
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <ContactCTA compact />
+    </>
+  );
+}
+
 function ResearchPage() {
   return (
     <>
@@ -2094,6 +2281,10 @@ function AppPage({ route }) {
 
   if (route === '/servicesos-founder-access') {
     return <ServicesOSFounderAccessPage />;
+  }
+
+  if (route === '/servicesos-training') {
+    return <ServicesOSTrainingPage />;
   }
 
   if (route === '/research') {

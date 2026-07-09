@@ -54,6 +54,17 @@ const publicRoutes = [
     visibleText: 'What is not included yet',
   },
   {
+    path: '/servicesos-training',
+    title: 'ServicesOS Training Center',
+    description:
+      'Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments during early beta and Founder Access rollout.',
+    socialTitle: 'ServicesOS Training Center',
+    socialDescription:
+      'Simple ServicesOS training for cleaning business owners covering dashboard, customers, bookings, payments, calendar, and Field Mode basics.',
+    heading: 'ServicesOS Training Center',
+    visibleText: 'Training lessons',
+  },
+  {
     path: '/research',
     title: 'Research | Stellar Logic AI',
     description:

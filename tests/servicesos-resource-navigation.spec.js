@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/test';
 
-const supportPages = ['/servicesos', '/servicesos-demo', '/servicesos-founder-access', '/servicesos-training', '/servicesos-faq'];
+const supportPages = ['/servicesos-demo', '/servicesos-founder-access', '/servicesos-training'];
 
 function watchForbiddenRequests(page) {
   const blockedIntegrationRequests = [];

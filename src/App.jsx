@@ -32,12 +32,12 @@ const routes = {
 
 const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
 const siteDescription =
-  'Stellar Logic AI builds human-centered AI platforms, starting with ServicesOS: a workflow system for cleaning and service businesses to manage leads, estimates, scheduling, employee workflows, and payment readiness from one place.';
+  'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, scheduled for late October completion for cleaning and service businesses.';
 const servicesOSDescription =
-  'ServicesOS helps cleaning and service businesses track leads, send estimates, schedule jobs, assign cleaners, guide job completion, and prepare for payment workflows without losing context between the office and field team.';
-const servicesOSSocialTitle = 'ServicesOS by Stellar Logic AI';
+  'ServicesOS V1 is scheduled for late October completion. It helps cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place.';
+const servicesOSSocialTitle = 'ServicesOS V1 | Launching Late October';
 const servicesOSSocialDescription =
-  'A workflow platform being built for cleaning and service businesses to manage leads, estimates, scheduling, employees, job completion, and future payment workflows from one place.';
+  'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.';
 
 const routeMeta = {
   '/': {
@@ -52,7 +52,7 @@ const routeMeta = {
       'Learn about Stellar Logic AI, its founder-led story, and the principles behind practical AI systems that keep people responsible for important decisions.',
   },
   '/servicesos': {
-    title: 'ServicesOS by Stellar Logic AI | Early Access Pilot',
+    title: 'ServicesOS V1 | Launching Late October',
     description: servicesOSDescription,
     socialTitle: servicesOSSocialTitle,
     socialDescription: servicesOSSocialDescription,
@@ -74,12 +74,12 @@ const routeMeta = {
       'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
   },
   '/servicesos-faq': {
-    title: 'ServicesOS FAQ',
+    title: 'ServicesOS V1 FAQ | Launching Late October',
     description:
-      'Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later.',
-    socialTitle: 'ServicesOS FAQ',
+      'Answers to common questions about ServicesOS V1, planned late-October completion, pricing, cleaning-business workflows, and payment validation.',
+    socialTitle: 'ServicesOS V1 FAQ | Launching Late October',
     socialDescription:
-      'Common ServicesOS questions for prospects, Founder Access users, and early cleaning-business customers.',
+      'Practical answers about ServicesOS V1 for cleaning businesses, including the planned $100/month price, public onboarding, and payment readiness.',
   },
   '/servicesos-training': {
     title: 'ServicesOS Training Center',
@@ -455,14 +455,19 @@ const servicesOSFaqGroups = [
           'Cleaning companies are the first focus. The same workflow may fit other service businesses later, but early messaging and onboarding are cleaning-business first.',
       },
       {
-        question: 'What is Founder Access?',
+        question: 'When will ServicesOS V1 be complete?',
         answer:
-          'Founder Access means early access while the product is still improving, with a more direct feedback loop and hands-on onboarding.',
+          'ServicesOS V1 is scheduled for late October completion. The remaining work is focused on release hardening, onboarding readiness, payment stabilization, and real-business validation before public onboarding.',
       },
       {
-        question: 'Is ServicesOS finished?',
+        question: 'Can I sign up today?',
         answer:
-          'No. ServicesOS is in beta and still maturing. Some workflows may change as real cleaning businesses use it and give feedback.',
+          'Demo and early-access requests are open now. Public onboarding begins after V1 completion and final validation.',
+      },
+      {
+        question: 'How much will ServicesOS cost?',
+        answer:
+          'ServicesOS V1 is planned at $100/month. The goal is simple, transparent pricing for small cleaning and service businesses, not enterprise software contracts.',
       },
     ],
   },
@@ -470,9 +475,9 @@ const servicesOSFaqGroups = [
     title: 'Current features',
     questions: [
       {
-        question: 'What can ServicesOS do today?',
+        question: 'What is included in ServicesOS V1?',
         answer:
-          'Current V1 workflows include customer organization, quote and request review, booking and job visibility, read-only calendar, read-only Field Mode job packets, Stripe payment links when connected, manual payment recording, and basic revenue visibility.',
+          'V1 is focused on customer organization, quote and request review, bookings, scheduling, employee workflows, job completion, payment visibility, and basic revenue visibility. Public onboarding follows final release validation.',
       },
       {
         question: 'Can I manage customers?',
@@ -490,9 +495,9 @@ const servicesOSFaqGroups = [
           'Yes, but Calendar is currently for read-only schedule visibility. Booking changes happen in Bookings.',
       },
       {
-        question: 'What is Field Mode?',
+        question: 'What is the employee workflow?',
         answer:
-          'Field Mode is a read-only job packet for workers. It shows job information without admin controls and is not the full employee mobile app yet.',
+          'The employee workflow is part of V1 scope. It is designed to give team members assigned-job details, customer notes, checklists, and completion context while owners retain administrative control. It remains subject to final real-world validation before public onboarding.',
       },
       {
         question: 'Can I track revenue?',
@@ -505,24 +510,24 @@ const servicesOSFaqGroups = [
     title: 'Payments',
     questions: [
       {
-        question: 'Does ServicesOS process payments?',
+        question: 'Will ServicesOS support payments?',
         answer:
-          'Online payments use Stripe Connect when connected. ServicesOS also supports owner-recorded manual payment tracking for payments collected another way.',
+          'The V1 plan includes payment visibility and Stripe or Stripe Connect workflows for deposits and final payments. Those workflows will be validated carefully before public onboarding.',
       },
       {
         question: 'Do I need Stripe?',
         answer:
-          'You need Stripe Connect for online payment links. If Stripe is not connected, owners can still record cash, check, or external payments manually.',
+          'Stripe or Stripe Connect is planned for online payment workflows. ServicesOS is not representing payment processing as publicly available until final validation is complete.',
       },
       {
         question: 'Can I record cash/check/manual payments?',
         answer:
-          'Yes. Manual paid-another-way tracking is for cash, check, Venmo, Zelle, PayPal, or other external payment methods the owner verifies.',
+          'Payment status tracking is part of the V1 workflow. Exact payment options and any processing or platform fees will be explained clearly before a business commits.',
       },
       {
         question: 'Does creating a payment link mark a booking paid?',
         answer:
-          'No. Payment links do not mark bookings paid by themselves. Stripe-paid status updates after confirmed payment.',
+          'No. A payment request should not be treated as paid until payment confirmation is received and the owner can verify the status.',
       },
       {
         question: 'Who is responsible for refunds or chargebacks?',
@@ -532,27 +537,22 @@ const servicesOSFaqGroups = [
     ],
   },
   {
-    title: 'Beta / Founder Access',
+    title: 'V1 launch and early access',
     questions: [
       {
-        question: 'What should Founder Access users expect?',
+        question: 'What should early-access businesses expect?',
         answer:
-          'Founder Access users should expect a product that is useful but still improving. Early support is more hands-on while the workflow matures.',
+          'Early-access businesses can request a demo, discuss fit, and share workflow feedback while ServicesOS completes V1 validation. Public onboarding does not begin until after late-October completion.',
       },
       {
         question: 'Will features change?',
         answer:
-          'Yes. Some workflows may change as ServicesOS learns from real cleaning businesses and simplifies the product.',
+          'Final release hardening may refine workflows before public onboarding. ServicesOS will not promise unfinished functionality as available today.',
       },
       {
         question: 'How should feedback be handled?',
         answer:
           'Feedback should be specific and tied to real owner workflows: customers, bookings, payments, Field Mode, schedule visibility, and follow-up.',
-      },
-      {
-        question: 'Is support hands-on?',
-        answer:
-          'Yes. Founder Access is intended to be more guided than a typical self-serve product launch.',
       },
     ],
   },
@@ -562,11 +562,12 @@ const servicesOSFaqGroups = [
       {
         question: 'Is there a mobile employee app?',
         answer:
-          'Not yet. Field Mode is mobile-friendly web visibility, not the full React Native employee app yet.',
+          'Employee workflow is part of the V1 completion plan. It will remain in final validation before being described as publicly available.',
       },
       {
         question: 'Does ServicesOS support Tap to Pay?',
-        answer: 'Not yet. Tap to Pay is later and is parked until ServicesOS V1 is stable.',
+        answer:
+          'Tap to Pay is part of the remaining V1 completion track and will not be promoted until payment validation is complete.',
       },
       {
         question: 'Does it handle payroll?',
@@ -616,8 +617,8 @@ const servicesOSFaqGroups = [
         answer: 'Use the ServicesOS demo page for a guided static walkthrough with fake data only.',
       },
       {
-        question: 'How do I request Founder Access?',
-        answer: 'Use the Founder Access page or the contact form to tell SLAI about your cleaning business.',
+        question: 'How do I request a V1 demo?',
+        answer: 'Use the contact form to tell SLAI about your cleaning business and the workflow problem you want to solve.',
       },
       {
         question: 'Where can I learn how to use ServicesOS?',
@@ -1075,8 +1076,8 @@ function ContactCTA({ compact = false }) {
           <p className="eyebrow">Contact</p>
           <h2>Request a ServicesOS Demo</h2>
           <p>
-            Tell us what workflow problem you want solved, ask about early access, or request a pilot pricing
-            conversation. Your request goes to SLAI by email, and we'll follow up directly.
+            Tell us what workflow problem you want solved, request a V1 demo, or ask about the planned $100/month
+            price. Your request goes to SLAI by email, and we'll follow up directly.
           </p>
           <div className="contact-actions" aria-label="Contact links">
             <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
@@ -1315,13 +1316,13 @@ function ServicesOSPage() {
     <>
       <PageHero
         className="servicesos-hero"
-        eyebrow="ServicesOS"
-        title="One operating platform for service businesses."
-        copy="ServicesOS is SLAI's main near-term product: a practical system for service businesses that need less software sprawl, fewer manual handoffs, and clearer daily operations."
+        eyebrow="ServicesOS V1"
+        title="Launching late October for cleaning and service businesses."
+        copy="A $100/month operating system designed to help cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place."
       >
         <div className="hero-actions">
-          <PageLink className="button primary" href="/servicesos-founder-access">
-            Request Founder Access
+          <PageLink className="button primary" href="#contact">
+            Request a V1 Demo
             <ArrowRight size={18} aria-hidden="true" />
           </PageLink>
           <PageLink className="button secondary" href="/servicesos-demo">
@@ -1412,18 +1413,42 @@ function ServicesOSPage() {
           </div>
         </div>
       </section>
+      <section className="section pricing-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">V1 Pricing</p>
+            <h2>Planned at $100/month.</h2>
+          </div>
+          <div>
+            <p>
+              ServicesOS V1 is planned at $100/month with simple, transparent pricing for small cleaning and service
+              businesses, not enterprise software contracts.
+            </p>
+            <p>
+              Demo and early-access requests are open now. Public onboarding begins after V1 completion and final
+              real-world validation.
+            </p>
+            <div className="hero-actions">
+              <PageLink className="button primary" href="#contact">
+                Request a V1 Demo
+                <ArrowRight size={18} aria-hidden="true" />
+              </PageLink>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="section pilot-section">
         <div className="shell two-column value-panel pilot-panel">
           <div>
-            <p className="eyebrow">Founder Access</p>
-            <h2>Preparing for early real-world pilots.</h2>
+            <p className="eyebrow">V1 Completion</p>
+            <h2>Scheduled for late October completion.</h2>
             <p>
-              ServicesOS is preparing for early pilots with cleaning businesses. Founder Access is available by request
-              for owners who want to help shape the product while it matures.
+              The remaining work is focused on release hardening, onboarding readiness, payment stabilization, and
+              real-business validation before public onboarding begins.
             </p>
             <div className="hero-actions">
-              <PageLink className="button primary" href="/servicesos-founder-access">
-                Request Founder Access
+              <PageLink className="button primary" href="#contact">
+                Request a V1 Demo
                 <ArrowRight size={18} aria-hidden="true" />
               </PageLink>
               <PageLink className="button secondary" href="/servicesos-demo">
@@ -1434,16 +1459,16 @@ function ServicesOSPage() {
           <div>
             <article className="status-callout">
               <p className="eyebrow">Current Status</p>
-              <h3>Beta-aware and still improving.</h3>
+              <h3>V1 completion is scheduled for late October.</h3>
               <p>
-                Some workflows may change as the product learns from real users. Training, FAQ, and demo pages explain
-                the current direction without overclaiming what is finished.
+                ServicesOS is not publicly launched yet. Payment workflows, onboarding, and final release checks will
+                be validated before public onboarding. Owners remain in control of customer, pricing, scheduling, and
+                payment decisions.
               </p>
             </article>
           </div>
         </div>
       </section>
-      <ServicesOSResourceLinks includeContact />
       <ContactCTA />
     </>
   );
@@ -2094,17 +2119,15 @@ function ServicesOSFaqPage() {
       <PageHero
         className="servicesos-hero servicesos-faq-hero"
         eyebrow="ServicesOS FAQ"
-        title="ServicesOS FAQ"
-        copy="Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later."
+        title="ServicesOS V1 FAQ"
+        copy="Practical answers about late-October V1 completion, the planned $100/month price, cleaning-business workflows, payment validation, and public onboarding."
       >
         <div className="hero-actions">
           <PageLink className="button primary" href="/servicesos-demo">
             View the demo
             <ArrowRight size={18} aria-hidden="true" />
           </PageLink>
-          <PageLink className="button secondary" href="/servicesos-founder-access">
-            Founder Access
-          </PageLink>
+          <a className="button secondary" href="#contact">Request a V1 Demo</a>
           <PageLink className="button secondary" href="/servicesos-training">
             Training Center
           </PageLink>
@@ -2115,20 +2138,19 @@ function ServicesOSFaqPage() {
         <div className="shell two-column value-panel">
           <div>
             <p className="eyebrow">Quick answer</p>
-            <h2>ServicesOS is useful now, but still beta-aware.</h2>
+            <h2>V1 is scheduled for late October completion.</h2>
           </div>
           <div>
             <p>
-              ServicesOS is being built first for cleaning companies that need simpler customer, booking, field
-              visibility, and payment workflows. Founder Access means early use while the product keeps improving.
+              ServicesOS is built first for cleaning companies that need simpler customer, booking, employee workflow,
+              and payment-visibility operations. Demo requests are open now; public onboarding begins after final V1
+              validation.
             </p>
             <div className="faq-quick-links">
               <PageLink className="button secondary" href="/servicesos-demo">
                 Demo
               </PageLink>
-              <PageLink className="button secondary" href="/servicesos-founder-access">
-                Founder Access
-              </PageLink>
+              <a className="button secondary" href="#contact">Request a V1 Demo</a>
               <PageLink className="button secondary" href="/servicesos-training">
                 Training
               </PageLink>
@@ -2169,7 +2191,7 @@ function ServicesOSFaqPage() {
         <div className="shell value-panel faq-final-cta">
           <div>
             <p className="eyebrow">Still have questions?</p>
-            <h2>Request Founder Access or contact SLAI.</h2>
+            <h2>Request a ServicesOS V1 demo.</h2>
             <p>
               Share your cleaning business workflow, the tools you use today, and where customers, bookings, field
               work, or payments are hardest to keep organized.
@@ -2177,7 +2199,7 @@ function ServicesOSFaqPage() {
           </div>
           <div className="hero-actions">
             <a className="button primary" href="#contact">
-              Request Founder Access
+              Request a V1 Demo
               <ArrowRight size={18} aria-hidden="true" />
             </a>
             <PageLink className="button secondary" href="/servicesos-training">
@@ -2187,7 +2209,6 @@ function ServicesOSFaqPage() {
         </div>
       </section>
 
-      <ServicesOSResourceLinks includeContact />
       <ContactCTA compact />
     </>
   );

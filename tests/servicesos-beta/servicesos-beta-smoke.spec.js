@@ -15,13 +15,13 @@ test.describe('ServicesOS beta public smoke checks', () => {
 
     await page.goto('/servicesos');
 
-    await expect(page).toHaveTitle('ServicesOS by Stellar Logic AI | Early Access Pilot');
+    await expect(page).toHaveTitle('ServicesOS V1 | Launching Late October');
     await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'One operating platform for service businesses.' })).toBeVisible();
-    await expect(page.getByText('Preparing for early real-world pilots.')).toBeVisible();
-    await expect(page.getByRole('link', { name: 'Request Founder Access' }).first()).toHaveAttribute(
+    await expect(page.getByRole('heading', { name: 'Launching late October for cleaning and service businesses.' })).toBeVisible();
+    await expect(page.getByText('Scheduled for late October completion.')).toBeVisible();
+    await expect(page.getByRole('link', { name: 'Request a V1 Demo' }).first()).toHaveAttribute(
       'href',
-      '/servicesos-founder-access'
+      '#contact'
     );
     await expect(page.getByRole('link', { name: 'View Demo' }).first()).toHaveAttribute(
       'href',
@@ -37,7 +37,7 @@ test.describe('ServicesOS beta public smoke checks', () => {
 
     await page.goto('/servicesos');
 
-    await expect(page.getByRole('heading', { name: 'One operating platform for service businesses.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Launching late October for cleaning and service businesses.' })).toBeVisible();
 
     const hasHorizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth > window.innerWidth + 1

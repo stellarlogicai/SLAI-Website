@@ -5,10 +5,10 @@ const publicRoutes = [
     path: '/',
     title: 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses',
     description:
-      'Stellar Logic AI builds human-centered AI platforms, starting with ServicesOS: a workflow system for cleaning and service businesses to manage leads, estimates, scheduling, employee workflows, and payment readiness from one place.',
-    socialTitle: 'ServicesOS by Stellar Logic AI',
+      'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, scheduled for late October completion for cleaning and service businesses.',
+    socialTitle: 'ServicesOS V1 | Launching Late October',
     socialDescription:
-      'A workflow platform being built for cleaning and service businesses to manage leads, estimates, scheduling, employees, job completion, and future payment workflows from one place.',
+      'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.',
     heading: 'Building AI That Amplifies Human Potential.',
     visibleText: 'ServicesOS leads the roadmap.',
   },
@@ -22,14 +22,14 @@ const publicRoutes = [
   },
   {
     path: '/servicesos',
-    title: 'ServicesOS by Stellar Logic AI | Early Access Pilot',
+    title: 'ServicesOS V1 | Launching Late October',
     description:
-      'ServicesOS helps cleaning and service businesses track leads, send estimates, schedule jobs, assign cleaners, guide job completion, and prepare for payment workflows without losing context between the office and field team.',
-    socialTitle: 'ServicesOS by Stellar Logic AI',
+      'ServicesOS V1 is scheduled for late October completion. It helps cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place.',
+    socialTitle: 'ServicesOS V1 | Launching Late October',
     socialDescription:
-      'A workflow platform being built for cleaning and service businesses to manage leads, estimates, scheduling, employees, job completion, and future payment workflows from one place.',
-    heading: 'One operating platform for service businesses.',
-    visibleText: 'Preparing for early real-world pilots.',
+      'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.',
+    heading: 'Launching late October for cleaning and service businesses.',
+    visibleText: 'Scheduled for late October completion.',
   },
   {
     path: '/servicesos-demo',
@@ -55,13 +55,13 @@ const publicRoutes = [
   },
   {
     path: '/servicesos-faq',
-    title: 'ServicesOS FAQ',
+    title: 'ServicesOS V1 FAQ | Launching Late October',
     description:
-      'Answers to common questions about ServicesOS Founder Access, cleaning-business workflows, payments, Field Mode, and what is still coming later.',
-    socialTitle: 'ServicesOS FAQ',
+      'Answers to common questions about ServicesOS V1, planned late-October completion, pricing, cleaning-business workflows, and payment validation.',
+    socialTitle: 'ServicesOS V1 FAQ | Launching Late October',
     socialDescription:
-      'Common ServicesOS questions for prospects, Founder Access users, and early cleaning-business customers.',
-    heading: 'ServicesOS FAQ',
+      'Practical answers about ServicesOS V1 for cleaning businesses, including the planned $100/month price, public onboarding, and payment readiness.',
+    heading: 'ServicesOS V1 FAQ',
     visibleText: 'Short answers for prospects and early users.',
   },
   {

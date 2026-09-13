@@ -961,9 +961,9 @@ textarea[aria-invalid="true"] {
 }
 
 .servicesos-resource-panel {
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
   align-items: center;
-  justify-content: space-between;
   gap: 28px;
 }
 
@@ -974,7 +974,7 @@ textarea[aria-invalid="true"] {
 
 .servicesos-resource-links {
   display: flex;
-  flex: 0 0 auto;
+  min-width: 0;
   flex-wrap: wrap;
   justify-content: flex-end;
   gap: 12px;
@@ -1487,8 +1487,8 @@ textarea[aria-invalid="true"] {
   }
 
   .servicesos-resource-panel {
+    grid-template-columns: 1fr;
     align-items: flex-start;
-    flex-direction: column;
   }
 
   .servicesos-resource-links {

@@ -15,10 +15,11 @@ test.describe('ServicesOS beta public smoke checks', () => {
 
     await page.goto('/servicesos');
 
-    await expect(page).toHaveTitle('ServicesOS V1 | Launching Late October');
+    await expect(page).toHaveTitle('ServicesOS V1 | $100/month | Targeting Late October 2026');
     await expect(page.getByRole('navigation', { name: 'Main navigation' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Launching late October for cleaning and service businesses.' })).toBeVisible();
-    await expect(page.getByText('Scheduled for late October completion.')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'One operating system for your service business.' })).toBeVisible();
+    await expect(page.getByText('Customer-ready V1 is targeted for late October 2026.')).toBeVisible();
+    await expect(page.getByText('ServicesOS V1 — $100/month.')).toBeVisible();
     await expect(page.getByRole('link', { name: 'Request a V1 Demo' }).first()).toHaveAttribute(
       'href',
       '#contact'
@@ -37,7 +38,7 @@ test.describe('ServicesOS beta public smoke checks', () => {
 
     await page.goto('/servicesos');
 
-    await expect(page.getByRole('heading', { name: 'Launching late October for cleaning and service businesses.' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'One operating system for your service business.' })).toBeVisible();
 
     const hasHorizontalOverflow = await page.evaluate(
       () => document.documentElement.scrollWidth > window.innerWidth + 1

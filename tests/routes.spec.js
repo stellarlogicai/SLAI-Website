@@ -5,10 +5,10 @@ const publicRoutes = [
     path: '/',
     title: 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses',
     description:
-      'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, scheduled for late October completion for cleaning and service businesses.',
-    socialTitle: 'ServicesOS V1 | Launching Late October',
+      'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, a $100/month operating system targeting customer-ready release in late October 2026.',
+    socialTitle: 'ServicesOS V1 | $100/month | Targeting Late October 2026',
     socialDescription:
-      'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.',
+      'ServicesOS V1 connects customers, estimates, bookings, job scope, employee field work, payments, and human-controlled AI assistance. Customer-ready V1 is targeted for late October 2026.',
     heading: 'Building AI That Amplifies Human Potential.',
     visibleText: 'ServicesOS leads the roadmap.',
   },
@@ -22,56 +22,56 @@ const publicRoutes = [
   },
   {
     path: '/servicesos',
-    title: 'ServicesOS V1 | Launching Late October',
+    title: 'ServicesOS V1 | $100/month | Targeting Late October 2026',
     description:
-      'ServicesOS V1 is scheduled for late October completion. It helps cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place.',
-    socialTitle: 'ServicesOS V1 | Launching Late October',
+      'ServicesOS V1 is a $100/month operating system for cleaning and service businesses, connecting customers, estimates, residential and commercial bookings, approved job scope, employee field work, payments, and human-controlled AI assistance.',
+    socialTitle: 'ServicesOS V1 | $100/month | Targeting Late October 2026',
     socialDescription:
-      'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.',
-    heading: 'Launching late October for cleaning and service businesses.',
-    visibleText: 'Scheduled for late October completion.',
+      'ServicesOS V1 connects customers, estimates, bookings, job scope, employee field work, payments, and human-controlled AI assistance. Customer-ready V1 is targeted for late October 2026.',
+    heading: 'One operating system for your service business.',
+    visibleText: 'Customer-ready V1 is targeted for late October 2026.',
   },
   {
     path: '/servicesos-demo',
     title: 'See how ServicesOS works | Static Demo Walkthrough',
     description:
-      'A static ServicesOS walkthrough using fake demo data to preview dashboard, customers, bookings, calendar, field mode, and payment workflows without app access.',
+      'A static ServicesOS walkthrough using fake demo data to preview the owner workflow while the completed V1 adds employee, scope-control, change-request, AI, and payment capabilities.',
     socialTitle: 'See how ServicesOS works',
     socialDescription:
-      'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
+      'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, AI providers, or real customer data are used.',
     heading: 'See how ServicesOS works',
     visibleText: 'Demo only: fake data, no backend actions.',
   },
   {
     path: '/servicesos-founder-access',
-    title: 'ServicesOS Founder Access',
+    title: 'ServicesOS Founder Access | Early V1 Rollout',
     description:
-      'Founder Access for cleaning businesses that want early access to ServicesOS while helping shape customer, booking, field visibility, and payment workflows.',
+      'Founder Access is the hands-on early rollout for cleaning and service businesses that want to help validate ServicesOS V1 before wider public onboarding.',
     socialTitle: 'ServicesOS Founder Access',
     socialDescription:
-      'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
-    heading: 'Founder Access for cleaning businesses',
-    visibleText: 'What is not included yet',
+      'Join the hands-on early rollout of ServicesOS V1 for customers, bookings, approved job scope, field work, payments, and human-controlled AI assistance.',
+    heading: 'Founder Access for cleaning and service businesses',
+    visibleText: 'Outside V1',
   },
   {
     path: '/servicesos-faq',
-    title: 'ServicesOS V1 FAQ | Launching Late October',
+    title: 'ServicesOS V1 FAQ | Features, Pricing & Launch',
     description:
-      'Answers to common questions about ServicesOS V1, planned late-October completion, pricing, cleaning-business workflows, and payment validation.',
-    socialTitle: 'ServicesOS V1 FAQ | Launching Late October',
+      'Answers about the completed ServicesOS V1 scope, $100/month pricing, 100 included monthly AI credits, Employee App, commercial work, job-scope control, payments, Tap to Pay, and late-October release target.',
+    socialTitle: 'ServicesOS V1 FAQ | Features, Pricing & Launch',
     socialDescription:
-      'Practical answers about ServicesOS V1 for cleaning businesses, including the planned $100/month price, public onboarding, and payment readiness.',
+      'Practical answers about what ServicesOS V1 includes, what remains in final validation, $100/month pricing, AI credits, payments, and public onboarding.',
     heading: 'ServicesOS V1 FAQ',
-    visibleText: 'Short answers for prospects and early users.',
+    visibleText: 'Completed V1 answers for prospects and early users.',
   },
   {
     path: '/servicesos-training',
-    title: 'ServicesOS Training Center',
+    title: 'ServicesOS V1 Training Center',
     description:
-      'Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments during early beta and Founder Access rollout.',
-    socialTitle: 'ServicesOS Training Center',
+      'Learn the ServicesOS V1 workflow across customers, estimates, bookings, approved job scope, Employee App field work, extra-work requests, payments, and human-controlled AI assistance.',
+    socialTitle: 'ServicesOS V1 Training Center',
     socialDescription:
-      'Simple ServicesOS training for cleaning business owners covering dashboard, customers, bookings, payments, calendar, and Field Mode basics.',
+      'Practical ServicesOS V1 training for owner-led service businesses, including booking, job scope, employees, payments, and AI-assisted workflows.',
     heading: 'ServicesOS Training Center',
     visibleText: 'Training lessons',
   },

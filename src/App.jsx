@@ -32,12 +32,12 @@ const routes = {
 
 const siteTitle = 'Stellar Logic AI | Human-Centered AI Platforms for Service Businesses';
 const siteDescription =
-  'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, scheduled for late October completion for cleaning and service businesses.';
+  'Stellar Logic AI builds human-centered AI platforms, beginning with ServicesOS V1, a $100/month operating system for cleaning and service businesses targeting customer-ready completion in late October 2026.';
 const servicesOSDescription =
-  'ServicesOS V1 is scheduled for late October completion. It helps cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place.';
-const servicesOSSocialTitle = 'ServicesOS V1 | Launching Late October';
+  'ServicesOS V1 is a $100/month operating system for cleaning and service businesses, connecting customers, estimates, residential and commercial bookings, approved job scope, employee field work, payments, and human-controlled AI. Customer-ready V1 is targeted for late October 2026.';
+const servicesOSSocialTitle = 'ServicesOS V1 | $100/Month | Late October 2026';
 const servicesOSSocialDescription =
-  'A $100/month operating system scheduled for late October completion, built for cleaning and service businesses to manage requests, bookings, field work, and payment visibility from one place.';
+  'Customers, bookings, approved job scope, employee field work, payments, and human-controlled AI in one $100/month service-business operating system.';
 
 const routeMeta = {
   '/': {
@@ -52,7 +52,7 @@ const routeMeta = {
       'Learn about Stellar Logic AI, its founder-led story, and the principles behind practical AI systems that keep people responsible for important decisions.',
   },
   '/servicesos': {
-    title: 'ServicesOS V1 | Launching Late October',
+    title: 'ServicesOS V1 | $100/Month | Late October 2026',
     description: servicesOSDescription,
     socialTitle: servicesOSSocialTitle,
     socialDescription: servicesOSSocialDescription,
@@ -60,34 +60,34 @@ const routeMeta = {
   '/servicesos-demo': {
     title: 'See how ServicesOS works | Static Demo Walkthrough',
     description:
-      'A static ServicesOS walkthrough using fake demo data to preview dashboard, customers, bookings, calendar, field mode, and payment workflows without app access.',
+      'A static ServicesOS walkthrough using fake demo data to preview the owner workflow. Completed V1 also includes approved job scope, the Employee App, add-on/change-request controls, payments, and human-controlled AI.',
     socialTitle: 'See how ServicesOS works',
     socialDescription:
-      'Preview the ServicesOS workflow with fake data only. No login, Firebase, Stripe, cloud functions, or real customer data are used.',
+      'Preview the ServicesOS owner workflow with fake data only. This static demo does not connect to Firebase, Stripe, cloud functions, AI providers, or real customer data.',
   },
   '/servicesos-founder-access': {
-    title: 'ServicesOS Founder Access',
+    title: 'ServicesOS Founder Access | V1 Early Access',
     description:
-      'Founder Access for cleaning businesses that want early access to ServicesOS while helping shape customer, booking, field visibility, and payment workflows.',
+      'Founder Access for cleaning and service businesses that want hands-on early access to the $100/month ServicesOS V1 operating platform before public onboarding.',
     socialTitle: 'ServicesOS Founder Access',
     socialDescription:
-      'ServicesOS Founder Access is for cleaning businesses that want a simpler operating system for customers, bookings, job visibility, and payments.',
+      'Early access to ServicesOS V1 for owner-led service businesses that want customers, bookings, approved scope, employee field work, payments, and human-controlled AI in one system.',
   },
   '/servicesos-faq': {
-    title: 'ServicesOS V1 FAQ | Launching Late October',
+    title: 'ServicesOS V1 FAQ | $100/Month | Late October 2026',
     description:
-      'Answers to common questions about ServicesOS V1, planned late-October completion, pricing, cleaning-business workflows, and payment validation.',
-    socialTitle: 'ServicesOS V1 FAQ | Launching Late October',
+      'Answers about the completed ServicesOS V1 scope, $100/month pricing, 100 included monthly AI credits, residential and commercial work, Employee App, job-scope control, payments, and launch validation.',
+    socialTitle: 'ServicesOS V1 FAQ | $100/Month',
     socialDescription:
-      'Practical answers about ServicesOS V1 for cleaning businesses, including the planned $100/month price, public onboarding, and payment readiness.',
+      'Practical answers about ServicesOS V1 capabilities, pricing, Employee App, customer-approved scope, AI credits, payments, and the late-October 2026 customer-ready target.',
   },
   '/servicesos-training': {
-    title: 'ServicesOS Training Center',
+    title: 'ServicesOS V1 Training Center',
     description:
-      'Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments during early beta and Founder Access rollout.',
-    socialTitle: 'ServicesOS Training Center',
+      'Learn the ServicesOS V1 workflow across customers, bookings, approved job scope, Employee App field work, payments, add-on/change requests, and SLAI Assistant.',
+    socialTitle: 'ServicesOS V1 Training Center',
     socialDescription:
-      'Simple ServicesOS training for cleaning business owners covering dashboard, customers, bookings, payments, calendar, and Field Mode basics.',
+      'Simple V1 training for cleaning and service business owners covering the connected owner, customer, employee, payment, and AI-assisted workflow.',
   },
   '/research': {
     title: 'Research | Stellar Logic AI',
@@ -127,19 +127,19 @@ const servicesOSResourceLinks = [
 const productPreviews = [
   {
     name: 'ServicesOS',
-    status: 'Near-term product',
+    status: 'Customer-ready V1 target: late Oct 2026',
     description:
-      'An operating platform for service businesses that brings CRM, estimates, contracts, payments, scheduling, training, and AI assistance into one place.',
+      'A $100/month operating system for service businesses that connects customers, estimates, bookings, approved job scope, employee field work, payments, and human-controlled AI.',
     icon: ShieldCheck,
     href: '/servicesos',
     featured: true,
-    points: ['Built around daily operations', 'Designed for service teams', 'Human approval stays central'],
+    points: ['Residential and commercial work', 'Employee App and scope control', 'AI assists; humans decide'],
   },
   {
     name: 'GrowthAI',
-    status: 'Coming soon / internal-first',
+    status: 'Future standalone platform',
     description:
-      'A future growth platform currently framed as internal-first tooling for lead discovery, outreach support, analytics, memory systems, and human oversight.',
+      'A future standalone growth platform planned around lead discovery, outreach support, analytics, memory systems, and human oversight. ServicesOS V1 already includes its own SLAI Assistant capabilities.',
     icon: LineChart,
     points: ['Lead research support', 'Outreach drafting', 'Growth analytics'],
   },
@@ -163,44 +163,62 @@ const productPreviews = [
 
 const serviceFeatures = [
   {
-    title: 'Customers & leads',
-    description: 'Keep customer records, lead context, contact details, property notes, and follow-up needs organized.',
+    title: 'Customers, leads & estimates',
+    description:
+      'Keep customer records, lead context, property or business details, estimates, pricing, service notes, and follow-up needs organized.',
     icon: Users,
   },
   {
-    title: 'Estimates and quotes',
-    description: 'Review requests, clarify scope, and move owner-approved work toward a booking.',
-    icon: FileSignature,
-  },
-  {
-    title: 'Bookings & scheduling',
-    description: 'Use Bookings as the job management center for schedule, job notes, and payment status.',
+    title: 'Residential & commercial bookings',
+    description:
+      'Create residential or commercial jobs through the same booking, scheduling, employee, and payment core, with bounded commercial facility context when needed.',
     icon: CalendarCheck,
   },
   {
-    title: 'Payments',
-    description: 'Create Stripe payment links when connected and record manual payments collected another way.',
-    icon: CreditCard,
+    title: 'Customer-approved job scope',
+    description:
+      'Preserve what the customer approved for the job. Material changes create a new scope revision instead of silently replacing the original agreement.',
+    icon: FileSignature,
   },
   {
-    title: 'Field Mode',
-    description: 'Give workers read-only job packet visibility without exposing owner admin controls.',
+    title: 'Employee App & field execution',
+    description:
+      'Give assigned employees My Day, job details, checklists, approved scope, before/after photos, notes, issue reporting, navigation, and job completion tools without exposing the whole back office.',
     icon: ClipboardCheck,
   },
   {
-    title: 'Revenue visibility',
-    description: 'Separate expected revenue, collected revenue, and outstanding balances in owner-friendly terms.',
+    title: 'Add-ons & extra-work control',
+    description:
+      'Owners define add-on pricing and expected duration. Employees submit work outside the approved scope for owner review instead of quietly expanding the job.',
+    icon: ShieldCheck,
+  },
+  {
+    title: 'Payments & revenue visibility',
+    description:
+      'Track expected, collected, and outstanding amounts, support Stripe-based customer payment workflows, and record approved manual payment methods without confusing a payment request with confirmed payment.',
+    icon: CreditCard,
+  },
+  {
+    title: 'SLAI Assistant',
+    description:
+      'Use business briefings, rebooking opportunities, communication drafts, reputation support, marketing assistance, content planning, and other controlled AI-assisted workflows with human review.',
+    icon: BrainCircuit,
+  },
+  {
+    title: 'Human control & audit history',
+    description:
+      'Keep important approvals, scope versions, draft history, and workflow state visible so employees and AI can assist without silently taking over owner decisions.',
     icon: LineChart,
   },
 ];
 
 const servicesOSAudience = [
-  'Cleaning businesses that need cleaner customer, quote, and booking workflows.',
-  'Owner-led local service teams juggling leads, schedules, payments, and job notes.',
-  'Teams that want one clearer operating center before adding more software.',
+  'Cleaning businesses managing residential, commercial, recurring, and one-time service work.',
+  'Owner-led local service teams coordinating customers, schedules, employees, scope, and payments across office and field work.',
+  'Teams that want one clearer operating center with practical AI assistance while keeping people responsible for important decisions.',
 ];
 
-const servicesOSWorkflow = ['Request', 'Booking', 'Payment', 'Field visibility', 'Follow-up'];
+const servicesOSWorkflow = ['Request', 'Estimate', 'Booking', 'Customer approval', 'Field work', 'Payment', 'Follow-up'];
 
 const servicesOSDemoCustomers = [
   {
@@ -278,13 +296,13 @@ const servicesOSDemoSteps = [
   },
   {
     step: 'Step 2',
-    title: 'Review a new customer request',
-    notice: 'Check scope and customer context before turning a request into a booking.',
+    title: 'Review a customer request',
+    notice: 'Keep customer context and estimate review together before confirming the work.',
   },
   {
     step: 'Step 3',
-    title: 'Manage the booking',
-    notice: 'Keep job details, schedule, service notes, and payment status together.',
+    title: 'Manage the booking and scope',
+    notice: 'Keep schedule, service notes, price, and the customer-approved job scope tied to the same job.',
   },
   {
     step: 'Step 4',
@@ -294,54 +312,56 @@ const servicesOSDemoSteps = [
   {
     step: 'Step 5',
     title: 'View the schedule',
-    notice: 'Use Calendar for read-only schedule visibility.',
+    notice: 'Use Calendar for schedule visibility while job changes stay in the canonical booking workflow.',
   },
   {
     step: 'Step 6',
-    title: 'Open Field Mode',
-    notice: 'Give workers job details without exposing admin controls.',
+    title: 'Understand the Employee App',
+    notice: 'Give employees assigned-job tools and approved scope without exposing owner-only controls.',
   },
   {
     step: 'Step 7',
     title: 'Request Founder Access',
-    notice: 'Ask about early access if the workflow fits your cleaning business.',
+    notice: 'Ask about early access if the workflow fits your cleaning or service business.',
   },
 ];
 
 const founderAccessAudience = [
-  'Solo cleaners who need one simple place to manage customers, jobs, and payment status.',
-  'Small cleaning teams that are ready to move beyond notebooks, text threads, and scattered spreadsheets.',
-  'Family-run cleaning businesses where the owner still needs hands-on visibility into daily work.',
-  'Early service businesses that want simpler operations before adding more tools or staff.',
+  'Solo cleaners who need one simple place to manage customers, jobs, approved scope, and payment status.',
+  'Small service teams that are ready to move beyond notebooks, text threads, and scattered spreadsheets.',
+  'Family-run or owner-led businesses where the owner still needs hands-on visibility into office and field work.',
+  'Residential and commercial service businesses that want simpler operations before adding more software or staff.',
 ];
 
 const founderAccessToday = [
-  'Customer organization',
-  'Quote and request review',
-  'Booking visibility',
-  'Read-only calendar',
-  'Read-only Field Mode job packets',
-  'Stripe payment links when connected',
-  'Manual payment recording',
+  'Customer and lead organization',
+  'Estimate and request review',
+  'Residential and commercial booking workflows',
+  'Calendar and repeat-customer visibility',
+  'Customer-approved job scope and immutable revisions',
+  'Employee App for assigned field work, checklists, photos, notes, and completion',
+  'Owner-controlled add-on catalog and employee extra-work requests',
+  'Stripe-based customer payment workflows and manual payment visibility',
   'Basic revenue visibility',
+  'SLAI Assistant and employee Work Assistant with human control',
+  '100 included AI credits each calendar month',
 ];
 
 const founderAccessMeans = [
-  'Early access while ServicesOS is still being shaped with real cleaning businesses.',
-  'A direct feedback loop so the product improves around actual owner workflows.',
-  'Simpler pricing conversations while the product matures.',
-  'Human-guided onboarding instead of handing owners a login and hoping they figure it out.',
-  'A roadmap shaped by real users, not enterprise feature checklists.',
+  'Early access while the completed V1 workflow goes through final release validation with real service businesses.',
+  'A direct feedback loop so the product improves around actual owner and employee workflows.',
+  'A clear $100/month V1 subscription rather than enterprise-style pricing tiers.',
+  'Human-guided onboarding and support during the early rollout.',
+  'A roadmap shaped by real users without pulling post-V1 complexity into the first release.',
 ];
 
 const founderAccessNotIncluded = [
-  'No full mobile employee app yet',
-  'No Tap to Pay yet',
-  'No payroll',
-  'No route optimization',
-  'No advanced accounting',
-  'No auto-posting or autonomous AI',
-  'Some workflows may still be beta',
+  'No payroll in V1',
+  'No advanced route optimization in V1',
+  'No full accounting replacement in V1',
+  'No advanced commercial proposal, procurement, or net-term contract system in V1',
+  'No enterprise multi-location account hierarchy in V1',
+  'No autonomous marketing or customer messaging',
 ];
 
 const founderAccessPhilosophy = [
@@ -352,19 +372,19 @@ const founderAccessPhilosophy = [
 ];
 
 const founderAccessExpectations = [
-  'Founder Access users should expect improvements over time.',
-  'Feedback matters and may directly affect product priorities.',
-  'Some features may change as the workflow gets clearer.',
+  'Founder Access users should expect final V1 hardening and workflow refinements before wider public onboarding.',
+  'Feedback matters and may directly affect beta-critical fixes.',
+  'Completed V1 scope is defined; new post-V1 ideas are not silently added to the launch requirement.',
   'Support is hands-on during the early rollout.',
 ];
 
 const servicesOSTrainingLessons = [
   {
     title: 'Getting started',
-    summary: 'Use the basic flow to understand where each piece of work belongs.',
+    summary: 'Follow the same connected path the work follows in the business.',
     points: [
-      'Request to Booking to Payment to Field visibility to Follow-up is the core ServicesOS path.',
-      'Requests should be reviewed before they become confirmed jobs.',
+      'Request to Estimate to Booking to Customer approval to Field work to Payment to Follow-up is the completed V1 path.',
+      'Requests and estimates should be reviewed before they become confirmed jobs.',
       'Bookings become the source of truth once work is approved and scheduled.',
     ],
   },
@@ -378,59 +398,71 @@ const servicesOSTrainingLessons = [
     ],
   },
   {
-    title: 'Customers',
-    summary: 'Customer records keep contact, property, and service notes organized.',
+    title: 'Customers and bookings',
+    summary: 'Customer records and bookings keep the office-side job context connected.',
     points: [
-      'Keep current customer records clean and accurate during beta.',
-      'Use customer notes for preferences, property details, and service context.',
-      'Avoid creating duplicate records when an existing customer can be updated.',
+      'Keep customer records clean and avoid unnecessary duplicates.',
+      'Use Residential or Commercial when creating the job.',
+      'Commercial bookings can capture bounded facility, access, hazard, surface, and frequency context.',
+      'Booking details remain the canonical place for job management.',
     ],
   },
   {
-    title: 'Bookings',
-    summary: 'Bookings is the job management center.',
+    title: 'Approved job scope',
+    summary: 'The approved scope records what the customer actually agreed to for the job.',
     points: [
-      'Schedule, job details, and payment status live with the booking.',
-      'Payment links do not mark a booking paid by themselves.',
-      'Manual payments are owner-recorded for cash, check, or external payment methods.',
+      'Customer approval creates an immutable scope version.',
+      'Material changes do not silently rewrite the previously approved scope.',
+      'Employees receive a safe view of the approved work they need in the field.',
+    ],
+  },
+  {
+    title: 'Employee App',
+    summary: 'Employees get the tools required for assigned work without owner-only administration.',
+    points: [
+      'My Day and assigned Job Detail keep field work focused.',
+      'Employees use checklists, job start/completion, before/after photos, notes, issue reporting, navigation, and safe guidance.',
+      'Owner-only business controls and unrelated tenant data remain protected.',
+    ],
+  },
+  {
+    title: 'Add-ons and extra work',
+    summary: 'Work outside the approved scope follows a controlled request instead of becoming unpaid scope creep.',
+    points: [
+      'Owner-managed add-ons provide authoritative price and expected duration.',
+      'Employees can submit an extra-work request against the exact approved scope baseline.',
+      'Custom work goes to the owner for pricing and operational review.',
+      'Completed V1 requires customer approval before the approved scope changes.',
     ],
   },
   {
     title: 'Payments',
     summary: 'Payment tracking should describe what actually happened.',
     points: [
-      'Stripe must be connected before online payment links can be used.',
-      'Stripe-paid status updates after payment confirmation.',
-      'Manual paid-another-way is for cash, check, Venmo, Zelle, PayPal, or other external payments.',
-      'The owner remains responsible for verifying unusual cases.',
+      'Stripe-based customer payment workflows and manual payment visibility are part of V1.',
+      'A payment request does not mark a booking paid by itself.',
+      'Confirmed Stripe state or an authorized owner-recorded workflow controls payment status.',
+      'Tap to Pay is part of the V1 mobile payment completion track and is released only after final device/payment validation.',
     ],
   },
   {
-    title: 'Calendar',
-    summary: 'Calendar is read-only visibility.',
+    title: 'SLAI Assistant and AI credits',
+    summary: 'AI can help the business without silently making important decisions.',
     points: [
-      'Use Calendar to understand the schedule.',
-      'Booking changes happen in Bookings.',
-      'Calendar should not become a second place to manage jobs.',
+      'SLAI Assistant supports briefings, opportunities, rebooking, communication drafts, reputation, marketing, and content planning.',
+      'Employee Work Assistant supports bounded field guidance.',
+      'ServicesOS V1 includes 100 AI credits each calendar month.',
+      'Provider-backed generation uses credits; deterministic ServicesOS workflows do not.',
+      'Human review remains central before sending, publishing, pricing, scheduling, or other consequential action.',
     ],
   },
   {
-    title: 'Field Mode',
-    summary: 'Field Mode is a read-only job packet.',
+    title: 'Launch expectations',
+    summary: 'Customer-ready V1 is targeted for late October 2026.',
     points: [
-      'It shows job information without admin controls.',
-      'Workers can review customer, address, service notes, and checklist context.',
-      'It is not the full employee mobile app yet.',
-    ],
-  },
-  {
-    title: 'Beta expectations',
-    summary: 'ServicesOS is being built simple first.',
-    points: [
-      'Founder Access users may see improvements over time.',
-      'Feedback matters and can shape product priorities.',
-      'Some workflows may change as the product matures.',
-      'The goal is to solve real operating problems before adding complexity.',
+      'Final work is focused on customer approval for extra work, Stripe lifecycle stabilization, Tap to Pay, hardening, device QA, and real-business beta validation.',
+      'Founder Access may see refinements before public onboarding.',
+      'Post-V1 ideas stay parked unless they become a real launch blocker.',
     ],
   },
 ];
@@ -442,67 +474,117 @@ const servicesOSFaqGroups = [
       {
         question: 'What is ServicesOS?',
         answer:
-          'ServicesOS is an operating system for service businesses, starting with cleaning companies. It helps owners manage customers, quote and request review, bookings, field visibility, and payments.',
+          'ServicesOS is an operating system for owner-led service businesses. V1 connects customers, estimates, residential and commercial bookings, scheduling, customer-approved job scope, employee field work, payments, business visibility, and human-controlled AI assistance in one platform.',
       },
       {
         question: 'Who is ServicesOS built for first?',
         answer:
-          'It is being built first for cleaning companies, especially solo cleaners, small teams, family-run businesses, and early service businesses that need simpler operations.',
+          'ServicesOS V1 is being built first around cleaning businesses and similar owner-led local service teams, including solo operators, small teams, and family-run businesses.',
       },
       {
         question: 'Is ServicesOS only for cleaning companies?',
         answer:
-          'Cleaning companies are the first focus. The same workflow may fit other service businesses later, but early messaging and onboarding are cleaning-business first.',
+          'Cleaning businesses are the first vertical and the product is being validated around real cleaning workflows. The V1 architecture also supports other owner-led service businesses without creating a separate operating system for each trade.',
       },
       {
-        question: 'When will ServicesOS V1 be complete?',
+        question: 'When will ServicesOS V1 be customer-ready?',
         answer:
-          'ServicesOS V1 is scheduled for late October completion. The remaining work is focused on release hardening, onboarding readiness, payment stabilization, and real-business validation before public onboarding.',
+          'Customer-ready ServicesOS V1 is targeted for late October 2026. Public onboarding begins after final payment stabilization, release hardening, device testing, and real-business beta validation.',
       },
       {
         question: 'Can I sign up today?',
         answer:
-          'Demo and early-access requests are open now. Public onboarding begins after V1 completion and final validation.',
+          'Demo and Founder Access requests are open now. Wider public onboarding begins after the customer-ready V1 validation gate is complete.',
       },
       {
-        question: 'How much will ServicesOS cost?',
+        question: 'How much does ServicesOS cost?',
         answer:
-          'ServicesOS V1 is planned at $100/month. The goal is simple, transparent pricing for small cleaning and service businesses, not enterprise software contracts.',
+          'ServicesOS V1 is $100/month. The subscription includes the core V1 operating platform and 100 AI credits each calendar month. Any optional additional provider-backed usage or third-party cost offered later would be disclosed separately rather than silently added.',
+      },
+      {
+        question: 'Is there a free trial?',
+        answer:
+          'No customer trial is planned for V1. Businesses can review the public information, demo workflow, pricing, and ServicesOS agreement before subscribing.',
       },
     ],
   },
   {
-    title: 'Current features',
+    title: 'Completed V1 capabilities',
     questions: [
       {
         question: 'What is included in ServicesOS V1?',
         answer:
-          'V1 is focused on customer organization, quote and request review, bookings, scheduling, employee workflows, job completion, payment visibility, and basic revenue visibility. Public onboarding follows final release validation.',
+          'Completed V1 includes customer and lead organization, estimates and pricing, residential and commercial bookings, scheduling and repeat-customer workflows, customer-approved scope, the Employee App, field photos and checklists, owner-controlled add-ons and extra-work requests, payment and revenue visibility, owner onboarding and subscription billing, SLAI Assistant, employee Work Assistant, and the security boundaries required to connect those workflows.',
       },
       {
-        question: 'Can I manage customers?',
+        question: 'Can I manage customers and estimates?',
         answer:
-          'Yes. ServicesOS is designed to keep customer contact details, property notes, service notes, and job context organized.',
+          'Yes. ServicesOS keeps customer contact and service context organized and supports estimate and pricing workflows that remain owner-controlled.',
       },
       {
-        question: 'Can I manage bookings?',
+        question: 'Does ServicesOS support residential and commercial jobs?',
         answer:
-          'Yes. Bookings is the job management center for schedule, job details, payment status, and owner review.',
+          'Yes. Residential and commercial bookings use the same core booking, scheduling, employee, payment, and JobPacket systems. Commercial jobs can also capture facility-specific context such as square footage, service frequency, operating hours, access and security requirements, hazards, surfaces, supplies, and service areas.',
       },
       {
-        question: 'Does ServicesOS have a calendar?',
+        question: 'Does ServicesOS support recurring customers?',
         answer:
-          'Yes, but Calendar is currently for read-only schedule visibility. Booking changes happen in Bookings.',
-      },
-      {
-        question: 'What is the employee workflow?',
-        answer:
-          'The employee workflow is part of V1 scope. It is designed to give team members assigned-job details, customer notes, checklists, and completion context while owners retain administrative control. It remains subject to final real-world validation before public onboarding.',
+          'Yes. V1 includes repeat-customer workflows and supported recurring-service context. SLAI Assistant can surface supported rebooking opportunities while the owner remains responsible for deciding what to do and what to send.',
       },
       {
         question: 'Can I track revenue?',
         answer:
-          'ServicesOS can show basic expected revenue, collected revenue, and outstanding balance visibility so owners can separate booked work from money actually received.',
+          'Yes. ServicesOS separates expected revenue, collected revenue, and outstanding balances so owners can distinguish booked work from money actually received.',
+      },
+    ],
+  },
+  {
+    title: 'Job scope and extra work',
+    questions: [
+      {
+        question: 'How does customer job-scope approval work?',
+        answer:
+          'ServicesOS creates a clear snapshot of the work being approved for a booking. Customer approval creates an immutable approved version. Material changes require a new revision rather than silently overwriting what the customer already approved.',
+      },
+      {
+        question: 'What happens if a customer asks for extra work during a job?',
+        answer:
+          'Employees can submit an extra-work request tied to the exact approved scope. Catalog add-ons use owner-controlled pricing and expected duration, while custom work goes back to the owner for pricing and review. Completed V1 requires authenticated customer approval before the approved scope changes.',
+      },
+      {
+        question: 'Can employees change prices?',
+        answer:
+          'No. Employees cannot create authoritative prices for catalog add-ons or custom work. Catalog price and duration are controlled by the owner and loaded server-side; custom requested work is priced by an authorized owner or admin.',
+      },
+      {
+        question: 'Can ServicesOS help control scope creep?',
+        answer:
+          'Yes. V1 is designed to make scope changes explicit. Employees can see the approved job scope and route work outside that scope through an extra-work request instead of quietly expanding the original job.',
+      },
+    ],
+  },
+  {
+    title: 'Employee App',
+    questions: [
+      {
+        question: 'Is there a mobile employee app?',
+        answer:
+          'Yes. ServicesOS V1 includes a dedicated Employee App for assigned work. The app is built and remains in final device, payment, and release validation before customer-ready launch.',
+      },
+      {
+        question: 'What can employees do in the app?',
+        answer:
+          'Employees can use My Day, assigned Job Detail, approved scope, checklists, job start and completion, before and after photos, notes, issue reporting, navigation, safe work guidance, Work Assistant, and V1 extra-work request tools.',
+      },
+      {
+        question: 'What can employees see?',
+        answer:
+          'Employees receive the information required to perform their assigned work. ServicesOS intentionally limits owner-only administration, unrelated tenant data, and private pricing or agreement information that employees do not need.',
+      },
+      {
+        question: 'Can an employee approve something for the customer?',
+        answer:
+          'No. Employee and owner actions cannot impersonate authenticated customer approval. Customer approval is a separate controlled boundary.',
       },
     ],
   },
@@ -510,102 +592,92 @@ const servicesOSFaqGroups = [
     title: 'Payments',
     questions: [
       {
-        question: 'Will ServicesOS support payments?',
+        question: 'Does ServicesOS support customer payments?',
         answer:
-          'The V1 plan includes payment visibility and Stripe or Stripe Connect workflows for deposits and final payments. Those workflows will be validated carefully before public onboarding.',
+          'Yes. Completed V1 includes Stripe-based customer payment workflows, payment-state tracking, manual payment visibility, business subscription billing, and the planned Tap to Pay employee/mobile workflow. Payment features are fully validated before public onboarding.',
       },
       {
         question: 'Do I need Stripe?',
         answer:
-          'Stripe or Stripe Connect is planned for online payment workflows. ServicesOS is not representing payment processing as publicly available until final validation is complete.',
+          'Stripe and Stripe Connect provide the online and connected-account payment foundation for ServicesOS V1. Manual payment visibility can still describe approved non-Stripe payment methods where the owner records what happened.',
       },
       {
-        question: 'Can I record cash/check/manual payments?',
+        question: 'Does creating a payment request mark a booking paid?',
         answer:
-          'Payment status tracking is part of the V1 workflow. Exact payment options and any processing or platform fees will be explained clearly before a business commits.',
-      },
-      {
-        question: 'Does creating a payment link mark a booking paid?',
-        answer:
-          'No. A payment request should not be treated as paid until payment confirmation is received and the owner can verify the status.',
-      },
-      {
-        question: 'Who is responsible for refunds or chargebacks?',
-        answer:
-          'Business owners remain responsible for unusual payment cases, refunds, and chargebacks. ServicesOS is not adding new refund or dispute workflows in V1.',
-      },
-    ],
-  },
-  {
-    title: 'V1 launch and early access',
-    questions: [
-      {
-        question: 'What should early-access businesses expect?',
-        answer:
-          'Early-access businesses can request a demo, discuss fit, and share workflow feedback while ServicesOS completes V1 validation. Public onboarding does not begin until after late-October completion.',
-      },
-      {
-        question: 'Will features change?',
-        answer:
-          'Final release hardening may refine workflows before public onboarding. ServicesOS will not promise unfinished functionality as available today.',
-      },
-      {
-        question: 'How should feedback be handled?',
-        answer:
-          'Feedback should be specific and tied to real owner workflows: customers, bookings, payments, Field Mode, schedule visibility, and follow-up.',
-      },
-    ],
-  },
-  {
-    title: 'What is not included yet',
-    questions: [
-      {
-        question: 'Is there a mobile employee app?',
-        answer:
-          'Employee workflow is part of the V1 completion plan. It will remain in final validation before being described as publicly available.',
+          'No. A payment request is not payment confirmation. ServicesOS keeps requested, confirmed, and owner-recorded payment states separate so the booking is not treated as paid simply because a link was created.',
       },
       {
         question: 'Does ServicesOS support Tap to Pay?',
         answer:
-          'Tap to Pay is part of the remaining V1 completion track and will not be promoted until payment validation is complete.',
+          'Tap to Pay is included in the V1 completion scope for supported employee/mobile payment workflows. It will be released only after Stripe and physical-device validation are complete.',
       },
       {
-        question: 'Does it handle payroll?',
-        answer: 'No. Payroll is not part of ServicesOS V1.',
-      },
-      {
-        question: 'Does it do route optimization?',
-        answer: 'No. Route optimization is not part of V1 and should be treated as a later possibility.',
-      },
-      {
-        question: 'Does it replace full accounting software?',
+        question: 'Who handles refunds or chargebacks?',
         answer:
-          'No. ServicesOS can show basic payment and revenue visibility, but it does not replace full accounting software.',
-      },
-      {
-        question: 'Does it auto-post marketing content?',
-        answer:
-          'No. Autonomous marketing and auto-posting are not V1 ServicesOS features.',
+          'Business owners remain responsible for unusual payment cases, refunds, and chargebacks. V1 focuses on safe payment collection and state visibility rather than adding a broad dispute-management system.',
       },
     ],
   },
   {
-    title: 'AI philosophy',
+    title: 'AI and credits',
     questions: [
+      {
+        question: 'Does ServicesOS include AI?',
+        answer:
+          'Yes. ServicesOS V1 includes SLAI Assistant capabilities for business briefings, opportunities, retention and rebooking, customer communication drafting, reputation support, marketing assistance, content planning, and controlled contextual workflows. The Employee App also includes SLAI Work Assistant capabilities.',
+      },
       {
         question: 'Does AI make decisions for the business?',
         answer:
-          'No. AI may draft, suggest, summarize, or organize later, but humans remain responsible for important decisions.',
+          'No. AI can notice, organize, draft, and suggest. Humans remain responsible for important customer, pricing, scheduling, payment, approval, and publishing decisions.',
       },
       {
-        question: 'Will AI replace the owner?',
+        question: 'How do AI credits work?',
         answer:
-          'No. ServicesOS is built around owner control. Human approval stays central for customer, pricing, scheduling, and payment decisions.',
+          'ServicesOS V1 includes 100 AI credits each calendar month. Provider-backed AI generation consumes credits, while deterministic ServicesOS workflows do not. Provider-backed actions show their credit cost before execution.',
       },
       {
-        question: 'How does SLAI think about AI?',
+        question: 'Does SLAI Assistant automatically send messages or publish marketing?',
         answer:
-          'AI should amplify humans, not replace them. ServicesOS should help owners work more clearly without pretending automation can run the business alone.',
+          'No. Customer communication and marketing output remain draft-first and human-reviewed. ServicesOS V1 does not automatically send customer communication or publish marketing without owner control.',
+      },
+      {
+        question: 'Will AI replace the owner or employee?',
+        answer:
+          'No. ServicesOS is built around the principle that AI should amplify people, not replace them. The system is designed to support owners and employees while preserving human responsibility.',
+      },
+    ],
+  },
+  {
+    title: 'V1 launch and boundaries',
+    questions: [
+      {
+        question: 'What remains before public onboarding?',
+        answer:
+          'Remaining work is focused on the final customer approval path for extra work, Stripe subscription and payment lifecycle stabilization, Tap to Pay, release hardening, final mobile/device QA, real-business beta validation, and beta-critical fixes.',
+      },
+      {
+        question: 'Will V1 features still change?',
+        answer:
+          'Final validation may refine wording, edge cases, and usability, but the V1 scope is defined. New post-V1 ideas are not being added unless a real launch blocker requires it.',
+      },
+      {
+        question: 'Does V1 include payroll?',
+        answer: 'No. Payroll is not part of ServicesOS V1.',
+      },
+      {
+        question: 'Does V1 include route optimization?',
+        answer: 'No. Advanced route optimization is outside the V1 scope.',
+      },
+      {
+        question: 'Does ServicesOS replace accounting software?',
+        answer:
+          'No. ServicesOS provides operational payment and revenue visibility, but V1 is not a full accounting system.',
+      },
+      {
+        question: 'Does V1 include advanced commercial contracts or procurement?',
+        answer:
+          'No. V1 supports commercial booking context through the same canonical operating workflow, but advanced proposals, procurement, net payment terms, and enterprise multi-location account hierarchies remain post-V1.',
       },
     ],
   },
@@ -614,15 +686,18 @@ const servicesOSFaqGroups = [
     questions: [
       {
         question: 'How do I see the demo?',
-        answer: 'Use the ServicesOS demo page for a guided static walkthrough with fake data only.',
+        answer:
+          'Use the ServicesOS demo page for a static owner-side walkthrough with fake data only. The demo intentionally shows a limited subset of V1 and does not connect to the real app or providers.',
       },
       {
         question: 'How do I request a V1 demo?',
-        answer: 'Use the contact form to tell SLAI about your cleaning business and the workflow problem you want to solve.',
+        answer:
+          'Use the contact form to tell SLAI about your service business and the workflow problem you want to solve.',
       },
       {
-        question: 'Where can I learn how to use ServicesOS?',
-        answer: 'Use the Training Center for beta-aware lessons on Dashboard, Customers, Bookings, Payments, Calendar, and Field Mode.',
+        question: 'Where can I learn the V1 workflow?',
+        answer:
+          'Use the Training Center for a public overview of customers, bookings, approved scope, Employee App, extra-work controls, payments, SLAI Assistant, and launch expectations.',
       },
     ],
   },
@@ -803,7 +878,7 @@ function ServicesOSResourceLinks({ includeContact = false, omitDemo = false }) {
           <p className="eyebrow">ServicesOS resources</p>
           <h2 id="servicesos-resource-heading">Keep exploring ServicesOS.</h2>
           <p>
-            Use these static website resources to understand the demo, Founder Access, basic training, and common
+            Use these public resources to understand the static demo, Founder Access, completed V1 workflow, and common
             questions before requesting access.
           </p>
         </div>
@@ -855,8 +930,8 @@ function ProductPreview({ detailed = false }) {
           <p className="eyebrow">Product Direction</p>
           <h2>ServicesOS leads the roadmap.</h2>
           <p>
-            SLAI is starting with practical operating software for service businesses. Future platforms are clearly
-            framed as planned products, internal-first work, or careful research.
+            SLAI is starting with a practical operating system for service businesses. Customer-ready ServicesOS V1 is
+            targeted for late October 2026; future platforms remain clearly separated from the active build.
           </p>
         </div>
         <div className={detailed ? 'product-grid detailed' : 'product-grid'}>
@@ -1076,8 +1151,8 @@ function ContactCTA({ compact = false }) {
           <p className="eyebrow">Contact</p>
           <h2>Request a ServicesOS Demo</h2>
           <p>
-            Tell us what workflow problem you want solved, request a V1 demo, or ask about the planned $100/month
-            price. Your request goes to SLAI by email, and we'll follow up directly.
+            Tell us what workflow problem you want solved, request a V1 demo, or ask about the $100/month subscription
+            and 100 included monthly AI credits. Your request goes to SLAI by email, and we'll follow up directly.
           </p>
           <div className="contact-actions" aria-label="Contact links">
             <a className="text-link contact-email" href="mailto:stellar.logic.ai@gmail.com">
@@ -1171,7 +1246,7 @@ function ContactCTA({ compact = false }) {
             >
               <option>ServicesOS Demo</option>
               <option>Early Access / Pilot</option>
-              <option>Pilot Pricing</option>
+              <option>ServicesOS Pricing</option>
               <option>Product Research</option>
               <option>GrowthAI</option>
               <option>EducationOS</option>
@@ -1317,8 +1392,8 @@ function ServicesOSPage() {
       <PageHero
         className="servicesos-hero"
         eyebrow="ServicesOS V1"
-        title="Launching late October for cleaning and service businesses."
-        copy="A $100/month operating system designed to help cleaning and service businesses manage customer requests, estimates, bookings, employee workflows, job completion, and payment visibility from one place."
+        title="One operating system for your service business."
+        copy="Manage customers, estimates, residential and commercial bookings, approved job scope, employee field work, payments, and human-controlled AI from one connected platform. ServicesOS V1 is $100/month, with customer-ready completion targeted for late October 2026."
       >
         <div className="hero-actions">
           <PageLink className="button primary" href="#contact">
@@ -1342,8 +1417,8 @@ function ServicesOSPage() {
           </div>
           <div>
             <p>
-              ServicesOS is for teams juggling leads, quotes, schedules, payments, and job notes without a clear shared
-              operating center.
+              ServicesOS is for businesses that need one clearer operating center for the customer, office, field team,
+              job scope, payment state, and follow-up instead of rebuilding context across disconnected tools.
             </p>
             <ul className="plain-list">
               {servicesOSAudience.map((item) => (
@@ -1356,11 +1431,11 @@ function ServicesOSPage() {
       <section className="section workflow-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Core Workflow</p>
-            <h2>One clear path from request to follow-up.</h2>
+            <p className="eyebrow">Core V1 Workflow</p>
+            <h2>One connected path from first request to follow-up.</h2>
             <p>
-              Request to Booking to Payment to Field visibility to Follow-up. The goal is to keep the work moving
-              without losing context between the customer, owner, and field team.
+              Request to Estimate to Booking to Customer approval to Field work to Payment to Follow-up. The goal is to
+              keep the work moving without losing context between the customer, owner, and field team.
             </p>
           </div>
           <ol className="workflow-list">
@@ -1376,10 +1451,11 @@ function ServicesOSPage() {
       <section className="section feature-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Current Focus</p>
-            <h2>Core tools for the work behind each job.</h2>
+            <p className="eyebrow">Completed V1 Scope</p>
+            <h2>The operating tools behind the whole job.</h2>
             <p>
-              ServicesOS is operations-first. Detailed how-to guidance now lives in the Training Center.
+              The website describes the defined customer-ready V1: one connected operating platform, with remaining work
+              focused on final validation, payment stabilization, device QA, and release hardening rather than adding a new feature maze.
             </p>
           </div>
           <div className="feature-grid services-feature-grid">
@@ -1401,15 +1477,38 @@ function ServicesOSPage() {
       <section className="section product-detail-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">AI Posture</p>
-            <h2>Human-controlled and operations-first.</h2>
+            <p className="eyebrow">Scope Control</p>
+            <h2>Know what was agreed. Know what changed.</h2>
           </div>
           <div>
             <p>
-              AI may draft, suggest, and organize later. Humans remain responsible for important customer, pricing,
-              scheduling, and payment decisions.
+              ServicesOS preserves the customer-approved scope for each job. When additional work comes up in the field,
+              employees submit an extra-work request instead of silently expanding the original job.
             </p>
-            <p>ServicesOS is not automation-first. It is practical operating software first.</p>
+            <p>
+              Owners control catalog pricing, custom-work pricing, timing, and operational disposition. Completed V1
+              adds authenticated customer approval before a material change becomes the next approved scope revision.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section className="section product-detail-section">
+        <div className="shell two-column">
+          <div>
+            <p className="eyebrow">AI Posture</p>
+            <h2>AI assists. Humans decide.</h2>
+          </div>
+          <div>
+            <p>
+              ServicesOS V1 includes SLAI Assistant and employee Work Assistant capabilities. AI can surface business
+              opportunities, help with rebooking, draft communication, support reputation and marketing work, organize
+              context, and assist employees within bounded workflows.
+            </p>
+            <p>
+              Important customer, pricing, scheduling, payment, approval, and publishing decisions remain under human
+              control. Provider-backed generation uses AI credits; deterministic ServicesOS workflows remain available
+              without consuming AI credits.
+            </p>
           </div>
         </div>
       </section>
@@ -1417,16 +1516,17 @@ function ServicesOSPage() {
         <div className="shell two-column">
           <div>
             <p className="eyebrow">V1 Pricing</p>
-            <h2>Planned at $100/month.</h2>
+            <h2>ServicesOS V1 — $100/month.</h2>
           </div>
           <div>
             <p>
-              ServicesOS V1 is planned at $100/month with simple, transparent pricing for small cleaning and service
-              businesses, not enterprise software contracts.
+              One ServicesOS subscription covers the core V1 operating platform and includes 100 AI credits each
+              calendar month. The V1 plan does not use an enterprise-style pricing maze or require a customer trial.
             </p>
             <p>
-              Demo and early-access requests are open now. Public onboarding begins after V1 completion and final
-              real-world validation.
+              Any optional additional provider-backed usage or third-party cost offered later would be disclosed
+              separately rather than silently added. Demo and Founder Access requests are open now; public onboarding
+              begins after final customer-ready validation.
             </p>
             <div className="hero-actions">
               <PageLink className="button primary" href="#contact">
@@ -1440,11 +1540,13 @@ function ServicesOSPage() {
       <section className="section pilot-section">
         <div className="shell two-column value-panel pilot-panel">
           <div>
-            <p className="eyebrow">V1 Completion</p>
-            <h2>Scheduled for late October completion.</h2>
+            <p className="eyebrow">Customer-Ready V1</p>
+            <h2>Targeted for late October 2026.</h2>
             <p>
-              The remaining work is focused on release hardening, onboarding readiness, payment stabilization, and
-              real-business validation before public onboarding begins.
+              Owner onboarding, subscription billing, residential and commercial booking, employee workflows,
+              customer-approved scope, canonical add-ons, and employee extra-work review are already part of the V1
+              architecture. Remaining work is focused on the final customer approval path for extra work, Stripe
+              lifecycle stabilization, Tap to Pay, release hardening, device QA, and real-business beta validation.
             </p>
             <div className="hero-actions">
               <PageLink className="button primary" href="#contact">
@@ -1459,11 +1561,11 @@ function ServicesOSPage() {
           <div>
             <article className="status-callout">
               <p className="eyebrow">Current Status</p>
-              <h3>V1 completion is scheduled for late October.</h3>
+              <h3>Defined V1 scope, final release validation in progress.</h3>
               <p>
-                ServicesOS is not publicly launched yet. Payment workflows, onboarding, and final release checks will
-                be validated before public onboarding. Owners remain in control of customer, pricing, scheduling, and
-                payment decisions.
+                ServicesOS is not publicly launched yet. This page describes what the completed V1 release includes;
+                unfinished release-critical pieces are still validated before public onboarding. Owners remain in
+                control of customer, pricing, scheduling, approval, payment, and publishing decisions.
               </p>
             </article>
           </div>
@@ -1489,7 +1591,7 @@ function ServicesOSDemoPage() {
         className="servicesos-hero servicesos-demo-hero"
         eyebrow="Static ServicesOS Demo"
         title="See how ServicesOS works"
-        copy="Walk through the owner-side workflow with fake cleaning business data. This page does not require login and does not connect to the real ServicesOS app, Firebase, Stripe, cloud functions, or customer records."
+        copy="Walk through a limited owner-side workflow with fake cleaning business data. The completed V1 scope is broader than this static walkthrough and also includes residential and commercial booking, customer-approved scope, the Employee App, add-on/change-request controls, SLAI Assistant, and V1 payment workflows."
       >
         <div className="hero-actions">
           <a className="button primary" href="#founder-access">
@@ -1510,7 +1612,8 @@ function ServicesOSDemoPage() {
           <p className="eyebrow">Demo boundary</p>
           <h2>Demo only: fake data, no backend actions.</h2>
           <p>
-            This walkthrough shows how ServicesOS works without connecting to real customer, payment, or schedule data.
+            This walkthrough shows selected ServicesOS concepts without login or connections to real customer data,
+            Firebase, Stripe, cloud functions, or AI providers. Use the ServicesOS and FAQ pages for the full V1 scope.
           </p>
         </div>
       </section>
@@ -1519,10 +1622,10 @@ function ServicesOSDemoPage() {
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Guided Owner Walkthrough</p>
-            <h2>Follow the ServicesOS workflow from request to follow-up.</h2>
+            <h2>Follow a simplified ServicesOS workflow.</h2>
             <p>
-              Core flow: Request to Booking to Payment to Field visibility to Follow-up. The owner stays in control at
-              every step, and each surface has a clear job.
+              The completed V1 path is Request to Estimate to Booking to Customer approval to Field work to Payment to
+              Follow-up. This static page intentionally illustrates only selected parts of that connected workflow.
             </p>
           </div>
           <ol className="demo-step-grid">
@@ -1565,8 +1668,8 @@ function ServicesOSDemoPage() {
       <section className="section demo-customers-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">Step 2: Review a new customer request</p>
-            <h2>Customer details stay close to service notes and payment context.</h2>
+            <p className="eyebrow">Step 2: Review a customer request</p>
+            <h2>Customer details stay close to service and estimate context.</h2>
             <p>Customer records keep contact details, property notes, service context, and payment status together.</p>
             <div className="demo-training-callout">
               <strong>What you see</strong>
@@ -1579,7 +1682,7 @@ function ServicesOSDemoPage() {
               type="button"
               onClick={() =>
                 explainDemoAction(
-                  'In the real app, the owner reviews a new customer request before approving a booking. This demo keeps the request static.'
+                  'In the real app, the owner reviews customer and estimate context before confirming the canonical booking. This demo keeps the request static.'
                 )
               }
             >
@@ -1627,15 +1730,21 @@ function ServicesOSDemoPage() {
       <section className="section demo-bookings-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">Step 3: Manage the booking</p>
+            <p className="eyebrow">Step 3: Manage the booking and scope</p>
             <h2>Bookings is the job management center.</h2>
-            <p>The booking detail view keeps scheduled work, service notes, job price, and payment status together.</p>
+            <p>
+              Residential and commercial bookings use the same canonical workflow. Completed V1 keeps schedule, service
+              context, job price, payment state, and customer-approved scope tied back to the booking.
+            </p>
           </div>
           <div className="demo-training-callout">
             <strong>What you see</strong>
             <p>Job status, customer context, price, amount owed, and manual payment details.</p>
-            <strong>Why it matters</strong>
-            <p>Bookings is where job management happens. Calendar and Field Mode are visibility surfaces.</p>
+            <strong>What completed V1 adds</strong>
+            <p>
+              Customer-approved immutable scope versions and controlled extra-work requests prevent material job changes
+              from silently replacing what was originally approved.
+            </p>
           </div>
           <div className="demo-booking-grid">
             {servicesOSDemoBookings.map((booking) => (
@@ -1670,7 +1779,7 @@ function ServicesOSDemoPage() {
                   type="button"
                   onClick={() =>
                     explainDemoAction(
-                      'In the real app, this creates a Stripe Checkout link after Stripe is connected. Creating the link does not mark the booking paid.'
+                      'In the real app, a Stripe payment link is created only through the authorized payment workflow. Creating a request does not mark the booking paid.'
                     )
                   }
                 >
@@ -1689,23 +1798,23 @@ function ServicesOSDemoPage() {
         <div className="shell two-column">
           <div>
             <p className="eyebrow">Step 4: Understand payment status</p>
-            <h2>Stripe-first, manual-friendly payment tracking.</h2>
+            <h2>Confirmed payment state, not wishful payment state.</h2>
             <p>
-              Payment links do not mark paid by themselves. Paid status updates after confirmed payment, or after the
-              owner records a manual payment.
+              Payment requests do not mark a job paid by themselves. Completed V1 keeps online and approved manual
+              payment state separate and validates Stripe-based workflows before public onboarding.
             </p>
             <div className="demo-training-callout">
               <strong>What you see</strong>
               <p>Payment status describes what has actually happened, not what the owner hopes will happen.</p>
               <strong>Why it matters</strong>
-              <p>Owners can separate online payments from cash, check, Venmo, Cash App, Zelle, PayPal, or other methods.</p>
+              <p>Owners can separate Stripe-confirmed payments from approved manually recorded payment methods.</p>
             </div>
             <button
               className="button secondary demo-action-button"
               type="button"
               onClick={() =>
                 explainDemoAction(
-                  'In the real app, paid status updates after payment confirmation, or after the owner manually records a non-Stripe payment.'
+                  'In the real app, paid status updates from confirmed payment state or an authorized owner-recorded manual-payment workflow.'
                 )
               }
             >
@@ -1720,13 +1829,13 @@ function ServicesOSDemoPage() {
             </article>
             <article>
               <span>2</span>
-              <h3>Payment link is sent when ready.</h3>
-              <p>Creating a link does not mean the customer has paid.</p>
+              <h3>Payment is requested through the authorized workflow.</h3>
+              <p>Creating the request does not mean the customer has paid.</p>
             </article>
             <article>
               <span>3</span>
               <h3>Status updates after confirmed payment.</h3>
-              <p>Owners see paid status after payment is confirmed, or after they manually record another method.</p>
+              <p>Owners see paid state only after the appropriate confirmation or authorized manual record.</p>
             </article>
           </div>
         </div>
@@ -1736,20 +1845,20 @@ function ServicesOSDemoPage() {
         <div className="shell two-column">
           <div>
             <p className="eyebrow">Step 5: View the schedule</p>
-            <h2>A read-only schedule view for visibility.</h2>
-            <p>Calendar is visibility. Booking changes happen in Bookings.</p>
+            <h2>A schedule view connected to canonical bookings.</h2>
+            <p>Calendar provides schedule visibility while booking changes remain in the booking workflow.</p>
             <div className="demo-training-callout">
               <strong>What you see</strong>
-              <p>The schedule shows upcoming work without payment buttons or edit controls.</p>
+              <p>The schedule shows upcoming work without becoming a duplicate booking-management system.</p>
               <strong>Why it matters</strong>
-              <p>The team can see the week without turning Calendar into a second booking system.</p>
+              <p>The owner and team can understand the week while keeping job state in one canonical place.</p>
             </div>
             <button
               className="button secondary demo-action-button"
               type="button"
               onClick={() =>
                 explainDemoAction(
-                  'In the real app, booking changes happen in Bookings, not Calendar. Calendar stays read-only for visibility.'
+                  'In the real app, booking changes remain in Bookings while Calendar provides schedule visibility.'
                 )
               }
             >
@@ -1774,34 +1883,39 @@ function ServicesOSDemoPage() {
       <section className="section demo-field-section">
         <div className="shell two-column value-panel">
           <div>
-            <p className="eyebrow">Step 6: Open Field Mode</p>
-            <h2>A read-only job packet for the team in the field.</h2>
-            <p>Field Mode shows job details without admin controls.</p>
+            <p className="eyebrow">Step 6: Understand the Employee App</p>
+            <h2>Assigned work without owner-only administration.</h2>
+            <p>
+              This static card previews the safe job information employees need. Completed V1 goes further with My Day,
+              assigned Job Detail, approved scope, checklists, job start/completion, before/after photos, notes, issue
+              reporting, navigation, Work Assistant, and extra-work requests.
+            </p>
             <div className="demo-training-callout">
-              <strong>What you see</strong>
-              <p>Field Mode shows job information, not payment collection, scheduling edits, or owner-only controls.</p>
-              <strong>Why it matters</strong>
-              <p>Workers get clarity for the job while the owner keeps admin control in Bookings.</p>
+              <strong>What employees receive</strong>
+              <p>Bounded job context and execution tools for assigned work.</p>
+              <strong>What stays protected</strong>
+              <p>Owner-only administration, unrelated tenant data, and private information employees do not need.</p>
             </div>
           </div>
           <article className="demo-job-packet">
             <h3>Sarah Mitchell - Standard recurring clean</h3>
             <p className="demo-address">Demo address: 1200 Clean Street, Springfield, ST</p>
             <ul className="plain-list">
-              <li>Focus on kitchen counters, bathrooms, floors, and entryway dusting.</li>
+              <li>Approved scope: kitchen, bathrooms, floors, and entryway dusting.</li>
               <li>Use customer-provided product on hardwood floors.</li>
-              <li>Checklist preview: arrival check, room-by-room clean, final owner notes.</li>
+              <li>Checklist preview: arrival check, room-by-room clean, final completion review.</li>
+              <li>If new work is requested, submit an extra-work request instead of silently changing the scope.</li>
             </ul>
             <button
               className="button secondary demo-action-button"
               type="button"
               onClick={() =>
                 explainDemoAction(
-                  'Demo-only field action: the real Field Mode is read-only and does not expose owner payment, booking, or admin controls.'
+                  'Completed V1 Employee App adds execution tools, photos, notes, Work Assistant, and scope-change requests while preserving owner-only controls.'
                 )
               }
             >
-              Explain Field Mode
+              Explain Employee App
             </button>
           </article>
         </div>
@@ -1811,10 +1925,10 @@ function ServicesOSDemoPage() {
         <div className="shell value-panel demo-founder-panel">
           <div>
             <p className="eyebrow">Step 7: Request Founder Access</p>
-            <h2>Built first for cleaning companies.</h2>
+            <h2>Built first for cleaning and owner-led service businesses.</h2>
             <p>
-              Manage customers, bookings, field visibility, and payments in one place. Founder Access is available for
-              early cleaning businesses that want a hands-on rollout while the product matures.
+              Founder Access provides a hands-on early rollout of the defined V1 workflow while final payment,
+              device, hardening, and real-business validation finish before wider public onboarding.
             </p>
           </div>
           <div className="hero-actions">
@@ -1844,8 +1958,8 @@ function ServicesOSFounderAccessPage() {
       <PageHero
         className="servicesos-hero founder-access-hero"
         eyebrow="ServicesOS Founder Access"
-        title="Founder Access for cleaning businesses"
-        copy="Help shape ServicesOS while getting early access to a simpler operating system for customers, bookings, job visibility, and payments."
+        title="Founder Access for cleaning and service businesses"
+        copy="Get hands-on early access to the defined ServicesOS V1 operating workflow while final release validation is completed before wider public onboarding."
       >
         <div className="hero-actions">
           <a className="button primary" href="#contact">
@@ -1862,16 +1976,17 @@ function ServicesOSFounderAccessPage() {
         <div className="shell two-column value-panel">
           <div>
             <p className="eyebrow">Main Message</p>
-            <h2>ServicesOS is being built first for cleaning companies.</h2>
+            <h2>ServicesOS V1 is built around the whole service-business workflow.</h2>
           </div>
           <div>
             <p>
-              ServicesOS is for cleaning businesses that need a simpler way to manage customers, bookings, field
-              visibility, and payments without spreading daily operations across too many tools.
+              ServicesOS connects customers, estimates, residential and commercial bookings, approved job scope,
+              employee field execution, payments, business visibility, and human-controlled AI without forcing the
+              owner to spread daily operations across disconnected tools.
             </p>
             <p>
-              Founder Access is intentionally early and hands-on. The goal is to help real owners use the product,
-              learn what matters, and improve the workflow before a wider launch.
+              Founder Access is intentionally hands-on. The completed V1 scope is defined; early users help validate
+              the final workflow and surface beta-critical issues before wider onboarding.
             </p>
           </div>
         </div>
@@ -1881,7 +1996,7 @@ function ServicesOSFounderAccessPage() {
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Who it is for</p>
-            <h2>Built for owner-led cleaning businesses that need simpler operations.</h2>
+            <h2>Built first for owner-led service businesses that need simpler operations.</h2>
           </div>
           <div className="feature-grid">
             {founderAccessAudience.map((item) => (
@@ -1899,11 +2014,11 @@ function ServicesOSFounderAccessPage() {
       <section className="section founder-today-section">
         <div className="shell two-column">
           <div>
-            <p className="eyebrow">What ServicesOS helps with today</p>
-            <h2>Useful V1 workflows, described honestly.</h2>
+            <p className="eyebrow">What completed V1 includes</p>
+            <h2>A defined operating platform, not a placeholder feature list.</h2>
             <p>
-              Founder Access focuses on practical owner workflows first. Some parts are still beta, and the product is
-              not being presented as a finished enterprise suite.
+              Founder Access is early, but the V1 scope is now defined. The remaining work is release-critical
+              validation rather than open-ended feature expansion.
             </p>
           </div>
           <ul className="plain-list founder-list">
@@ -1920,8 +2035,8 @@ function ServicesOSFounderAccessPage() {
             <p className="eyebrow">What Founder Access means</p>
             <h2>Early access with a direct feedback loop.</h2>
             <p>
-              Founder Access is not a passive waitlist. It is a practical early rollout for cleaning businesses willing
-              to use the product, give feedback, and help shape what comes next.
+              Founder Access is not a passive waitlist. It is a practical early rollout for service businesses willing
+              to use the product, give feedback, and help surface beta-critical issues before wider public onboarding.
             </p>
           </div>
           <ul className="plain-list">
@@ -1935,10 +2050,11 @@ function ServicesOSFounderAccessPage() {
       <section className="section founder-not-included-section">
         <div className="shell">
           <div className="section-header">
-            <p className="eyebrow">What is not included yet</p>
-            <h2>Clear boundaries for the early version.</h2>
+            <p className="eyebrow">V1 boundaries</p>
+            <h2>Clear limits keep the first release useful.</h2>
             <p>
-              ServicesOS is being built carefully. Founder Access does not promise every future workflow on day one.
+              ServicesOS V1 solves the core operating workflow without pretending to replace payroll, accounting,
+              enterprise procurement, or every future business system.
             </p>
           </div>
           <div className="founder-boundary-grid">
@@ -1957,8 +2073,8 @@ function ServicesOSFounderAccessPage() {
             <p className="eyebrow">ServicesOS philosophy</p>
             <h2>Practical software first. Human judgment always.</h2>
             <p>
-              The ServicesOS roadmap can include AI assistance, but the product is built around owner control,
-              responsible decisions, and useful workflows before complexity.
+              ServicesOS V1 includes AI assistance, but the system is built around owner control, employee clarity,
+              explicit customer approval, responsible decisions, and useful workflows before complexity.
             </p>
           </div>
           <ul className="plain-list founder-list">
@@ -1973,7 +2089,7 @@ function ServicesOSFounderAccessPage() {
         <div className="shell two-column value-panel">
           <div>
             <p className="eyebrow">Early user expectations</p>
-            <h2>Hands-on support while the product matures.</h2>
+            <h2>Hands-on support while final V1 validation finishes.</h2>
           </div>
           <ul className="plain-list">
             {founderAccessExpectations.map((item) => (
@@ -1987,10 +2103,10 @@ function ServicesOSFounderAccessPage() {
         <div className="shell value-panel founder-final-cta">
           <div>
             <p className="eyebrow">Request Access</p>
-            <h2>Founder Access is for cleaning companies ready to simplify operations.</h2>
+            <h2>Founder Access is for service businesses ready to simplify operations.</h2>
             <p>
-              Tell SLAI about your business, the workflows causing the most friction, and whether you want to start
-              with customers, bookings, field visibility, or payment tracking.
+              Tell SLAI about your business, the workflows causing the most friction, and whether your biggest problem
+              is customer management, booking, field execution, scope creep, payment visibility, or follow-up.
             </p>
           </div>
           <div className="hero-actions">
@@ -2016,9 +2132,9 @@ function ServicesOSTrainingPage() {
     <>
       <PageHero
         className="servicesos-hero servicesos-training-hero"
-        eyebrow="ServicesOS Training Center"
+        eyebrow="ServicesOS V1 Training Center"
         title="ServicesOS Training Center"
-        copy="Learn the basics of using ServicesOS to manage customers, bookings, field visibility, and payments."
+        copy="Learn the completed V1 workflow across customers, estimates, residential and commercial bookings, approved job scope, Employee App field work, payments, extra-work control, and SLAI Assistant."
       >
         <div className="hero-actions">
           <PageLink className="button primary" href="/servicesos-demo">
@@ -2035,19 +2151,17 @@ function ServicesOSTrainingPage() {
         <div className="shell two-column value-panel">
           <div>
             <p className="eyebrow">Start here</p>
-            <h2>The basic ServicesOS flow.</h2>
+            <h2>The completed ServicesOS V1 flow.</h2>
           </div>
           <div>
             <p>
-              For beta and Founder Access users, the safest way to understand ServicesOS is to follow the work from
-              first request through follow-up.
+              Understand ServicesOS by following the work from the customer's first request through approval, field
+              execution, payment, and follow-up.
             </p>
             <ol className="training-flow-list">
-              <li>Request</li>
-              <li>Booking</li>
-              <li>Payment</li>
-              <li>Field visibility</li>
-              <li>Follow-up</li>
+              {servicesOSWorkflow.map((step) => (
+                <li key={step}>{step}</li>
+              ))}
             </ol>
           </div>
         </div>
@@ -2057,10 +2171,10 @@ function ServicesOSTrainingPage() {
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Training lessons</p>
-            <h2>Simple operating guidance for cleaning business owners.</h2>
+            <h2>Practical operating guidance for ServicesOS V1.</h2>
             <p>
-              These notes are intentionally practical and beta-aware. They explain where work belongs without promising
-              that every future ServicesOS workflow is finished today.
+              These public notes explain the defined V1 workflow while final customer-ready validation continues.
+              Detailed in-app guidance can be refined without changing the core V1 boundaries described here.
             </p>
           </div>
           <div className="training-lesson-grid">
@@ -2086,10 +2200,10 @@ function ServicesOSTrainingPage() {
         <div className="shell value-panel training-links-panel">
           <div>
             <p className="eyebrow">Quick links</p>
-            <h2>Use these pages for demos, onboarding, and support conversations.</h2>
+            <h2>Use these pages for demos, V1 planning, and support conversations.</h2>
             <p>
-              These links are public website resources only. They do not require login and do not connect to the live
-              ServicesOS app.
+              These links are public website resources only. They do not require login and do not connect to the real
+              ServicesOS app, payment providers, or customer records.
             </p>
           </div>
           <div className="training-quick-links">
@@ -2118,9 +2232,9 @@ function ServicesOSFaqPage() {
     <>
       <PageHero
         className="servicesos-hero servicesos-faq-hero"
-        eyebrow="ServicesOS FAQ"
+        eyebrow="ServicesOS V1 FAQ"
         title="ServicesOS V1 FAQ"
-        copy="Practical answers about late-October V1 completion, the planned $100/month price, cleaning-business workflows, payment validation, and public onboarding."
+        copy="Practical answers about the defined V1 release: $100/month pricing, 100 included monthly AI credits, residential and commercial work, customer-approved scope, Employee App, payments, AI assistance, and the late-October 2026 customer-ready target."
       >
         <div className="hero-actions">
           <PageLink className="button primary" href="/servicesos-demo">
@@ -2138,13 +2252,13 @@ function ServicesOSFaqPage() {
         <div className="shell two-column value-panel">
           <div>
             <p className="eyebrow">Quick answer</p>
-            <h2>V1 is scheduled for late October completion.</h2>
+            <h2>Customer-ready V1 is targeted for late October 2026.</h2>
           </div>
           <div>
             <p>
-              ServicesOS is built first for cleaning companies that need simpler customer, booking, employee workflow,
-              and payment-visibility operations. Demo requests are open now; public onboarding begins after final V1
-              validation.
+              ServicesOS V1 is a $100/month operating platform built first for cleaning and owner-led service businesses.
+              This FAQ describes what completed V1 includes; wider public onboarding begins only after final payment,
+              hardening, device, and real-business validation.
             </p>
             <div className="faq-quick-links">
               <PageLink className="button secondary" href="/servicesos-demo">
@@ -2163,10 +2277,10 @@ function ServicesOSFaqPage() {
         <div className="shell">
           <div className="section-header">
             <p className="eyebrow">Common questions</p>
-            <h2>Short answers for prospects and early users.</h2>
+            <h2>Clear answers about the defined V1 product.</h2>
             <p>
-              These answers are intentionally plain and conservative. ServicesOS is not being described as mature
-              enterprise software or as a replacement for tools that are not part of V1.
+              These answers describe the completed V1 target without pretending unfinished release validation is already
+              publicly available or pulling post-V1 features into the launch promise.
             </p>
           </div>
           <div className="servicesos-faq-groups">
@@ -2193,8 +2307,8 @@ function ServicesOSFaqPage() {
             <p className="eyebrow">Still have questions?</p>
             <h2>Request a ServicesOS V1 demo.</h2>
             <p>
-              Share your cleaning business workflow, the tools you use today, and where customers, bookings, field
-              work, or payments are hardest to keep organized.
+              Share your service-business workflow, the tools you use today, and where customers, bookings, field work,
+              scope changes, payments, or follow-up are hardest to keep organized.
             </p>
           </div>
           <div className="hero-actions">

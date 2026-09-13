@@ -23,7 +23,7 @@ function watchForbiddenRequests(page) {
 }
 
 test.describe('ServicesOS Training Center page', () => {
-  test('renders training lessons and quick links without backend integrations', async ({ page }) => {
+  test('renders V1 training lessons and quick links without backend integrations', async ({ page }) => {
     const blockedIntegrationRequests = watchForbiddenRequests(page);
 
     await page.goto('/servicesos-training');
@@ -31,21 +31,25 @@ test.describe('ServicesOS Training Center page', () => {
     await expect(page.getByRole('heading', { name: 'ServicesOS Training Center' })).toBeVisible();
     const trainingFlow = page.locator('.training-flow-list');
     await expect(trainingFlow.getByText('Request', { exact: true })).toBeVisible();
+    await expect(trainingFlow.getByText('Estimate', { exact: true })).toBeVisible();
     await expect(trainingFlow.getByText('Booking', { exact: true })).toBeVisible();
+    await expect(trainingFlow.getByText('Customer approval', { exact: true })).toBeVisible();
+    await expect(trainingFlow.getByText('Field work', { exact: true })).toBeVisible();
     await expect(trainingFlow.getByText('Payment', { exact: true })).toBeVisible();
-    await expect(trainingFlow.getByText('Field visibility', { exact: true })).toBeVisible();
     await expect(trainingFlow.getByText('Follow-up', { exact: true })).toBeVisible();
 
     await expect(page.getByRole('heading', { name: 'Getting started' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Dashboard' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Customers' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Bookings' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Customers and bookings' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Approved job scope' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Employee App' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Add-ons and extra work' })).toBeVisible();
     await expect(page.getByRole('heading', { name: 'Payments' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Calendar' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Field Mode' })).toBeVisible();
-    await expect(page.getByRole('heading', { name: 'Beta expectations' })).toBeVisible();
-    await expect(page.getByText('Payment links do not mark a booking paid by themselves.')).toBeVisible();
-    await expect(page.getByText('It is not the full employee mobile app yet.')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'SLAI Assistant and AI credits' })).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Launch expectations' })).toBeVisible();
+    await expect(page.getByText('A payment request does not mark a booking paid by itself.')).toBeVisible();
+    await expect(page.getByText('My Day and assigned Job Detail keep field work focused.')).toBeVisible();
+    await expect(page.getByText('ServicesOS V1 includes 100 AI credits each calendar month.')).toBeVisible();
 
     await expect(page.getByRole('link', { name: 'ServicesOS Demo' })).toHaveAttribute('href', '/servicesos-demo');
     await expect(page.getByRole('link', { name: 'Founder Access' }).first()).toHaveAttribute(

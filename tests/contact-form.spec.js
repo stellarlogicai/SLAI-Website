@@ -36,7 +36,7 @@ async function fulfillPreflight(route) {
 }
 
 test.describe('Request demo contact form', () => {
-  test('renders required contact fields', async ({ page }) => {
+  test('renders required contact fields and current ServicesOS options', async ({ page }) => {
     await page.goto('/#contact');
 
     await expect(page.getByRole('heading', { name: 'Request a ServicesOS Demo' })).toBeVisible();
@@ -45,8 +45,8 @@ test.describe('Request demo contact form', () => {
     await expect(page.getByLabel('Business name')).toBeVisible();
     await expect(page.getByLabel('Business type')).toBeVisible();
     await expect(page.getByLabel('Interested product')).toHaveValue('ServicesOS Demo');
-    await expect(page.locator('#interested-product')).toContainText('Early Access / Pilot');
-    await expect(page.locator('#interested-product')).toContainText('Pilot Pricing');
+    await expect(page.locator('#interested-product')).toContainText('ServicesOS Founder Access');
+    await expect(page.locator('#interested-product')).toContainText('ServicesOS Pricing / Subscription');
     await expect(page.locator('#interested-product')).toContainText('Product Research');
     await expect(page.getByLabel('Message')).toBeVisible();
   });

@@ -40,7 +40,8 @@ test.describe('ServicesOS FAQ page', () => {
     await expect(page.getByRole('heading', { name: 'Getting started', exact: true })).toBeVisible();
 
     await expect(page.getByText('ServicesOS V1 is $100/month.')).toBeVisible();
-    await expect(page.getByText('100 AI credits each calendar month')).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'How do AI credits work?' })).toBeVisible();
+    await expect(page.getByText('Provider-backed AI generation consumes credits')).toBeVisible();
     await expect(page.getByText('Residential and commercial bookings use the same core booking')).toBeVisible();
     await expect(page.getByText('Employees can submit an extra-work request tied to the exact approved scope.')).toBeVisible();
     await expect(page.getByText('Yes. ServicesOS V1 includes a dedicated Employee App')).toBeVisible();
